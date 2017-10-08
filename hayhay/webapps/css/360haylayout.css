@@ -1,0 +1,53 @@
+.separator{
+	background-image: url('/images/icons/seperator.png');
+	background-repeat: no-repeat; 
+	background-size: 100% auto; 
+	text-align: left;
+	color: white;
+	font-weight: bold;
+	padding-bottom: 2px;
+}
+.container-fluid{
+	padding: 6px;
+}
+.row{
+	margin-left: 0px;
+	margin-right: 0px;
+}
+.website_info{
+	color: rgba(0, 0, 0, 0.5);
+	font-family: Roboto,arial,sans-serif;
+	font-size: 11px;
+}
+a {
+	color: black;
+}
+p {
+	color: black;
+}
+a:hover { 
+	color: #2ea3f2;
+}
+.nav>li>a {
+    padding: 6px 6px;
+    font-weight: bold;
+}
+.navbar-toggle {
+	float: left;
+}
+
+.active{
+	color: white;
+}
+.highlight{
+	text-decoration: none;
+    color: rgba(0, 0, 0, 0.75);
+    font-weight: 600;
+}
+.mainarticletitle{
+	text-decoration: none;
+    color: rgba(0, 0, 0, 0.75);
+    font-weight: bold;
+}
+
+

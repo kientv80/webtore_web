@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "webapps/WEB-INF/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+	<definition name="search" template="/jsp/layout/searchlayout.jsp">
+		<put-attribute name="header" value="/jsp/layout/header.jsp" />
+		<put-attribute name="content" value="/jsp/location/location.jsp" />
+	</definition>
+	
+	<definition name="index" template="/jsp/layout/widelayout.jsp">
+		<put-attribute name="content" value="/jsp/360hay/home.jsp"/>
+		<put-attribute name="footer" value="/jsp/layout/footer.jsp" />
+	</definition>
+	
+	<definition name="dashboard_news" template="/jsp/layout/layout.jsp">
+		<put-attribute name="header" value="/jsp/layout/header.jsp" />
+		<put-attribute name="content" value="/jsp/news/dashboard_news.jsp" />
+		<put-attribute name="rightsidebar" value="/jsp/layout/rightsidebar.jsp" />
+		<put-attribute name="footer" value="/jsp/layout/footer.jsp" />
+	</definition>
+	
+	<definition name="category_news" extends="dashboard_news">
+		<put-attribute name="content" value="/jsp/news/news.jsp" />
+	</definition>
+	<definition name="news_in_one_cate" extends="dashboard_news">
+		<put-attribute name="content" value="/jsp/news/news.jsp" />
+	</definition>
+	<definition name="webstore" extends="dashboard_news">
+		<put-attribute name="content" value="/jsp/webstore/webstore.jsp" />
+	</definition>
+	<definition name="menuitems" template="/jsp/webstore/cate_menu_items.jsp">
+	</definition>
+	<definition name="lottery" extends="index">
+		<put-attribute name="content" value="/jsp/webthirdparty/lottery.jsp" />
+	</definition>
+	<definition name="publishfeed" extends="index">
+		<put-attribute name="content" value="/jsp/news/publishfeed.jsp" />
+	</definition>
+
+	<definition name="mng_article" extends="dashboard_news">
+		<put-attribute name="content" value="/jsp/news/360hay_collect_articles.jsp" />
+	</definition>
+
+	<!-- 	Wide Layout -->
+	<definition name="tvprogram" extends="index">
+		<put-attribute name="content" value="/jsp/news/tvprogram.jsp" />
+	</definition>
+	<definition name="vieclam" extends="index">
+		<put-attribute name="content" value="/jsp/news/vieclam.jsp" />
+	</definition>
+	<definition name="collectorlogs" extends="index">
+		<put-attribute name="content" value="/jsp/360hay/collectorlogs.jsp" />
+	</definition>
+	<definition name="register" extends="index">
+		<put-attribute name="content" value="/jsp/360hay/register.jsp" />
+	</definition>
+	<definition name="searchlocation" extends="index">
+		<put-attribute name="content" value="/jsp/location/location.jsp" />
+	</definition>
+	
+	<!-- 	No layout -->
+	<definition name="fblike" template="/jsp/news/fblike.jsp">
+	</definition>
+	<definition name="opennews" template="/jsp/news/opennews.jsp">
+	</definition>
+	<definition name="tangthecaomayman" template="/jsp/ads/tangthecaomayman.jsp">
+	</definition>
+	
+	<!-- 	AngularJS -->
+	<definition name="angular_hello_world" template="/jsp/angularjs/helloworld.jsp">
+	</definition>
+
+
+</tiles-definitions>

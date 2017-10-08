@@ -1,0 +1,86 @@
+#!/bin/sh
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# common attributes
+APP_PROF=development
+CONF_FILES=config.ini
+JZCOMMONX_VERSION=1.2.0.7
+ZICACHEX_VERSION=1.2.0.3
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# app arguments: empty means disable or not-available
+
+APP_ARGS=""
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# jvm arguments: empty means disable or not-available
+
+JVM_XMX=500M
+JVM_XMS=
+JVM_JMX_HOST=123.30.58.130
+JVM_JMX_PORT=10023
+JVM_JDWP_PORT=10123
+
+#jvm extra options
+JVM_EXTRA_ARGS=""
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# jvm arguments cao cấp quá đừng đụng vào :))
+
+#jmx
+if [ "x$JVM_JMX_HOST" != "x" ] && [ "x$JVM_JMX_PORT" != "x" ]; then
+JVM_JMX_ARGS="-Djava.rmi.server.hostname=$JVM_JMX_HOST \
+	-Dcom.sun.management.jmxremote.port=$JVM_JMX_PORT \
+	-Dcom.sun.management.jmxremote.ssl=false \
+	-Dcom.sun.management.jmxremote.authenticate=false \
+	-Dhttp.proxyHost=123.30.58.130 \
+	-Dhttp.proxyPort=81"
+fi
+
+#jdwp
+if [ "x$JVM_JDWP_PORT" != "x" ]; then
+JVM_JDWP_ARGS="-Xdebug -Xrunjdwp:transport=dt_socket,address=$JVM_JDWP_PORT,server=y,suspend=n"
+fi
+
+# GC tuning
+JVM_GCTUNE_ARGS="-XX:+UseParNewGC \
+	-XX:+UseConcMarkSweepGC \
+	-XX:+CMSParallelRemarkEnabled \
+	-XX:SurvivorRatio=8 \
+	-XX:MaxTenuringThreshold=1 \
+	-XX:CMSInitiatingOccupancyFraction=75 \
+	-XX:+UseCMSInitiatingOccupancyOnly"
+
+
+#jvm args
+JVM_ARGS="-Dzappname=$APP_NAME \
+	-Dzappprof=$APP_PROF \
+	-Dzconfdir=$CONF_DIR \
+	-Dzconffiles=$CONF_FILES \
+	-Djzcommonx.version=$JZCOMMONX_VERSION \
+	-Dzicachex.version=$ZICACHEX_VERSION"
+
+if [ "x$JVM_JMX_ARGS" != "x" ]; then
+JVM_ARGS="$JVM_ARGS $JVM_JMX_ARGS"
+fi
+
+if [ "x$JVM_JDWP_ARGS" != "x" ]; then
+JVM_ARGS="$JVM_ARGS $JVM_JDWP_ARGS"
+fi
+
+if [ "x$JVM_XMX" != "x" ]; then
+JVM_ARGS="$JVM_ARGS -Xmx$JVM_XMX"
+fi
+
+if [ "x$JVM_XMS" != "x" ]; then
+JVM_ARGS="$JVM_ARGS -Xms$JVM_XMS"
+fi
+
+if [ "x$JVM_GCTUNE_ARGS" != "x" ]; then
+JVM_ARGS="$JVM_ARGS $JVM_GCTUNE_ARGS"
+fi
+
+if [ "x$JVM_EXTRA_ARGS" != "x" ]; then
+JVM_ARGS="$JVM_ARGS $JVM_EXTRA_ARGS"
+fi
+

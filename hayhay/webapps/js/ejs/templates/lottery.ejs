@@ -1,0 +1,29 @@
+<% for(i=0;i<lotteries.length;i++){ 
+	var lottery = lotteries[i];
+	var data = lottery.data;
+%>
+	<div class="container-fluid" style="padding-bottom: 10px;padding:0px;">
+		<% if(data.length > 0){%>
+			<table class="table table-bordered table-hover">
+				<caption style="color:blue;"><b>Xổ Số <%=lottery.name%> ngày <%=lottery.date%></b></caption>
+				<thead>
+					<tr>
+						<th>Giải</th><th>Kết Quả</th><th >Đầu</th><th>Cuối</th>
+					</tr>
+				</thead>
+				<% for(j=0;j<data.length;j++){ %>
+					<tr>
+						<td><%=data[j].name%></td>
+						<td><%=data[j].result%></td>
+						<td><%=data[j].first%></td>
+						<td><%=data[j].last%></td>
+					</tr>
+				<% } %>
+			</table>
+		<%}%>
+	</div>
+<%}%>
+
+
+	
+

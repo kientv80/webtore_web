@@ -1,0 +1,177 @@
+
+
+
+
+
+<%for(i = 0;i< categoriesNews.length;i++){ %>
+	<%
+		var mainNews = {};
+		var hotNews = {};
+		var recommendNews = {};
+		var otherNews = {};
+		var category =categoriesNews[i];
+		if(category.news.length <= 0)
+			continue;
+		mainNews = category.news[0];
+
+		if(category.news.length > 5)
+			hotNews = category.news.slice(1,5);
+		else
+			hotNews = category.news.slice(1,category.news.length);
+		if(category.news.length >= 6)	
+			recommendNews = category.news[5];
+		if(category.news.length >= 7)
+			otherNews = category.news.slice(6,category.news.length);
+
+	%>
+		<div class="container-fluid" style="padding: 2px 0px 15px 0px;">
+			<div class="row w3-card-2"   style="padding: 0px; background-color:#fff ;color: white;">
+				<div id="<%=category.cateId%>"></div>
+				<div class="container-fluid"  id="<%=category.cateId%>_container">
+					<!-- Main news -->
+					<div class="row" style="padding: 0px">
+						<!-- Cate header -->
+						<div class="container-fluid" style="padding: 0px;margin-bottom:8px;border-bottom : 4px solid <%=category.backGroudColor%>  !important;">
+							<h5 style="padding-left: 10px;"><a href="#" style=" text-decoration: none;color:<%=category.backGroudColor%> ;font-weight: bold;"><%=category.name%></a></h5>
+						</div>
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"  style="padding: 0px;border-bottom : 1px solid #e9eaed  !important;">
+							<div class="container-fluid"  id="<%=mainNews.id%>">
+								<div class="row" style="padding: 0px">
+									<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" style="padding: 0px;">
+										<div class="container-fluid" style="padding: 0px;">
+										  	<a   onclick="return showWebcontent('<%=mainNews.url%>',false,'<%=mainNews.id%>','<%=mainNews.type%>','');" style="text-decoration: none;"> 
+												<img class="img-responsive mainarticleimage" src="/images/icons/blankpic.jpg" alt="" style="width: 100%;" id="image_<%=mainNews.id%>">
+											</a>
+										</div>
+									</div>
+									<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8" >
+										<h3>
+											<a  onclick="return showWebcontent('<%=mainNews.url%>',false,'<%=mainNews.id%>','<%=mainNews.type%>','')" class="mainarticletitle" style="text-decoration: none;"><%=mainNews.title%></a>
+										</h3>
+										<p>
+											<%=mainNews.shotDesc%>
+											<br><a href="/news/type/<%=mainNews.type%>" style="text-decoration: none;"><span class="website_info" style="text-transform: uppercase;color:<%=category.backGroudColor%>"><%=mainNews.type%></span> </a><span class="website_info">(<%=mainNews.fromWebSite%> <%=mainNews.strDate %>)</span>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="padding: 0px;background-color: #e9eaed;"  >
+						<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8"  style="padding: 10px 0px 0px 0px ;background-color: #fff;">
+							<!-- hot  news -->
+							<div class="container-fluid" style="padding: 0px;">
+								<%for(j = 0;j< hotNews.length; j ++){ var news = hotNews[j];%>
+										<div class="row" style="padding: 0px 0px 10px 0px;" id="<%=news.id%>">
+											<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"  style="padding: 0px;" id="<%=news.id%>">
+												<div class="container-fluid" style="padding:0px 4px 0px 4px;">
+													<a  onclick="return showWebcontent('<%=news.url%>',false,'<%=news.id%>','<%=news.type%>','');" style=" text-decoration: none;">
+														<img class="img-responsive highlightarticleimage" style="width: 100%;padding-top: 6px" alt="<%=news.title%>" src="/images/icons/blankpic.jpg" id="image_<%=news.id%>">
+													</a>
+												</div>
+											</div>
+											<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+												<div class="container-fluid">
+													<a  onclick="return showWebcontent('<%=news.url%>',false,'<%=news.id%>','<%=news.type%>','');" class="highlight" style="text-decoration: none;"><%=news.title%></a>
+													<p style="padding: 0px;">
+														<a href="/news/type/<%=news.type%>" style="text-decoration: none;"><span class="website_info"  style="text-transform: uppercase;color:<%=category.backGroudColor%>"><%=news.type%></span> </a>
+														<span class="website_info">(<%=news.fromWebSite%> <%=news.strDate%>)</span>
+													</p>
+												</div>
+											</div>
+										</div>
+								<%}%>
+							</div>
+						</div>
+						<!-- recommended -->
+						<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"  style="padding: 0px;padding-top:4px;color:black;">
+							<div class="container-fluid" style="background-color: #e9eaed;">
+								<h3 class="panel-title" style="padding: 6px;color:<%=category.backGroudColor%>">
+									<b>Nhiều Người Quan Tâm</b>
+								</h3>
+								<div class="row" style="padding: 6px 4px 0px 4px;">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"  style="padding: 0px;">
+										<div class="container-fluid" style="padding: 0px;">
+										  	<a   onclick="return showWebcontent('<%=recommendNews.url%>',false,'<%=recommendNews.id%>','<%=recommendNews.type%>','');" style="text-decoration: none;"> 
+												<img class="img-responsive mainarticleimage" src="/images/icons/blankpic.jpg" alt="" style="width: 100%;" id="image_<%=recommendNews.id%>">
+											</a>
+										</div>
+									</div>
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding: 0px;">
+										<h3>
+											<a  onclick="return showWebcontent('<%=recommendNews.url%>',false,'<%=recommendNews.id%>','<%=recommendNews.type%>','');" class="recomendedarticletitle" style="text-decoration: none;"><%=recommendNews.title%></a>
+										</h3>
+										<p>
+											<%=recommendNews.shotDesc%><br>
+											<a href="/news/type/<%=recommendNews.type%>"><span class="website_info"  style="text-transform: uppercase;color:<%=category.backGroudColor%>"><%=recommendNews.type%></span> </a><span class="website_info">(<%=recommendNews.fromWebSite%> <%=recommendNews.strDate %>)</span>
+										</p>
+									</div>
+								</div>
+							</div>
+						 </div>
+						</div>
+						<!-- other news -->
+						<div class="container-fluid" style="width:100%;float:left;padding: 4px 0px 4px 0px;">
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"  style="padding: 0px;">
+								<div class="row " style="padding: 0px; border-bottom: 1px solid <%=category.backGroudColor%> !important;">
+									<h5><a href="void(0);" style=" text-decoration: none;color:<%=category.backGroudColor%> ;font-weight: bold;">Tin Khác</a></h5>
+								</div>
+								<div class="container-fluid" style="padding: 0px; padding-top: 10px;">
+										<div class="swiper-container">
+											<div class="swiper-wrapper">
+												<%for(k=0;k<otherNews.length;k++){ var news = otherNews[k];%>
+												 	<div class="swiper-slide" id = "<%=news.id%>">
+												 		<table>
+												 			<tr>
+												 				<td style="text-align: -webkit-center;">
+												 					<img class="img-responsive ortherarticleimage" style="width: 100%;" onclick="return showWebcontent('<%=news.url%>',false,'<%=news.id%>','<%=news.type%>','');"   alt="<%=news.title%>" src="/images/icons/blankpic.jpg" id="image_<%=news.id%>">
+												 				</td>
+												 			</tr>
+												 			<tr>
+												 				<td style="text-align: -webkit-center;">
+																	<div class="container-fluid" style="padding:0px;padding-top: 10px;">
+																		<a style="text-decoration: none;color: #444651;font-size: 16px;text-transform: none;font-weight: 600;" onclick="return showWebcontent('<%=news.url%>',false,'<%=news.id%>','<%=news.type%>','');"><%=news.title%></a>
+																		<br><span class="website_info">(<%=news.fromWebSite%>)</span>
+																	</div>
+												 				</td>
+												 			</tr>
+												 		</table>
+													</div>
+												<%}%>
+											</div>
+											<div class="swiper-pagination" style="padding-top: 20px;position: relative;"></div>
+										</div>
+									</div>
+								</div> 
+						</div>
+						<!-- Container load more -->
+						<div class="container-fluid" style="padding: 4px;" id="<%=category.cateId%>_loadmore_container">
+						</div>
+						<!-- Cate footer -->
+						<div class="container-fluid" style="width:100%;float:left;padding: 4px 0px 4px 0px; border-top : 1px solid #e9eaed  !important;">
+							<div style="float:left; padding: 4px;">
+								<h6><a style="color:#7f7f7f;font-weight: bold;" onclick="loadMore('<%=from%>', <%=fromIndex%>,'<%=category.cateId %>','<%=category.cateId%>_loadmore_container')"><img src="/images/icons/readmore.png" style="padding-bottom: 5px;">Xem Thêm</a></h6>
+								<input type="hidden" id="<%=category.cateId%>_fromIndex" value="10">
+							</div>
+							<%if(category.subcates!= null && category.subcates !=undefined && category.subcates.length > 0){%>
+								<div style="float:right; padding: 4px;">
+									<div class="dropdown">
+									  <button class="btn btn-default dropdown-toggle" type="button" id="btn<%=category.cateId%>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+									    Chuyên Mục Khác
+									    <span class="caret"></span>
+									  </button>
+									  <ul class="dropdown-menu" aria-labelledby="btn<%=category.cateId%>">
+										<%for(sc=0;sc<category.subcates.length;sc++){ var scate=category.subcates[sc];%>
+											<li><a href="<%=scate.url%>"><%=scate.name%></a></li>
+										<%}%>
+									  </ul>
+									</div>
+								</div>
+							<%}%>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+<%}%>
+		 

@@ -1,0 +1,38 @@
+<% for(i=0;i<categories.length;i++){ 
+	try{
+		for(j=0;j<categories[i].news.length;j++){
+%>
+
+	<div class="row" style="padding-left: 8px;">
+		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="padding: 0px;padding-top: 10px;">
+			<div class="container-fluid" style="padding: 0px 4px 2px 0px;" id='<%=news[i].id%>'>
+				<div class="row" style="padding-left: 8px;padding-bottom: 12px;">
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="padding: 0px;" id="${news[i].id}">
+						<div class="container-fluid" style="padding: 0px 4px 2px 0px;">
+							<a  onclick="return showWebcontent('<%=news[i].url%>',false,'<%=news[i].id%>','more_<%=news[i].type%>');">
+								<img class="img-responsive" style="width: 100%;padding-top: 6px" alt="${news[i].title}" src="<%=news[i].imageUrl%>">
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" style="padding: 0px;">
+						<div class="container-fluid" style="padding: 0px 4px 2px 0px;">
+							<a  onclick="return showWebcontent('<%=news[i].url%>',false,'<%=news[i].id%>','<%=news[i].type%>');" class="highlight"><%=news[i].title%></a>
+							<span class="website_info">(<%=news[i].fromWebSite%> <%=news[i].strDate%>)</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<% 
+		}//end for
+	}catch(e){
+		console.log(e+'==================');
+	}
+}%>
+
+
+
+	
+

@@ -1,0 +1,1353 @@
+2017/06/07 20:15:44 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r371,c39,p18363) whose content does not match a registered StartTagType
+2017/06/07 20:15:44 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r370,c39,p18293) whose content does not match a registered StartTagType
+2017/06/07 20:15:44 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r369,c38,p18229) whose content does not match a registered StartTagType
+2017/06/07 20:15:44 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r368,c38,p18166) whose content does not match a registered StartTagType
+2017/06/07 20:15:44 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r366,c41,p18060) whose content does not match a registered StartTagType
+2017/06/07 20:15:44 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r477,c53,p22274) whose content does not match a registered StartTagType
+2017/06/07 20:15:44 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r464,c55,p21733) whose content does not match a registered StartTagType
+2017/06/07 20:15:44 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r567,c96,p25714) whose content does not match a registered StartTagType
+2017/06/07 20:15:44 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r591,c53,p26970) whose content does not match a registered StartTagType
+2017/06/07 20:15:44 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r723,c59,p36043) rejected because the name contains an invalid character at position (r723,c69,p36053)
+2017/06/07 20:15:44 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r723,c59,p36043) whose content does not match a registered StartTagType
+2017/06/07 20:15:44 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r698,c62,p34293) whose content does not match a registered StartTagType
+2017/06/07 20:15:44 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r683,c68,p33368) whose content does not match a registered StartTagType
+2017/06/07 20:15:44 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r660,c62,p31519) whose content does not match a registered StartTagType
+2017/06/07 20:15:44 ERROR net.htmlparser.jericho:?  - StartTag li at (r750,c82,p38348) contains attribute name with invalid character at position (r750,c114,p38380)
+2017/06/07 20:15:44 ERROR net.htmlparser.jericho:?  - StartTag li at (r750,c82,p38348) contains attribute name with invalid character at position (r750,c115,p38381)
+2017/06/07 20:15:44 ERROR net.htmlparser.jericho:?  - StartTag li at (r755,c82,p38771) contains attribute name with invalid character at position (r755,c114,p38803)
+2017/06/07 20:15:44 ERROR net.htmlparser.jericho:?  - StartTag li at (r755,c82,p38771) contains attribute name with invalid character at position (r755,c115,p38804)
+2017/06/07 20:15:44 ERROR net.htmlparser.jericho:?  - StartTag div at (r775,c60,p40494) contains attribute name with invalid character at position (r775,c116,p40550)
+2017/06/07 20:15:44 ERROR net.htmlparser.jericho:?  - StartTag div at (r775,c60,p40494) contains attribute name with invalid character at position (r775,c117,p40551)
+2017/06/07 20:15:44 ERROR net.htmlparser.jericho:?  - StartTag ul at (r789,c98,p42001) contains attribute name with invalid character at position (r789,c164,p42067)
+2017/06/07 20:15:44 ERROR net.htmlparser.jericho:?  - StartTag ul at (r789,c98,p42001) contains attribute name with invalid character at position (r789,c165,p42068)
+2017/06/07 20:15:44 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r887,c64,p49293) whose content does not match a registered StartTagType
+2017/06/07 20:15:44 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r887,c27,p49256) whose content does not match a registered StartTagType
+2017/06/07 20:25:00 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r431,c39,p20405) whose content does not match a registered StartTagType
+2017/06/07 20:25:00 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r430,c39,p20335) whose content does not match a registered StartTagType
+2017/06/07 20:25:00 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r429,c38,p20271) whose content does not match a registered StartTagType
+2017/06/07 20:25:00 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r428,c38,p20208) whose content does not match a registered StartTagType
+2017/06/07 20:25:00 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r426,c41,p20102) whose content does not match a registered StartTagType
+2017/06/07 20:25:00 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r537,c53,p24316) whose content does not match a registered StartTagType
+2017/06/07 20:25:00 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r524,c55,p23775) whose content does not match a registered StartTagType
+2017/06/07 20:25:00 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r627,c96,p27756) whose content does not match a registered StartTagType
+2017/06/07 20:25:00 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r651,c53,p29012) whose content does not match a registered StartTagType
+2017/06/07 20:25:00 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r783,c59,p38085) rejected because the name contains an invalid character at position (r783,c69,p38095)
+2017/06/07 20:25:00 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r783,c59,p38085) whose content does not match a registered StartTagType
+2017/06/07 20:25:00 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r758,c62,p36335) whose content does not match a registered StartTagType
+2017/06/07 20:25:00 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r743,c68,p35410) whose content does not match a registered StartTagType
+2017/06/07 20:25:00 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r720,c62,p33561) whose content does not match a registered StartTagType
+2017/06/07 20:25:00 ERROR net.htmlparser.jericho:?  - StartTag li at (r810,c82,p40390) contains attribute name with invalid character at position (r810,c114,p40422)
+2017/06/07 20:25:00 ERROR net.htmlparser.jericho:?  - StartTag li at (r810,c82,p40390) contains attribute name with invalid character at position (r810,c115,p40423)
+2017/06/07 20:25:00 ERROR net.htmlparser.jericho:?  - StartTag li at (r815,c82,p40813) contains attribute name with invalid character at position (r815,c114,p40845)
+2017/06/07 20:25:00 ERROR net.htmlparser.jericho:?  - StartTag li at (r815,c82,p40813) contains attribute name with invalid character at position (r815,c115,p40846)
+2017/06/07 20:25:00 ERROR net.htmlparser.jericho:?  - StartTag div at (r835,c60,p42536) contains attribute name with invalid character at position (r835,c116,p42592)
+2017/06/07 20:25:00 ERROR net.htmlparser.jericho:?  - StartTag div at (r835,c60,p42536) contains attribute name with invalid character at position (r835,c117,p42593)
+2017/06/07 20:25:00 ERROR net.htmlparser.jericho:?  - StartTag ul at (r849,c98,p44043) contains attribute name with invalid character at position (r849,c164,p44109)
+2017/06/07 20:25:00 ERROR net.htmlparser.jericho:?  - StartTag ul at (r849,c98,p44043) contains attribute name with invalid character at position (r849,c165,p44110)
+2017/06/07 20:25:00 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r947,c64,p51335) whose content does not match a registered StartTagType
+2017/06/07 20:25:00 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r947,c27,p51298) whose content does not match a registered StartTagType
+2017/06/07 20:26:39 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r663,c39,p57039) whose content does not match a registered StartTagType
+2017/06/07 20:26:39 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r662,c39,p56969) whose content does not match a registered StartTagType
+2017/06/07 20:26:39 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r661,c38,p56905) whose content does not match a registered StartTagType
+2017/06/07 20:26:39 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r660,c38,p56842) whose content does not match a registered StartTagType
+2017/06/07 20:26:39 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r658,c41,p56736) whose content does not match a registered StartTagType
+2017/06/07 20:26:39 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r769,c53,p60950) whose content does not match a registered StartTagType
+2017/06/07 20:26:39 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r756,c55,p60409) whose content does not match a registered StartTagType
+2017/06/07 20:26:39 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r859,c96,p64390) whose content does not match a registered StartTagType
+2017/06/07 20:26:39 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r883,c53,p65646) whose content does not match a registered StartTagType
+2017/06/07 20:26:39 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r1015,c59,p74719) rejected because the name contains an invalid character at position (r1015,c69,p74729)
+2017/06/07 20:26:39 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r1015,c59,p74719) whose content does not match a registered StartTagType
+2017/06/07 20:26:39 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r990,c62,p72969) whose content does not match a registered StartTagType
+2017/06/07 20:26:39 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r975,c68,p72044) whose content does not match a registered StartTagType
+2017/06/07 20:26:39 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r952,c62,p70195) whose content does not match a registered StartTagType
+2017/06/07 20:26:39 ERROR net.htmlparser.jericho:?  - StartTag li at (r1042,c82,p77024) contains attribute name with invalid character at position (r1042,c114,p77056)
+2017/06/07 20:26:39 ERROR net.htmlparser.jericho:?  - StartTag li at (r1042,c82,p77024) contains attribute name with invalid character at position (r1042,c115,p77057)
+2017/06/07 20:26:39 ERROR net.htmlparser.jericho:?  - StartTag li at (r1047,c82,p77447) contains attribute name with invalid character at position (r1047,c114,p77479)
+2017/06/07 20:26:39 ERROR net.htmlparser.jericho:?  - StartTag li at (r1047,c82,p77447) contains attribute name with invalid character at position (r1047,c115,p77480)
+2017/06/07 20:26:39 ERROR net.htmlparser.jericho:?  - StartTag div at (r1067,c60,p79170) contains attribute name with invalid character at position (r1067,c116,p79226)
+2017/06/07 20:26:39 ERROR net.htmlparser.jericho:?  - StartTag div at (r1067,c60,p79170) contains attribute name with invalid character at position (r1067,c117,p79227)
+2017/06/07 20:26:39 ERROR net.htmlparser.jericho:?  - StartTag ul at (r1081,c98,p80677) contains attribute name with invalid character at position (r1081,c164,p80743)
+2017/06/07 20:26:39 ERROR net.htmlparser.jericho:?  - StartTag ul at (r1081,c98,p80677) contains attribute name with invalid character at position (r1081,c165,p80744)
+2017/06/07 20:26:39 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r1179,c64,p87969) whose content does not match a registered StartTagType
+2017/06/07 20:26:39 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r1179,c27,p87932) whose content does not match a registered StartTagType
+2017/06/07 20:27:40 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r521,c39,p29649) whose content does not match a registered StartTagType
+2017/06/07 20:27:40 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r520,c39,p29579) whose content does not match a registered StartTagType
+2017/06/07 20:27:40 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r519,c38,p29515) whose content does not match a registered StartTagType
+2017/06/07 20:27:40 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r518,c38,p29452) whose content does not match a registered StartTagType
+2017/06/07 20:27:40 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r516,c41,p29346) whose content does not match a registered StartTagType
+2017/06/07 20:27:40 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r627,c53,p33560) whose content does not match a registered StartTagType
+2017/06/07 20:27:40 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r614,c55,p33019) whose content does not match a registered StartTagType
+2017/06/07 20:27:40 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r717,c96,p37000) whose content does not match a registered StartTagType
+2017/06/07 20:27:40 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r741,c53,p38256) whose content does not match a registered StartTagType
+2017/06/07 20:27:40 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r873,c59,p47329) rejected because the name contains an invalid character at position (r873,c69,p47339)
+2017/06/07 20:27:40 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r873,c59,p47329) whose content does not match a registered StartTagType
+2017/06/07 20:27:40 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r848,c62,p45579) whose content does not match a registered StartTagType
+2017/06/07 20:27:40 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r833,c68,p44654) whose content does not match a registered StartTagType
+2017/06/07 20:27:40 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r810,c62,p42805) whose content does not match a registered StartTagType
+2017/06/07 20:27:40 ERROR net.htmlparser.jericho:?  - StartTag li at (r900,c82,p49634) contains attribute name with invalid character at position (r900,c114,p49666)
+2017/06/07 20:27:40 ERROR net.htmlparser.jericho:?  - StartTag li at (r900,c82,p49634) contains attribute name with invalid character at position (r900,c115,p49667)
+2017/06/07 20:27:40 ERROR net.htmlparser.jericho:?  - StartTag li at (r905,c82,p50057) contains attribute name with invalid character at position (r905,c114,p50089)
+2017/06/07 20:27:40 ERROR net.htmlparser.jericho:?  - StartTag li at (r905,c82,p50057) contains attribute name with invalid character at position (r905,c115,p50090)
+2017/06/07 20:27:40 ERROR net.htmlparser.jericho:?  - StartTag div at (r925,c60,p51780) contains attribute name with invalid character at position (r925,c116,p51836)
+2017/06/07 20:27:40 ERROR net.htmlparser.jericho:?  - StartTag div at (r925,c60,p51780) contains attribute name with invalid character at position (r925,c117,p51837)
+2017/06/07 20:27:40 ERROR net.htmlparser.jericho:?  - StartTag ul at (r939,c98,p53287) contains attribute name with invalid character at position (r939,c164,p53353)
+2017/06/07 20:27:40 ERROR net.htmlparser.jericho:?  - StartTag ul at (r939,c98,p53287) contains attribute name with invalid character at position (r939,c165,p53354)
+2017/06/07 20:27:40 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r1037,c64,p60579) whose content does not match a registered StartTagType
+2017/06/07 20:27:40 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r1037,c27,p60542) whose content does not match a registered StartTagType
+2017/06/07 20:29:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r429,c39,p19282) whose content does not match a registered StartTagType
+2017/06/07 20:29:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r428,c39,p19212) whose content does not match a registered StartTagType
+2017/06/07 20:29:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r427,c38,p19148) whose content does not match a registered StartTagType
+2017/06/07 20:29:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r426,c38,p19085) whose content does not match a registered StartTagType
+2017/06/07 20:29:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r424,c41,p18979) whose content does not match a registered StartTagType
+2017/06/07 20:29:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r535,c53,p23193) whose content does not match a registered StartTagType
+2017/06/07 20:29:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r522,c55,p22652) whose content does not match a registered StartTagType
+2017/06/07 20:29:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r625,c96,p26633) whose content does not match a registered StartTagType
+2017/06/07 20:29:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r649,c53,p27889) whose content does not match a registered StartTagType
+2017/06/07 20:29:28 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r781,c59,p36962) rejected because the name contains an invalid character at position (r781,c69,p36972)
+2017/06/07 20:29:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r781,c59,p36962) whose content does not match a registered StartTagType
+2017/06/07 20:29:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r756,c62,p35212) whose content does not match a registered StartTagType
+2017/06/07 20:29:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r741,c68,p34287) whose content does not match a registered StartTagType
+2017/06/07 20:29:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r718,c62,p32438) whose content does not match a registered StartTagType
+2017/06/07 20:29:28 ERROR net.htmlparser.jericho:?  - StartTag li at (r808,c82,p39267) contains attribute name with invalid character at position (r808,c114,p39299)
+2017/06/07 20:29:28 ERROR net.htmlparser.jericho:?  - StartTag li at (r808,c82,p39267) contains attribute name with invalid character at position (r808,c115,p39300)
+2017/06/07 20:29:28 ERROR net.htmlparser.jericho:?  - StartTag li at (r813,c82,p39690) contains attribute name with invalid character at position (r813,c114,p39722)
+2017/06/07 20:29:28 ERROR net.htmlparser.jericho:?  - StartTag li at (r813,c82,p39690) contains attribute name with invalid character at position (r813,c115,p39723)
+2017/06/07 20:29:28 ERROR net.htmlparser.jericho:?  - StartTag div at (r833,c60,p41413) contains attribute name with invalid character at position (r833,c116,p41469)
+2017/06/07 20:29:28 ERROR net.htmlparser.jericho:?  - StartTag div at (r833,c60,p41413) contains attribute name with invalid character at position (r833,c117,p41470)
+2017/06/07 20:29:28 ERROR net.htmlparser.jericho:?  - StartTag ul at (r847,c98,p42920) contains attribute name with invalid character at position (r847,c164,p42986)
+2017/06/07 20:29:28 ERROR net.htmlparser.jericho:?  - StartTag ul at (r847,c98,p42920) contains attribute name with invalid character at position (r847,c165,p42987)
+2017/06/07 20:29:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r945,c64,p50212) whose content does not match a registered StartTagType
+2017/06/07 20:29:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r945,c27,p50175) whose content does not match a registered StartTagType
+2017/06/07 20:35:09 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r433,c39,p33413) whose content does not match a registered StartTagType
+2017/06/07 20:35:09 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r432,c39,p33343) whose content does not match a registered StartTagType
+2017/06/07 20:35:09 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r431,c38,p33279) whose content does not match a registered StartTagType
+2017/06/07 20:35:09 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r430,c38,p33216) whose content does not match a registered StartTagType
+2017/06/07 20:35:09 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r428,c41,p33110) whose content does not match a registered StartTagType
+2017/06/07 20:35:09 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r539,c53,p37324) whose content does not match a registered StartTagType
+2017/06/07 20:35:09 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r526,c55,p36783) whose content does not match a registered StartTagType
+2017/06/07 20:35:09 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r629,c96,p40764) whose content does not match a registered StartTagType
+2017/06/07 20:35:09 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r653,c53,p42020) whose content does not match a registered StartTagType
+2017/06/07 20:35:09 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r785,c59,p51093) rejected because the name contains an invalid character at position (r785,c69,p51103)
+2017/06/07 20:35:09 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r785,c59,p51093) whose content does not match a registered StartTagType
+2017/06/07 20:35:09 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r760,c62,p49343) whose content does not match a registered StartTagType
+2017/06/07 20:35:09 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r745,c68,p48418) whose content does not match a registered StartTagType
+2017/06/07 20:35:09 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r722,c62,p46569) whose content does not match a registered StartTagType
+2017/06/07 20:35:09 ERROR net.htmlparser.jericho:?  - StartTag li at (r812,c82,p53398) contains attribute name with invalid character at position (r812,c114,p53430)
+2017/06/07 20:35:09 ERROR net.htmlparser.jericho:?  - StartTag li at (r812,c82,p53398) contains attribute name with invalid character at position (r812,c115,p53431)
+2017/06/07 20:35:09 ERROR net.htmlparser.jericho:?  - StartTag li at (r817,c82,p53821) contains attribute name with invalid character at position (r817,c114,p53853)
+2017/06/07 20:35:09 ERROR net.htmlparser.jericho:?  - StartTag li at (r817,c82,p53821) contains attribute name with invalid character at position (r817,c115,p53854)
+2017/06/07 20:35:10 ERROR net.htmlparser.jericho:?  - StartTag div at (r837,c60,p55544) contains attribute name with invalid character at position (r837,c116,p55600)
+2017/06/07 20:35:10 ERROR net.htmlparser.jericho:?  - StartTag div at (r837,c60,p55544) contains attribute name with invalid character at position (r837,c117,p55601)
+2017/06/07 20:35:10 ERROR net.htmlparser.jericho:?  - StartTag ul at (r851,c98,p57051) contains attribute name with invalid character at position (r851,c164,p57117)
+2017/06/07 20:35:10 ERROR net.htmlparser.jericho:?  - StartTag ul at (r851,c98,p57051) contains attribute name with invalid character at position (r851,c165,p57118)
+2017/06/07 20:35:10 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r949,c64,p64343) whose content does not match a registered StartTagType
+2017/06/07 20:35:10 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r949,c27,p64306) whose content does not match a registered StartTagType
+2017/06/07 20:37:11 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r625,c39,p52816) whose content does not match a registered StartTagType
+2017/06/07 20:37:11 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r624,c39,p52746) whose content does not match a registered StartTagType
+2017/06/07 20:37:11 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r623,c38,p52682) whose content does not match a registered StartTagType
+2017/06/07 20:37:11 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r622,c38,p52619) whose content does not match a registered StartTagType
+2017/06/07 20:37:11 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r620,c41,p52513) whose content does not match a registered StartTagType
+2017/06/07 20:37:11 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r731,c53,p56727) whose content does not match a registered StartTagType
+2017/06/07 20:37:11 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r718,c55,p56186) whose content does not match a registered StartTagType
+2017/06/07 20:37:11 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r821,c96,p60167) whose content does not match a registered StartTagType
+2017/06/07 20:37:11 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r845,c53,p61423) whose content does not match a registered StartTagType
+2017/06/07 20:37:11 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r977,c59,p70496) rejected because the name contains an invalid character at position (r977,c69,p70506)
+2017/06/07 20:37:11 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r977,c59,p70496) whose content does not match a registered StartTagType
+2017/06/07 20:37:11 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r952,c62,p68746) whose content does not match a registered StartTagType
+2017/06/07 20:37:11 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r937,c68,p67821) whose content does not match a registered StartTagType
+2017/06/07 20:37:11 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r914,c62,p65972) whose content does not match a registered StartTagType
+2017/06/07 20:37:11 ERROR net.htmlparser.jericho:?  - StartTag li at (r1004,c82,p72801) contains attribute name with invalid character at position (r1004,c114,p72833)
+2017/06/07 20:37:11 ERROR net.htmlparser.jericho:?  - StartTag li at (r1004,c82,p72801) contains attribute name with invalid character at position (r1004,c115,p72834)
+2017/06/07 20:37:11 ERROR net.htmlparser.jericho:?  - StartTag li at (r1009,c82,p73224) contains attribute name with invalid character at position (r1009,c114,p73256)
+2017/06/07 20:37:11 ERROR net.htmlparser.jericho:?  - StartTag li at (r1009,c82,p73224) contains attribute name with invalid character at position (r1009,c115,p73257)
+2017/06/07 20:37:11 ERROR net.htmlparser.jericho:?  - StartTag div at (r1029,c60,p74947) contains attribute name with invalid character at position (r1029,c116,p75003)
+2017/06/07 20:37:11 ERROR net.htmlparser.jericho:?  - StartTag div at (r1029,c60,p74947) contains attribute name with invalid character at position (r1029,c117,p75004)
+2017/06/07 20:37:11 ERROR net.htmlparser.jericho:?  - StartTag ul at (r1043,c98,p76454) contains attribute name with invalid character at position (r1043,c164,p76520)
+2017/06/07 20:37:11 ERROR net.htmlparser.jericho:?  - StartTag ul at (r1043,c98,p76454) contains attribute name with invalid character at position (r1043,c165,p76521)
+2017/06/07 20:37:11 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r1141,c64,p83746) whose content does not match a registered StartTagType
+2017/06/07 20:37:11 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r1141,c27,p83709) whose content does not match a registered StartTagType
+2017/06/07 20:38:22 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r258,c39,p11777) whose content does not match a registered StartTagType
+2017/06/07 20:38:22 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r257,c39,p11707) whose content does not match a registered StartTagType
+2017/06/07 20:38:22 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r256,c38,p11643) whose content does not match a registered StartTagType
+2017/06/07 20:38:22 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r255,c38,p11580) whose content does not match a registered StartTagType
+2017/06/07 20:38:22 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r253,c41,p11474) whose content does not match a registered StartTagType
+2017/06/07 20:38:22 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r364,c53,p15688) whose content does not match a registered StartTagType
+2017/06/07 20:38:22 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r351,c55,p15147) whose content does not match a registered StartTagType
+2017/06/07 20:38:22 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r454,c96,p19128) whose content does not match a registered StartTagType
+2017/06/07 20:38:22 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r478,c53,p20384) whose content does not match a registered StartTagType
+2017/06/07 20:38:22 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r610,c59,p29457) rejected because the name contains an invalid character at position (r610,c69,p29467)
+2017/06/07 20:38:22 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r610,c59,p29457) whose content does not match a registered StartTagType
+2017/06/07 20:38:22 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r585,c62,p27707) whose content does not match a registered StartTagType
+2017/06/07 20:38:22 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r570,c68,p26782) whose content does not match a registered StartTagType
+2017/06/07 20:38:22 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r547,c62,p24933) whose content does not match a registered StartTagType
+2017/06/07 20:38:22 ERROR net.htmlparser.jericho:?  - StartTag li at (r637,c82,p31762) contains attribute name with invalid character at position (r637,c114,p31794)
+2017/06/07 20:38:22 ERROR net.htmlparser.jericho:?  - StartTag li at (r637,c82,p31762) contains attribute name with invalid character at position (r637,c115,p31795)
+2017/06/07 20:38:22 ERROR net.htmlparser.jericho:?  - StartTag li at (r642,c82,p32185) contains attribute name with invalid character at position (r642,c114,p32217)
+2017/06/07 20:38:22 ERROR net.htmlparser.jericho:?  - StartTag li at (r642,c82,p32185) contains attribute name with invalid character at position (r642,c115,p32218)
+2017/06/07 20:38:22 ERROR net.htmlparser.jericho:?  - StartTag div at (r662,c60,p33908) contains attribute name with invalid character at position (r662,c116,p33964)
+2017/06/07 20:38:22 ERROR net.htmlparser.jericho:?  - StartTag div at (r662,c60,p33908) contains attribute name with invalid character at position (r662,c117,p33965)
+2017/06/07 20:38:22 ERROR net.htmlparser.jericho:?  - StartTag ul at (r676,c98,p35415) contains attribute name with invalid character at position (r676,c164,p35481)
+2017/06/07 20:38:22 ERROR net.htmlparser.jericho:?  - StartTag ul at (r676,c98,p35415) contains attribute name with invalid character at position (r676,c165,p35482)
+2017/06/07 20:38:22 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r774,c64,p42707) whose content does not match a registered StartTagType
+2017/06/07 20:38:22 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r774,c27,p42670) whose content does not match a registered StartTagType
+2017/06/07 20:38:30 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r537,c39,p34885) whose content does not match a registered StartTagType
+2017/06/07 20:38:30 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r536,c39,p34815) whose content does not match a registered StartTagType
+2017/06/07 20:38:30 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r535,c38,p34751) whose content does not match a registered StartTagType
+2017/06/07 20:38:30 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r534,c38,p34688) whose content does not match a registered StartTagType
+2017/06/07 20:38:30 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r532,c41,p34582) whose content does not match a registered StartTagType
+2017/06/07 20:38:30 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r643,c53,p38796) whose content does not match a registered StartTagType
+2017/06/07 20:38:30 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r630,c55,p38255) whose content does not match a registered StartTagType
+2017/06/07 20:38:30 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r733,c96,p42236) whose content does not match a registered StartTagType
+2017/06/07 20:38:30 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r757,c53,p43492) whose content does not match a registered StartTagType
+2017/06/07 20:38:30 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r889,c59,p52565) rejected because the name contains an invalid character at position (r889,c69,p52575)
+2017/06/07 20:38:30 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r889,c59,p52565) whose content does not match a registered StartTagType
+2017/06/07 20:38:30 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r864,c62,p50815) whose content does not match a registered StartTagType
+2017/06/07 20:38:30 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r849,c68,p49890) whose content does not match a registered StartTagType
+2017/06/07 20:38:30 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r826,c62,p48041) whose content does not match a registered StartTagType
+2017/06/07 20:38:30 ERROR net.htmlparser.jericho:?  - StartTag li at (r916,c82,p54870) contains attribute name with invalid character at position (r916,c114,p54902)
+2017/06/07 20:38:30 ERROR net.htmlparser.jericho:?  - StartTag li at (r916,c82,p54870) contains attribute name with invalid character at position (r916,c115,p54903)
+2017/06/07 20:38:30 ERROR net.htmlparser.jericho:?  - StartTag li at (r921,c82,p55293) contains attribute name with invalid character at position (r921,c114,p55325)
+2017/06/07 20:38:30 ERROR net.htmlparser.jericho:?  - StartTag li at (r921,c82,p55293) contains attribute name with invalid character at position (r921,c115,p55326)
+2017/06/07 20:38:30 ERROR net.htmlparser.jericho:?  - StartTag div at (r941,c60,p57016) contains attribute name with invalid character at position (r941,c116,p57072)
+2017/06/07 20:38:30 ERROR net.htmlparser.jericho:?  - StartTag div at (r941,c60,p57016) contains attribute name with invalid character at position (r941,c117,p57073)
+2017/06/07 20:38:30 ERROR net.htmlparser.jericho:?  - StartTag ul at (r955,c98,p58523) contains attribute name with invalid character at position (r955,c164,p58589)
+2017/06/07 20:38:30 ERROR net.htmlparser.jericho:?  - StartTag ul at (r955,c98,p58523) contains attribute name with invalid character at position (r955,c165,p58590)
+2017/06/07 20:38:30 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r1053,c64,p65815) whose content does not match a registered StartTagType
+2017/06/07 20:38:30 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r1053,c27,p65778) whose content does not match a registered StartTagType
+2017/06/08 15:19:59 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r371,c39,p18363) whose content does not match a registered StartTagType
+2017/06/08 15:19:59 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r370,c39,p18293) whose content does not match a registered StartTagType
+2017/06/08 15:19:59 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r369,c38,p18229) whose content does not match a registered StartTagType
+2017/06/08 15:19:59 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r368,c38,p18166) whose content does not match a registered StartTagType
+2017/06/08 15:19:59 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r366,c41,p18060) whose content does not match a registered StartTagType
+2017/06/08 15:19:59 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r477,c53,p22274) whose content does not match a registered StartTagType
+2017/06/08 15:19:59 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r464,c55,p21733) whose content does not match a registered StartTagType
+2017/06/08 15:19:59 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r567,c96,p25714) whose content does not match a registered StartTagType
+2017/06/08 15:19:59 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r591,c53,p26970) whose content does not match a registered StartTagType
+2017/06/08 15:19:59 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r723,c59,p36043) rejected because the name contains an invalid character at position (r723,c69,p36053)
+2017/06/08 15:19:59 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r723,c59,p36043) whose content does not match a registered StartTagType
+2017/06/08 15:19:59 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r698,c62,p34293) whose content does not match a registered StartTagType
+2017/06/08 15:19:59 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r683,c68,p33368) whose content does not match a registered StartTagType
+2017/06/08 15:19:59 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r660,c62,p31519) whose content does not match a registered StartTagType
+2017/06/08 15:19:59 ERROR net.htmlparser.jericho:?  - StartTag li at (r750,c82,p38348) contains attribute name with invalid character at position (r750,c114,p38380)
+2017/06/08 15:19:59 ERROR net.htmlparser.jericho:?  - StartTag li at (r750,c82,p38348) contains attribute name with invalid character at position (r750,c115,p38381)
+2017/06/08 15:19:59 ERROR net.htmlparser.jericho:?  - StartTag li at (r755,c82,p38771) contains attribute name with invalid character at position (r755,c114,p38803)
+2017/06/08 15:19:59 ERROR net.htmlparser.jericho:?  - StartTag li at (r755,c82,p38771) contains attribute name with invalid character at position (r755,c115,p38804)
+2017/06/08 15:19:59 ERROR net.htmlparser.jericho:?  - StartTag div at (r775,c60,p40494) contains attribute name with invalid character at position (r775,c116,p40550)
+2017/06/08 15:19:59 ERROR net.htmlparser.jericho:?  - StartTag div at (r775,c60,p40494) contains attribute name with invalid character at position (r775,c117,p40551)
+2017/06/08 15:19:59 ERROR net.htmlparser.jericho:?  - StartTag ul at (r789,c98,p42001) contains attribute name with invalid character at position (r789,c164,p42067)
+2017/06/08 15:19:59 ERROR net.htmlparser.jericho:?  - StartTag ul at (r789,c98,p42001) contains attribute name with invalid character at position (r789,c165,p42068)
+2017/06/08 15:19:59 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r887,c64,p49293) whose content does not match a registered StartTagType
+2017/06/08 15:19:59 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r887,c27,p49256) whose content does not match a registered StartTagType
+2017/06/09 01:12:37 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r627,c39,p59575) whose content does not match a registered StartTagType
+2017/06/09 01:12:37 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r626,c39,p59505) whose content does not match a registered StartTagType
+2017/06/09 01:12:37 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r625,c38,p59441) whose content does not match a registered StartTagType
+2017/06/09 01:12:37 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r624,c38,p59378) whose content does not match a registered StartTagType
+2017/06/09 01:12:37 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r622,c41,p59272) whose content does not match a registered StartTagType
+2017/06/09 01:12:37 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r733,c53,p63486) whose content does not match a registered StartTagType
+2017/06/09 01:12:37 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r720,c55,p62945) whose content does not match a registered StartTagType
+2017/06/09 01:12:37 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r823,c96,p66926) whose content does not match a registered StartTagType
+2017/06/09 01:12:37 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r847,c53,p68182) whose content does not match a registered StartTagType
+2017/06/09 01:12:37 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r979,c59,p77255) rejected because the name contains an invalid character at position (r979,c69,p77265)
+2017/06/09 01:12:37 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r979,c59,p77255) whose content does not match a registered StartTagType
+2017/06/09 01:12:37 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r954,c62,p75505) whose content does not match a registered StartTagType
+2017/06/09 01:12:37 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r939,c68,p74580) whose content does not match a registered StartTagType
+2017/06/09 01:12:37 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r916,c62,p72731) whose content does not match a registered StartTagType
+2017/06/09 01:12:37 ERROR net.htmlparser.jericho:?  - StartTag li at (r1006,c82,p79560) contains attribute name with invalid character at position (r1006,c114,p79592)
+2017/06/09 01:12:37 ERROR net.htmlparser.jericho:?  - StartTag li at (r1006,c82,p79560) contains attribute name with invalid character at position (r1006,c115,p79593)
+2017/06/09 01:12:37 ERROR net.htmlparser.jericho:?  - StartTag li at (r1011,c82,p79983) contains attribute name with invalid character at position (r1011,c114,p80015)
+2017/06/09 01:12:37 ERROR net.htmlparser.jericho:?  - StartTag li at (r1011,c82,p79983) contains attribute name with invalid character at position (r1011,c115,p80016)
+2017/06/09 01:12:37 ERROR net.htmlparser.jericho:?  - StartTag div at (r1031,c60,p81706) contains attribute name with invalid character at position (r1031,c116,p81762)
+2017/06/09 01:12:37 ERROR net.htmlparser.jericho:?  - StartTag div at (r1031,c60,p81706) contains attribute name with invalid character at position (r1031,c117,p81763)
+2017/06/09 01:12:37 ERROR net.htmlparser.jericho:?  - StartTag ul at (r1045,c98,p83213) contains attribute name with invalid character at position (r1045,c164,p83279)
+2017/06/09 01:12:37 ERROR net.htmlparser.jericho:?  - StartTag ul at (r1045,c98,p83213) contains attribute name with invalid character at position (r1045,c165,p83280)
+2017/06/09 01:12:37 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r1143,c64,p90505) whose content does not match a registered StartTagType
+2017/06/09 01:12:37 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r1143,c27,p90468) whose content does not match a registered StartTagType
+2017/06/10 22:19:09 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r431,c39,p30876) whose content does not match a registered StartTagType
+2017/06/10 22:19:09 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r430,c39,p30806) whose content does not match a registered StartTagType
+2017/06/10 22:19:09 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r429,c38,p30742) whose content does not match a registered StartTagType
+2017/06/10 22:19:09 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r428,c38,p30679) whose content does not match a registered StartTagType
+2017/06/10 22:19:09 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r426,c41,p30573) whose content does not match a registered StartTagType
+2017/06/10 22:19:09 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r537,c53,p34787) whose content does not match a registered StartTagType
+2017/06/10 22:19:09 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r524,c55,p34246) whose content does not match a registered StartTagType
+2017/06/10 22:19:09 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r627,c96,p38227) whose content does not match a registered StartTagType
+2017/06/10 22:19:09 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r651,c53,p39483) whose content does not match a registered StartTagType
+2017/06/10 22:19:09 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r783,c59,p48556) rejected because the name contains an invalid character at position (r783,c69,p48566)
+2017/06/10 22:19:09 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r783,c59,p48556) whose content does not match a registered StartTagType
+2017/06/10 22:19:09 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r758,c62,p46806) whose content does not match a registered StartTagType
+2017/06/10 22:19:09 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r743,c68,p45881) whose content does not match a registered StartTagType
+2017/06/10 22:19:09 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r720,c62,p44032) whose content does not match a registered StartTagType
+2017/06/10 22:19:09 ERROR net.htmlparser.jericho:?  - StartTag li at (r810,c82,p50861) contains attribute name with invalid character at position (r810,c114,p50893)
+2017/06/10 22:19:09 ERROR net.htmlparser.jericho:?  - StartTag li at (r810,c82,p50861) contains attribute name with invalid character at position (r810,c115,p50894)
+2017/06/10 22:19:09 ERROR net.htmlparser.jericho:?  - StartTag li at (r815,c82,p51284) contains attribute name with invalid character at position (r815,c114,p51316)
+2017/06/10 22:19:09 ERROR net.htmlparser.jericho:?  - StartTag li at (r815,c82,p51284) contains attribute name with invalid character at position (r815,c115,p51317)
+2017/06/10 22:19:09 ERROR net.htmlparser.jericho:?  - StartTag div at (r835,c60,p53007) contains attribute name with invalid character at position (r835,c116,p53063)
+2017/06/10 22:19:09 ERROR net.htmlparser.jericho:?  - StartTag div at (r835,c60,p53007) contains attribute name with invalid character at position (r835,c117,p53064)
+2017/06/10 22:19:09 ERROR net.htmlparser.jericho:?  - StartTag ul at (r849,c98,p54514) contains attribute name with invalid character at position (r849,c164,p54580)
+2017/06/10 22:19:09 ERROR net.htmlparser.jericho:?  - StartTag ul at (r849,c98,p54514) contains attribute name with invalid character at position (r849,c165,p54581)
+2017/06/10 22:19:09 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r947,c64,p61806) whose content does not match a registered StartTagType
+2017/06/10 22:19:09 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r947,c27,p61769) whose content does not match a registered StartTagType
+2017/06/13 12:26:52 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r449,c39,p21938) whose content does not match a registered StartTagType
+2017/06/13 12:26:52 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r448,c39,p21868) whose content does not match a registered StartTagType
+2017/06/13 12:26:52 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r447,c38,p21804) whose content does not match a registered StartTagType
+2017/06/13 12:26:52 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r446,c38,p21741) whose content does not match a registered StartTagType
+2017/06/13 12:26:52 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r444,c41,p21635) whose content does not match a registered StartTagType
+2017/06/13 12:26:52 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r555,c53,p25849) whose content does not match a registered StartTagType
+2017/06/13 12:26:52 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r542,c55,p25308) whose content does not match a registered StartTagType
+2017/06/13 12:26:52 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r645,c96,p29289) whose content does not match a registered StartTagType
+2017/06/13 12:26:52 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r669,c53,p30545) whose content does not match a registered StartTagType
+2017/06/13 12:26:52 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r801,c59,p39618) rejected because the name contains an invalid character at position (r801,c69,p39628)
+2017/06/13 12:26:52 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r801,c59,p39618) whose content does not match a registered StartTagType
+2017/06/13 12:26:52 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r776,c62,p37868) whose content does not match a registered StartTagType
+2017/06/13 12:26:52 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r761,c68,p36943) whose content does not match a registered StartTagType
+2017/06/13 12:26:52 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r738,c62,p35094) whose content does not match a registered StartTagType
+2017/06/13 12:26:52 ERROR net.htmlparser.jericho:?  - StartTag li at (r828,c82,p41923) contains attribute name with invalid character at position (r828,c114,p41955)
+2017/06/13 12:26:52 ERROR net.htmlparser.jericho:?  - StartTag li at (r828,c82,p41923) contains attribute name with invalid character at position (r828,c115,p41956)
+2017/06/13 12:26:52 ERROR net.htmlparser.jericho:?  - StartTag li at (r833,c82,p42346) contains attribute name with invalid character at position (r833,c114,p42378)
+2017/06/13 12:26:52 ERROR net.htmlparser.jericho:?  - StartTag li at (r833,c82,p42346) contains attribute name with invalid character at position (r833,c115,p42379)
+2017/06/13 12:26:52 ERROR net.htmlparser.jericho:?  - StartTag div at (r853,c60,p44069) contains attribute name with invalid character at position (r853,c116,p44125)
+2017/06/13 12:26:52 ERROR net.htmlparser.jericho:?  - StartTag div at (r853,c60,p44069) contains attribute name with invalid character at position (r853,c117,p44126)
+2017/06/13 12:26:52 ERROR net.htmlparser.jericho:?  - StartTag ul at (r867,c98,p45576) contains attribute name with invalid character at position (r867,c164,p45642)
+2017/06/13 12:26:52 ERROR net.htmlparser.jericho:?  - StartTag ul at (r867,c98,p45576) contains attribute name with invalid character at position (r867,c165,p45643)
+2017/06/13 12:26:52 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r965,c64,p52868) whose content does not match a registered StartTagType
+2017/06/13 12:26:52 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r965,c27,p52831) whose content does not match a registered StartTagType
+2017/06/23 07:15:19 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r507,c39,p36655) whose content does not match a registered StartTagType
+2017/06/23 07:15:19 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r506,c39,p36585) whose content does not match a registered StartTagType
+2017/06/23 07:15:19 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r505,c38,p36521) whose content does not match a registered StartTagType
+2017/06/23 07:15:19 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r504,c38,p36458) whose content does not match a registered StartTagType
+2017/06/23 07:15:19 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r502,c41,p36352) whose content does not match a registered StartTagType
+2017/06/23 07:15:19 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r613,c53,p40566) whose content does not match a registered StartTagType
+2017/06/23 07:15:19 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r600,c55,p40025) whose content does not match a registered StartTagType
+2017/06/23 07:15:19 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r703,c96,p44006) whose content does not match a registered StartTagType
+2017/06/23 07:15:19 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r727,c53,p45262) whose content does not match a registered StartTagType
+2017/06/23 07:15:19 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r859,c59,p54335) rejected because the name contains an invalid character at position (r859,c69,p54345)
+2017/06/23 07:15:19 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r859,c59,p54335) whose content does not match a registered StartTagType
+2017/06/23 07:15:19 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r834,c62,p52585) whose content does not match a registered StartTagType
+2017/06/23 07:15:19 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r819,c68,p51660) whose content does not match a registered StartTagType
+2017/06/23 07:15:19 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r796,c62,p49811) whose content does not match a registered StartTagType
+2017/06/23 07:15:19 ERROR net.htmlparser.jericho:?  - StartTag li at (r886,c82,p56640) contains attribute name with invalid character at position (r886,c114,p56672)
+2017/06/23 07:15:19 ERROR net.htmlparser.jericho:?  - StartTag li at (r886,c82,p56640) contains attribute name with invalid character at position (r886,c115,p56673)
+2017/06/23 07:15:19 ERROR net.htmlparser.jericho:?  - StartTag li at (r891,c82,p57063) contains attribute name with invalid character at position (r891,c114,p57095)
+2017/06/23 07:15:19 ERROR net.htmlparser.jericho:?  - StartTag li at (r891,c82,p57063) contains attribute name with invalid character at position (r891,c115,p57096)
+2017/06/23 07:15:19 ERROR net.htmlparser.jericho:?  - StartTag div at (r911,c60,p58786) contains attribute name with invalid character at position (r911,c116,p58842)
+2017/06/23 07:15:19 ERROR net.htmlparser.jericho:?  - StartTag div at (r911,c60,p58786) contains attribute name with invalid character at position (r911,c117,p58843)
+2017/06/23 07:15:19 ERROR net.htmlparser.jericho:?  - StartTag ul at (r925,c98,p60293) contains attribute name with invalid character at position (r925,c164,p60359)
+2017/06/23 07:15:19 ERROR net.htmlparser.jericho:?  - StartTag ul at (r925,c98,p60293) contains attribute name with invalid character at position (r925,c165,p60360)
+2017/06/23 07:15:19 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r1023,c64,p67585) whose content does not match a registered StartTagType
+2017/06/23 07:15:19 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r1023,c27,p67548) whose content does not match a registered StartTagType
+2017/07/12 11:17:58 ERROR com.xyz.hayhay.interceptor.UIInterceptor:69  - 
+java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.lang.String.substring(String.java:1875)
+	at com.xyz.hayhay.interceptor.UIInterceptor.postHandle(UIInterceptor.java:47)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPostHandle(HandlerExecutionChain.java:152)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:966)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:735)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1448)
+	at com.xyz.hayhay.interceptor.GZipFilter.doFilter(GZipFilter.java:35)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:949)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1011)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+2017/07/21 05:28:06 ERROR com.xyz.hayhay.interceptor.UIInterceptor:69  - 
+java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.lang.String.substring(String.java:1875)
+	at com.xyz.hayhay.interceptor.UIInterceptor.postHandle(UIInterceptor.java:47)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPostHandle(HandlerExecutionChain.java:152)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:966)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:735)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1448)
+	at com.xyz.hayhay.interceptor.GZipFilter.doFilter(GZipFilter.java:35)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:949)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1011)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+2017/07/21 18:16:47 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r363,c39,p16211) whose content does not match a registered StartTagType
+2017/07/21 18:16:47 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r362,c39,p16141) whose content does not match a registered StartTagType
+2017/07/21 18:16:47 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r361,c38,p16077) whose content does not match a registered StartTagType
+2017/07/21 18:16:47 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r360,c38,p16014) whose content does not match a registered StartTagType
+2017/07/21 18:16:47 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r358,c41,p15908) whose content does not match a registered StartTagType
+2017/07/21 18:16:47 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r469,c53,p20122) whose content does not match a registered StartTagType
+2017/07/21 18:16:47 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r456,c55,p19581) whose content does not match a registered StartTagType
+2017/07/21 18:16:47 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r559,c96,p23562) whose content does not match a registered StartTagType
+2017/07/21 18:16:47 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r583,c53,p24818) whose content does not match a registered StartTagType
+2017/07/21 18:16:47 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r715,c59,p33891) rejected because the name contains an invalid character at position (r715,c69,p33901)
+2017/07/21 18:16:47 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r715,c59,p33891) whose content does not match a registered StartTagType
+2017/07/21 18:16:47 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r690,c62,p32141) whose content does not match a registered StartTagType
+2017/07/21 18:16:47 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r675,c68,p31216) whose content does not match a registered StartTagType
+2017/07/21 18:16:47 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r652,c62,p29367) whose content does not match a registered StartTagType
+2017/07/21 18:16:47 ERROR net.htmlparser.jericho:?  - StartTag li at (r742,c82,p36196) contains attribute name with invalid character at position (r742,c114,p36228)
+2017/07/21 18:16:47 ERROR net.htmlparser.jericho:?  - StartTag li at (r742,c82,p36196) contains attribute name with invalid character at position (r742,c115,p36229)
+2017/07/21 18:16:47 ERROR net.htmlparser.jericho:?  - StartTag li at (r747,c82,p36619) contains attribute name with invalid character at position (r747,c114,p36651)
+2017/07/21 18:16:47 ERROR net.htmlparser.jericho:?  - StartTag li at (r747,c82,p36619) contains attribute name with invalid character at position (r747,c115,p36652)
+2017/07/21 18:16:47 ERROR net.htmlparser.jericho:?  - StartTag div at (r767,c60,p38342) contains attribute name with invalid character at position (r767,c116,p38398)
+2017/07/21 18:16:47 ERROR net.htmlparser.jericho:?  - StartTag div at (r767,c60,p38342) contains attribute name with invalid character at position (r767,c117,p38399)
+2017/07/21 18:16:47 ERROR net.htmlparser.jericho:?  - StartTag ul at (r781,c98,p39849) contains attribute name with invalid character at position (r781,c164,p39915)
+2017/07/21 18:16:47 ERROR net.htmlparser.jericho:?  - StartTag ul at (r781,c98,p39849) contains attribute name with invalid character at position (r781,c165,p39916)
+2017/07/21 18:16:47 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r879,c64,p47141) whose content does not match a registered StartTagType
+2017/07/21 18:16:47 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r879,c27,p47104) whose content does not match a registered StartTagType
+2017/07/21 18:17:33 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r381,c39,p19665) whose content does not match a registered StartTagType
+2017/07/21 18:17:33 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r380,c39,p19595) whose content does not match a registered StartTagType
+2017/07/21 18:17:33 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r379,c38,p19531) whose content does not match a registered StartTagType
+2017/07/21 18:17:33 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r378,c38,p19468) whose content does not match a registered StartTagType
+2017/07/21 18:17:33 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r376,c41,p19362) whose content does not match a registered StartTagType
+2017/07/21 18:17:33 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r487,c53,p23576) whose content does not match a registered StartTagType
+2017/07/21 18:17:33 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r474,c55,p23035) whose content does not match a registered StartTagType
+2017/07/21 18:17:33 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r577,c96,p27016) whose content does not match a registered StartTagType
+2017/07/21 18:17:33 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r601,c53,p28272) whose content does not match a registered StartTagType
+2017/07/21 18:17:33 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r733,c59,p37345) rejected because the name contains an invalid character at position (r733,c69,p37355)
+2017/07/21 18:17:33 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r733,c59,p37345) whose content does not match a registered StartTagType
+2017/07/21 18:17:33 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r708,c62,p35595) whose content does not match a registered StartTagType
+2017/07/21 18:17:33 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r693,c68,p34670) whose content does not match a registered StartTagType
+2017/07/21 18:17:33 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r670,c62,p32821) whose content does not match a registered StartTagType
+2017/07/21 18:17:33 ERROR net.htmlparser.jericho:?  - StartTag li at (r760,c82,p39650) contains attribute name with invalid character at position (r760,c114,p39682)
+2017/07/21 18:17:33 ERROR net.htmlparser.jericho:?  - StartTag li at (r760,c82,p39650) contains attribute name with invalid character at position (r760,c115,p39683)
+2017/07/21 18:17:33 ERROR net.htmlparser.jericho:?  - StartTag li at (r765,c82,p40073) contains attribute name with invalid character at position (r765,c114,p40105)
+2017/07/21 18:17:33 ERROR net.htmlparser.jericho:?  - StartTag li at (r765,c82,p40073) contains attribute name with invalid character at position (r765,c115,p40106)
+2017/07/21 18:17:33 ERROR net.htmlparser.jericho:?  - StartTag div at (r785,c60,p41796) contains attribute name with invalid character at position (r785,c116,p41852)
+2017/07/21 18:17:33 ERROR net.htmlparser.jericho:?  - StartTag div at (r785,c60,p41796) contains attribute name with invalid character at position (r785,c117,p41853)
+2017/07/21 18:17:33 ERROR net.htmlparser.jericho:?  - StartTag ul at (r799,c98,p43303) contains attribute name with invalid character at position (r799,c164,p43369)
+2017/07/21 18:17:33 ERROR net.htmlparser.jericho:?  - StartTag ul at (r799,c98,p43303) contains attribute name with invalid character at position (r799,c165,p43370)
+2017/07/21 18:17:33 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r897,c64,p50595) whose content does not match a registered StartTagType
+2017/07/21 18:17:33 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r897,c27,p50558) whose content does not match a registered StartTagType
+2017/08/26 03:08:31 ERROR com.xyz.hayhay.interceptor.UIInterceptor:69  - 
+java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.lang.String.substring(String.java:1875)
+	at com.xyz.hayhay.interceptor.UIInterceptor.postHandle(UIInterceptor.java:47)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPostHandle(HandlerExecutionChain.java:152)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:966)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:735)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1448)
+	at com.xyz.hayhay.interceptor.GZipFilter.doFilter(GZipFilter.java:32)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:949)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1011)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+2017/08/28 19:43:03 ERROR com.xyz.hayhay.interceptor.UIInterceptor:69  - 
+java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.lang.String.substring(String.java:1875)
+	at com.xyz.hayhay.interceptor.UIInterceptor.postHandle(UIInterceptor.java:47)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPostHandle(HandlerExecutionChain.java:152)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:966)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:735)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1448)
+	at com.xyz.hayhay.interceptor.GZipFilter.doFilter(GZipFilter.java:32)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:949)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1011)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+2017/08/28 19:43:03 ERROR com.xyz.hayhay.interceptor.UIInterceptor:69  - 
+java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.lang.String.substring(String.java:1875)
+	at com.xyz.hayhay.interceptor.UIInterceptor.postHandle(UIInterceptor.java:47)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPostHandle(HandlerExecutionChain.java:152)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:966)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:735)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1448)
+	at com.xyz.hayhay.interceptor.GZipFilter.doFilter(GZipFilter.java:32)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:949)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1011)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+2017/08/30 20:47:48 ERROR com.xyz.hayhay.interceptor.UIInterceptor:69  - 
+java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.lang.String.substring(String.java:1875)
+	at com.xyz.hayhay.interceptor.UIInterceptor.postHandle(UIInterceptor.java:47)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPostHandle(HandlerExecutionChain.java:152)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:966)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:735)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1448)
+	at com.xyz.hayhay.interceptor.GZipFilter.doFilter(GZipFilter.java:32)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:949)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1011)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+2017/09/02 22:21:30 ERROR com.xyz.hayhay.interceptor.UIInterceptor:69  - 
+java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.lang.String.substring(String.java:1875)
+	at com.xyz.hayhay.interceptor.UIInterceptor.postHandle(UIInterceptor.java:47)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPostHandle(HandlerExecutionChain.java:152)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:966)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:735)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1448)
+	at com.xyz.hayhay.interceptor.GZipFilter.doFilter(GZipFilter.java:32)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:949)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1011)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+2017/09/03 18:52:52 ERROR com.xyz.hayhay.interceptor.UIInterceptor:69  - 
+java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.lang.String.substring(String.java:1875)
+	at com.xyz.hayhay.interceptor.UIInterceptor.postHandle(UIInterceptor.java:47)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPostHandle(HandlerExecutionChain.java:152)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:966)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:735)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1448)
+	at com.xyz.hayhay.interceptor.GZipFilter.doFilter(GZipFilter.java:32)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:949)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1011)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+2017/09/04 03:19:32 ERROR com.xyz.hayhay.interceptor.UIInterceptor:69  - 
+java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.lang.String.substring(String.java:1875)
+	at com.xyz.hayhay.interceptor.UIInterceptor.postHandle(UIInterceptor.java:47)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPostHandle(HandlerExecutionChain.java:152)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:966)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:735)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1448)
+	at com.xyz.hayhay.interceptor.GZipFilter.doFilter(GZipFilter.java:32)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:949)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1011)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+2017/09/18 23:30:54 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r501,c39,p32697) whose content does not match a registered StartTagType
+2017/09/18 23:30:54 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r500,c39,p32627) whose content does not match a registered StartTagType
+2017/09/18 23:30:54 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r499,c38,p32563) whose content does not match a registered StartTagType
+2017/09/18 23:30:54 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r498,c38,p32500) whose content does not match a registered StartTagType
+2017/09/18 23:30:54 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r496,c41,p32394) whose content does not match a registered StartTagType
+2017/09/18 23:30:54 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r607,c53,p36608) whose content does not match a registered StartTagType
+2017/09/18 23:30:54 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r594,c55,p36067) whose content does not match a registered StartTagType
+2017/09/18 23:30:54 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r697,c96,p40048) whose content does not match a registered StartTagType
+2017/09/18 23:30:54 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r721,c53,p41304) whose content does not match a registered StartTagType
+2017/09/18 23:30:54 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r853,c59,p50377) rejected because the name contains an invalid character at position (r853,c69,p50387)
+2017/09/18 23:30:54 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r853,c59,p50377) whose content does not match a registered StartTagType
+2017/09/18 23:30:54 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r828,c62,p48627) whose content does not match a registered StartTagType
+2017/09/18 23:30:54 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r813,c68,p47702) whose content does not match a registered StartTagType
+2017/09/18 23:30:54 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r790,c62,p45853) whose content does not match a registered StartTagType
+2017/09/18 23:30:54 ERROR net.htmlparser.jericho:?  - StartTag li at (r880,c82,p52682) contains attribute name with invalid character at position (r880,c114,p52714)
+2017/09/18 23:30:54 ERROR net.htmlparser.jericho:?  - StartTag li at (r880,c82,p52682) contains attribute name with invalid character at position (r880,c115,p52715)
+2017/09/18 23:30:54 ERROR net.htmlparser.jericho:?  - StartTag li at (r885,c82,p53105) contains attribute name with invalid character at position (r885,c114,p53137)
+2017/09/18 23:30:54 ERROR net.htmlparser.jericho:?  - StartTag li at (r885,c82,p53105) contains attribute name with invalid character at position (r885,c115,p53138)
+2017/09/18 23:30:54 ERROR net.htmlparser.jericho:?  - StartTag div at (r905,c60,p54828) contains attribute name with invalid character at position (r905,c116,p54884)
+2017/09/18 23:30:54 ERROR net.htmlparser.jericho:?  - StartTag div at (r905,c60,p54828) contains attribute name with invalid character at position (r905,c117,p54885)
+2017/09/18 23:30:54 ERROR net.htmlparser.jericho:?  - StartTag ul at (r919,c98,p56335) contains attribute name with invalid character at position (r919,c164,p56401)
+2017/09/18 23:30:54 ERROR net.htmlparser.jericho:?  - StartTag ul at (r919,c98,p56335) contains attribute name with invalid character at position (r919,c165,p56402)
+2017/09/18 23:30:54 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r1017,c64,p63627) whose content does not match a registered StartTagType
+2017/09/18 23:30:54 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r1017,c27,p63590) whose content does not match a registered StartTagType
+2017/09/19 11:59:42 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r431,c39,p19771) whose content does not match a registered StartTagType
+2017/09/19 11:59:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r430,c39,p19701) whose content does not match a registered StartTagType
+2017/09/19 11:59:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r429,c38,p19637) whose content does not match a registered StartTagType
+2017/09/19 11:59:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r428,c38,p19574) whose content does not match a registered StartTagType
+2017/09/19 11:59:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r426,c41,p19468) whose content does not match a registered StartTagType
+2017/09/19 11:59:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r537,c53,p23682) whose content does not match a registered StartTagType
+2017/09/19 11:59:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r524,c55,p23141) whose content does not match a registered StartTagType
+2017/09/19 11:59:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r627,c96,p27122) whose content does not match a registered StartTagType
+2017/09/19 11:59:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r651,c53,p28378) whose content does not match a registered StartTagType
+2017/09/19 11:59:43 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r783,c59,p37451) rejected because the name contains an invalid character at position (r783,c69,p37461)
+2017/09/19 11:59:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r783,c59,p37451) whose content does not match a registered StartTagType
+2017/09/19 11:59:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r758,c62,p35701) whose content does not match a registered StartTagType
+2017/09/19 11:59:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r743,c68,p34776) whose content does not match a registered StartTagType
+2017/09/19 11:59:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r720,c62,p32927) whose content does not match a registered StartTagType
+2017/09/19 11:59:43 ERROR net.htmlparser.jericho:?  - StartTag li at (r810,c82,p39756) contains attribute name with invalid character at position (r810,c114,p39788)
+2017/09/19 11:59:43 ERROR net.htmlparser.jericho:?  - StartTag li at (r810,c82,p39756) contains attribute name with invalid character at position (r810,c115,p39789)
+2017/09/19 11:59:43 ERROR net.htmlparser.jericho:?  - StartTag li at (r815,c82,p40179) contains attribute name with invalid character at position (r815,c114,p40211)
+2017/09/19 11:59:43 ERROR net.htmlparser.jericho:?  - StartTag li at (r815,c82,p40179) contains attribute name with invalid character at position (r815,c115,p40212)
+2017/09/19 11:59:43 ERROR net.htmlparser.jericho:?  - StartTag div at (r835,c60,p41902) contains attribute name with invalid character at position (r835,c116,p41958)
+2017/09/19 11:59:43 ERROR net.htmlparser.jericho:?  - StartTag div at (r835,c60,p41902) contains attribute name with invalid character at position (r835,c117,p41959)
+2017/09/19 11:59:43 ERROR net.htmlparser.jericho:?  - StartTag ul at (r849,c98,p43409) contains attribute name with invalid character at position (r849,c164,p43475)
+2017/09/19 11:59:43 ERROR net.htmlparser.jericho:?  - StartTag ul at (r849,c98,p43409) contains attribute name with invalid character at position (r849,c165,p43476)
+2017/09/19 11:59:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r947,c64,p50701) whose content does not match a registered StartTagType
+2017/09/19 11:59:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r947,c27,p50664) whose content does not match a registered StartTagType
+2017/09/24 13:22:21 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r371,c39,p16660) whose content does not match a registered StartTagType
+2017/09/24 13:22:21 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r370,c39,p16590) whose content does not match a registered StartTagType
+2017/09/24 13:22:21 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r369,c38,p16526) whose content does not match a registered StartTagType
+2017/09/24 13:22:21 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r368,c38,p16463) whose content does not match a registered StartTagType
+2017/09/24 13:22:21 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r366,c41,p16357) whose content does not match a registered StartTagType
+2017/09/24 13:22:21 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r477,c53,p20571) whose content does not match a registered StartTagType
+2017/09/24 13:22:21 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r464,c55,p20030) whose content does not match a registered StartTagType
+2017/09/24 13:22:21 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r567,c96,p24011) whose content does not match a registered StartTagType
+2017/09/24 13:22:21 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r591,c53,p25267) whose content does not match a registered StartTagType
+2017/09/24 13:22:21 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r723,c59,p34340) rejected because the name contains an invalid character at position (r723,c69,p34350)
+2017/09/24 13:22:21 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r723,c59,p34340) whose content does not match a registered StartTagType
+2017/09/24 13:22:21 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r698,c62,p32590) whose content does not match a registered StartTagType
+2017/09/24 13:22:21 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r683,c68,p31665) whose content does not match a registered StartTagType
+2017/09/24 13:22:21 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r660,c62,p29816) whose content does not match a registered StartTagType
+2017/09/24 13:22:21 ERROR net.htmlparser.jericho:?  - StartTag li at (r750,c82,p36645) contains attribute name with invalid character at position (r750,c114,p36677)
+2017/09/24 13:22:21 ERROR net.htmlparser.jericho:?  - StartTag li at (r750,c82,p36645) contains attribute name with invalid character at position (r750,c115,p36678)
+2017/09/24 13:22:21 ERROR net.htmlparser.jericho:?  - StartTag li at (r755,c82,p37068) contains attribute name with invalid character at position (r755,c114,p37100)
+2017/09/24 13:22:21 ERROR net.htmlparser.jericho:?  - StartTag li at (r755,c82,p37068) contains attribute name with invalid character at position (r755,c115,p37101)
+2017/09/24 13:22:21 ERROR net.htmlparser.jericho:?  - StartTag div at (r775,c60,p38791) contains attribute name with invalid character at position (r775,c116,p38847)
+2017/09/24 13:22:21 ERROR net.htmlparser.jericho:?  - StartTag div at (r775,c60,p38791) contains attribute name with invalid character at position (r775,c117,p38848)
+2017/09/24 13:22:21 ERROR net.htmlparser.jericho:?  - StartTag ul at (r789,c98,p40298) contains attribute name with invalid character at position (r789,c164,p40364)
+2017/09/24 13:22:21 ERROR net.htmlparser.jericho:?  - StartTag ul at (r789,c98,p40298) contains attribute name with invalid character at position (r789,c165,p40365)
+2017/09/24 13:22:21 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r887,c64,p47590) whose content does not match a registered StartTagType
+2017/09/24 13:22:21 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r887,c27,p47553) whose content does not match a registered StartTagType
+2017/09/24 13:22:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r265,c39,p11777) whose content does not match a registered StartTagType
+2017/09/24 13:22:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r264,c39,p11707) whose content does not match a registered StartTagType
+2017/09/24 13:22:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r263,c38,p11643) whose content does not match a registered StartTagType
+2017/09/24 13:22:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r262,c38,p11580) whose content does not match a registered StartTagType
+2017/09/24 13:22:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r260,c41,p11474) whose content does not match a registered StartTagType
+2017/09/24 13:22:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r371,c53,p15688) whose content does not match a registered StartTagType
+2017/09/24 13:22:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r358,c55,p15147) whose content does not match a registered StartTagType
+2017/09/24 13:22:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r461,c96,p19128) whose content does not match a registered StartTagType
+2017/09/24 13:22:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r485,c53,p20384) whose content does not match a registered StartTagType
+2017/09/24 13:22:43 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r617,c59,p29457) rejected because the name contains an invalid character at position (r617,c69,p29467)
+2017/09/24 13:22:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r617,c59,p29457) whose content does not match a registered StartTagType
+2017/09/24 13:22:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r592,c62,p27707) whose content does not match a registered StartTagType
+2017/09/24 13:22:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r577,c68,p26782) whose content does not match a registered StartTagType
+2017/09/24 13:22:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r554,c62,p24933) whose content does not match a registered StartTagType
+2017/09/24 13:22:43 ERROR net.htmlparser.jericho:?  - StartTag li at (r644,c82,p31762) contains attribute name with invalid character at position (r644,c114,p31794)
+2017/09/24 13:22:43 ERROR net.htmlparser.jericho:?  - StartTag li at (r644,c82,p31762) contains attribute name with invalid character at position (r644,c115,p31795)
+2017/09/24 13:22:43 ERROR net.htmlparser.jericho:?  - StartTag li at (r649,c82,p32185) contains attribute name with invalid character at position (r649,c114,p32217)
+2017/09/24 13:22:43 ERROR net.htmlparser.jericho:?  - StartTag li at (r649,c82,p32185) contains attribute name with invalid character at position (r649,c115,p32218)
+2017/09/24 13:22:43 ERROR net.htmlparser.jericho:?  - StartTag div at (r669,c60,p33908) contains attribute name with invalid character at position (r669,c116,p33964)
+2017/09/24 13:22:43 ERROR net.htmlparser.jericho:?  - StartTag div at (r669,c60,p33908) contains attribute name with invalid character at position (r669,c117,p33965)
+2017/09/24 13:22:43 ERROR net.htmlparser.jericho:?  - StartTag ul at (r683,c98,p35415) contains attribute name with invalid character at position (r683,c164,p35481)
+2017/09/24 13:22:43 ERROR net.htmlparser.jericho:?  - StartTag ul at (r683,c98,p35415) contains attribute name with invalid character at position (r683,c165,p35482)
+2017/09/24 13:22:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r781,c64,p42707) whose content does not match a registered StartTagType
+2017/09/24 13:22:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r781,c27,p42670) whose content does not match a registered StartTagType
+2017/09/24 13:23:30 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r265,c39,p11784) whose content does not match a registered StartTagType
+2017/09/24 13:23:30 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r264,c39,p11714) whose content does not match a registered StartTagType
+2017/09/24 13:23:30 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r263,c38,p11650) whose content does not match a registered StartTagType
+2017/09/24 13:23:30 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r262,c38,p11587) whose content does not match a registered StartTagType
+2017/09/24 13:23:30 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r260,c41,p11481) whose content does not match a registered StartTagType
+2017/09/24 13:23:30 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r371,c53,p15695) whose content does not match a registered StartTagType
+2017/09/24 13:23:30 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r358,c55,p15154) whose content does not match a registered StartTagType
+2017/09/24 13:23:30 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r461,c96,p19135) whose content does not match a registered StartTagType
+2017/09/24 13:23:30 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r485,c53,p20391) whose content does not match a registered StartTagType
+2017/09/24 13:23:30 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r617,c59,p29464) rejected because the name contains an invalid character at position (r617,c69,p29474)
+2017/09/24 13:23:30 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r617,c59,p29464) whose content does not match a registered StartTagType
+2017/09/24 13:23:30 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r592,c62,p27714) whose content does not match a registered StartTagType
+2017/09/24 13:23:30 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r577,c68,p26789) whose content does not match a registered StartTagType
+2017/09/24 13:23:30 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r554,c62,p24940) whose content does not match a registered StartTagType
+2017/09/24 13:23:30 ERROR net.htmlparser.jericho:?  - StartTag li at (r644,c82,p31769) contains attribute name with invalid character at position (r644,c114,p31801)
+2017/09/24 13:23:30 ERROR net.htmlparser.jericho:?  - StartTag li at (r644,c82,p31769) contains attribute name with invalid character at position (r644,c115,p31802)
+2017/09/24 13:23:30 ERROR net.htmlparser.jericho:?  - StartTag li at (r649,c82,p32192) contains attribute name with invalid character at position (r649,c114,p32224)
+2017/09/24 13:23:30 ERROR net.htmlparser.jericho:?  - StartTag li at (r649,c82,p32192) contains attribute name with invalid character at position (r649,c115,p32225)
+2017/09/24 13:23:30 ERROR net.htmlparser.jericho:?  - StartTag div at (r669,c60,p33915) contains attribute name with invalid character at position (r669,c116,p33971)
+2017/09/24 13:23:30 ERROR net.htmlparser.jericho:?  - StartTag div at (r669,c60,p33915) contains attribute name with invalid character at position (r669,c117,p33972)
+2017/09/24 13:23:30 ERROR net.htmlparser.jericho:?  - StartTag ul at (r683,c98,p35422) contains attribute name with invalid character at position (r683,c164,p35488)
+2017/09/24 13:23:30 ERROR net.htmlparser.jericho:?  - StartTag ul at (r683,c98,p35422) contains attribute name with invalid character at position (r683,c165,p35489)
+2017/09/24 13:23:30 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r781,c64,p42714) whose content does not match a registered StartTagType
+2017/09/24 13:23:30 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r781,c27,p42677) whose content does not match a registered StartTagType
+2017/09/24 13:23:46 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r421,c39,p29852) whose content does not match a registered StartTagType
+2017/09/24 13:23:46 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r420,c39,p29782) whose content does not match a registered StartTagType
+2017/09/24 13:23:46 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r419,c38,p29718) whose content does not match a registered StartTagType
+2017/09/24 13:23:46 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r418,c38,p29655) whose content does not match a registered StartTagType
+2017/09/24 13:23:46 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r416,c41,p29549) whose content does not match a registered StartTagType
+2017/09/24 13:23:46 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r527,c53,p33763) whose content does not match a registered StartTagType
+2017/09/24 13:23:46 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r514,c55,p33222) whose content does not match a registered StartTagType
+2017/09/24 13:23:46 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r617,c96,p37203) whose content does not match a registered StartTagType
+2017/09/24 13:23:46 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r641,c53,p38459) whose content does not match a registered StartTagType
+2017/09/24 13:23:46 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r773,c59,p47532) rejected because the name contains an invalid character at position (r773,c69,p47542)
+2017/09/24 13:23:46 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r773,c59,p47532) whose content does not match a registered StartTagType
+2017/09/24 13:23:46 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r748,c62,p45782) whose content does not match a registered StartTagType
+2017/09/24 13:23:46 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r733,c68,p44857) whose content does not match a registered StartTagType
+2017/09/24 13:23:46 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r710,c62,p43008) whose content does not match a registered StartTagType
+2017/09/24 13:23:46 ERROR net.htmlparser.jericho:?  - StartTag li at (r800,c82,p49837) contains attribute name with invalid character at position (r800,c114,p49869)
+2017/09/24 13:23:46 ERROR net.htmlparser.jericho:?  - StartTag li at (r800,c82,p49837) contains attribute name with invalid character at position (r800,c115,p49870)
+2017/09/24 13:23:46 ERROR net.htmlparser.jericho:?  - StartTag li at (r805,c82,p50260) contains attribute name with invalid character at position (r805,c114,p50292)
+2017/09/24 13:23:46 ERROR net.htmlparser.jericho:?  - StartTag li at (r805,c82,p50260) contains attribute name with invalid character at position (r805,c115,p50293)
+2017/09/24 13:23:46 ERROR net.htmlparser.jericho:?  - StartTag div at (r825,c60,p51983) contains attribute name with invalid character at position (r825,c116,p52039)
+2017/09/24 13:23:46 ERROR net.htmlparser.jericho:?  - StartTag div at (r825,c60,p51983) contains attribute name with invalid character at position (r825,c117,p52040)
+2017/09/24 13:23:46 ERROR net.htmlparser.jericho:?  - StartTag ul at (r839,c98,p53490) contains attribute name with invalid character at position (r839,c164,p53556)
+2017/09/24 13:23:46 ERROR net.htmlparser.jericho:?  - StartTag ul at (r839,c98,p53490) contains attribute name with invalid character at position (r839,c165,p53557)
+2017/09/24 13:23:46 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r937,c64,p60782) whose content does not match a registered StartTagType
+2017/09/24 13:23:46 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r937,c27,p60745) whose content does not match a registered StartTagType
+2017/10/01 12:53:07 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r369,c39,p16967) whose content does not match a registered StartTagType
+2017/10/01 12:53:07 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r368,c39,p16897) whose content does not match a registered StartTagType
+2017/10/01 12:53:07 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r367,c38,p16833) whose content does not match a registered StartTagType
+2017/10/01 12:53:07 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r366,c38,p16770) whose content does not match a registered StartTagType
+2017/10/01 12:53:07 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r364,c41,p16664) whose content does not match a registered StartTagType
+2017/10/01 12:53:07 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r475,c53,p20878) whose content does not match a registered StartTagType
+2017/10/01 12:53:07 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r462,c55,p20337) whose content does not match a registered StartTagType
+2017/10/01 12:53:07 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r565,c96,p24318) whose content does not match a registered StartTagType
+2017/10/01 12:53:07 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r589,c53,p25574) whose content does not match a registered StartTagType
+2017/10/01 12:53:07 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r721,c59,p34647) rejected because the name contains an invalid character at position (r721,c69,p34657)
+2017/10/01 12:53:07 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r721,c59,p34647) whose content does not match a registered StartTagType
+2017/10/01 12:53:07 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r696,c62,p32897) whose content does not match a registered StartTagType
+2017/10/01 12:53:07 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r681,c68,p31972) whose content does not match a registered StartTagType
+2017/10/01 12:53:07 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r658,c62,p30123) whose content does not match a registered StartTagType
+2017/10/01 12:53:07 ERROR net.htmlparser.jericho:?  - StartTag li at (r748,c82,p36952) contains attribute name with invalid character at position (r748,c114,p36984)
+2017/10/01 12:53:07 ERROR net.htmlparser.jericho:?  - StartTag li at (r748,c82,p36952) contains attribute name with invalid character at position (r748,c115,p36985)
+2017/10/01 12:53:07 ERROR net.htmlparser.jericho:?  - StartTag li at (r753,c82,p37375) contains attribute name with invalid character at position (r753,c114,p37407)
+2017/10/01 12:53:07 ERROR net.htmlparser.jericho:?  - StartTag li at (r753,c82,p37375) contains attribute name with invalid character at position (r753,c115,p37408)
+2017/10/01 12:53:07 ERROR net.htmlparser.jericho:?  - StartTag div at (r773,c60,p39098) contains attribute name with invalid character at position (r773,c116,p39154)
+2017/10/01 12:53:07 ERROR net.htmlparser.jericho:?  - StartTag div at (r773,c60,p39098) contains attribute name with invalid character at position (r773,c117,p39155)
+2017/10/01 12:53:07 ERROR net.htmlparser.jericho:?  - StartTag ul at (r787,c98,p40605) contains attribute name with invalid character at position (r787,c164,p40671)
+2017/10/01 12:53:07 ERROR net.htmlparser.jericho:?  - StartTag ul at (r787,c98,p40605) contains attribute name with invalid character at position (r787,c165,p40672)
+2017/10/01 12:53:07 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r885,c64,p47897) whose content does not match a registered StartTagType
+2017/10/01 12:53:07 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r885,c27,p47860) whose content does not match a registered StartTagType
+2017/10/01 12:54:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r473,c39,p23163) whose content does not match a registered StartTagType
+2017/10/01 12:54:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r472,c39,p23093) whose content does not match a registered StartTagType
+2017/10/01 12:54:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r471,c38,p23029) whose content does not match a registered StartTagType
+2017/10/01 12:54:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r470,c38,p22966) whose content does not match a registered StartTagType
+2017/10/01 12:54:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r468,c41,p22860) whose content does not match a registered StartTagType
+2017/10/01 12:54:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r579,c53,p27074) whose content does not match a registered StartTagType
+2017/10/01 12:54:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r566,c55,p26533) whose content does not match a registered StartTagType
+2017/10/01 12:54:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r669,c96,p30514) whose content does not match a registered StartTagType
+2017/10/01 12:54:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r693,c53,p31770) whose content does not match a registered StartTagType
+2017/10/01 12:54:12 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r825,c59,p40843) rejected because the name contains an invalid character at position (r825,c69,p40853)
+2017/10/01 12:54:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r825,c59,p40843) whose content does not match a registered StartTagType
+2017/10/01 12:54:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r800,c62,p39093) whose content does not match a registered StartTagType
+2017/10/01 12:54:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r785,c68,p38168) whose content does not match a registered StartTagType
+2017/10/01 12:54:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r762,c62,p36319) whose content does not match a registered StartTagType
+2017/10/01 12:54:12 ERROR net.htmlparser.jericho:?  - StartTag li at (r852,c82,p43148) contains attribute name with invalid character at position (r852,c114,p43180)
+2017/10/01 12:54:12 ERROR net.htmlparser.jericho:?  - StartTag li at (r852,c82,p43148) contains attribute name with invalid character at position (r852,c115,p43181)
+2017/10/01 12:54:12 ERROR net.htmlparser.jericho:?  - StartTag li at (r857,c82,p43571) contains attribute name with invalid character at position (r857,c114,p43603)
+2017/10/01 12:54:12 ERROR net.htmlparser.jericho:?  - StartTag li at (r857,c82,p43571) contains attribute name with invalid character at position (r857,c115,p43604)
+2017/10/01 12:54:12 ERROR net.htmlparser.jericho:?  - StartTag div at (r877,c60,p45294) contains attribute name with invalid character at position (r877,c116,p45350)
+2017/10/01 12:54:12 ERROR net.htmlparser.jericho:?  - StartTag div at (r877,c60,p45294) contains attribute name with invalid character at position (r877,c117,p45351)
+2017/10/01 12:54:12 ERROR net.htmlparser.jericho:?  - StartTag ul at (r891,c98,p46801) contains attribute name with invalid character at position (r891,c164,p46867)
+2017/10/01 12:54:12 ERROR net.htmlparser.jericho:?  - StartTag ul at (r891,c98,p46801) contains attribute name with invalid character at position (r891,c165,p46868)
+2017/10/01 12:54:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r989,c64,p54093) whose content does not match a registered StartTagType
+2017/10/01 12:54:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r989,c27,p54056) whose content does not match a registered StartTagType
+2017/10/01 12:56:59 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r629,c39,p55232) whose content does not match a registered StartTagType
+2017/10/01 12:56:59 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r628,c39,p55162) whose content does not match a registered StartTagType
+2017/10/01 12:57:00 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r627,c38,p55098) whose content does not match a registered StartTagType
+2017/10/01 12:57:00 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r626,c38,p55035) whose content does not match a registered StartTagType
+2017/10/01 12:57:00 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r624,c41,p54929) whose content does not match a registered StartTagType
+2017/10/01 12:57:00 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r735,c53,p59143) whose content does not match a registered StartTagType
+2017/10/01 12:57:00 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r722,c55,p58602) whose content does not match a registered StartTagType
+2017/10/01 12:57:00 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r825,c96,p62583) whose content does not match a registered StartTagType
+2017/10/01 12:57:00 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r849,c53,p63839) whose content does not match a registered StartTagType
+2017/10/01 12:57:00 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r981,c59,p72912) rejected because the name contains an invalid character at position (r981,c69,p72922)
+2017/10/01 12:57:00 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r981,c59,p72912) whose content does not match a registered StartTagType
+2017/10/01 12:57:00 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r956,c62,p71162) whose content does not match a registered StartTagType
+2017/10/01 12:57:00 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r941,c68,p70237) whose content does not match a registered StartTagType
+2017/10/01 12:57:00 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r918,c62,p68388) whose content does not match a registered StartTagType
+2017/10/01 12:57:00 ERROR net.htmlparser.jericho:?  - StartTag li at (r1008,c82,p75217) contains attribute name with invalid character at position (r1008,c114,p75249)
+2017/10/01 12:57:00 ERROR net.htmlparser.jericho:?  - StartTag li at (r1008,c82,p75217) contains attribute name with invalid character at position (r1008,c115,p75250)
+2017/10/01 12:57:00 ERROR net.htmlparser.jericho:?  - StartTag li at (r1013,c82,p75640) contains attribute name with invalid character at position (r1013,c114,p75672)
+2017/10/01 12:57:00 ERROR net.htmlparser.jericho:?  - StartTag li at (r1013,c82,p75640) contains attribute name with invalid character at position (r1013,c115,p75673)
+2017/10/01 12:57:00 ERROR net.htmlparser.jericho:?  - StartTag div at (r1033,c60,p77363) contains attribute name with invalid character at position (r1033,c116,p77419)
+2017/10/01 12:57:00 ERROR net.htmlparser.jericho:?  - StartTag div at (r1033,c60,p77363) contains attribute name with invalid character at position (r1033,c117,p77420)
+2017/10/01 12:57:00 ERROR net.htmlparser.jericho:?  - StartTag ul at (r1047,c98,p78870) contains attribute name with invalid character at position (r1047,c164,p78936)
+2017/10/01 12:57:00 ERROR net.htmlparser.jericho:?  - StartTag ul at (r1047,c98,p78870) contains attribute name with invalid character at position (r1047,c165,p78937)
+2017/10/01 12:57:00 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r1145,c64,p86162) whose content does not match a registered StartTagType
+2017/10/01 12:57:00 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r1145,c27,p86125) whose content does not match a registered StartTagType
+2017/10/01 12:57:33 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r265,c39,p11784) whose content does not match a registered StartTagType
+2017/10/01 12:57:33 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r264,c39,p11714) whose content does not match a registered StartTagType
+2017/10/01 12:57:33 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r263,c38,p11650) whose content does not match a registered StartTagType
+2017/10/01 12:57:33 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r262,c38,p11587) whose content does not match a registered StartTagType
+2017/10/01 12:57:33 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r260,c41,p11481) whose content does not match a registered StartTagType
+2017/10/01 12:57:33 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r371,c53,p15695) whose content does not match a registered StartTagType
+2017/10/01 12:57:33 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r358,c55,p15154) whose content does not match a registered StartTagType
+2017/10/01 12:57:33 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r461,c96,p19135) whose content does not match a registered StartTagType
+2017/10/01 12:57:33 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r485,c53,p20391) whose content does not match a registered StartTagType
+2017/10/01 12:57:33 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r617,c59,p29464) rejected because the name contains an invalid character at position (r617,c69,p29474)
+2017/10/01 12:57:33 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r617,c59,p29464) whose content does not match a registered StartTagType
+2017/10/01 12:57:33 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r592,c62,p27714) whose content does not match a registered StartTagType
+2017/10/01 12:57:33 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r577,c68,p26789) whose content does not match a registered StartTagType
+2017/10/01 12:57:33 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r554,c62,p24940) whose content does not match a registered StartTagType
+2017/10/01 12:57:33 ERROR net.htmlparser.jericho:?  - StartTag li at (r644,c82,p31769) contains attribute name with invalid character at position (r644,c114,p31801)
+2017/10/01 12:57:33 ERROR net.htmlparser.jericho:?  - StartTag li at (r644,c82,p31769) contains attribute name with invalid character at position (r644,c115,p31802)
+2017/10/01 12:57:33 ERROR net.htmlparser.jericho:?  - StartTag li at (r649,c82,p32192) contains attribute name with invalid character at position (r649,c114,p32224)
+2017/10/01 12:57:33 ERROR net.htmlparser.jericho:?  - StartTag li at (r649,c82,p32192) contains attribute name with invalid character at position (r649,c115,p32225)
+2017/10/01 12:57:33 ERROR net.htmlparser.jericho:?  - StartTag div at (r669,c60,p33915) contains attribute name with invalid character at position (r669,c116,p33971)
+2017/10/01 12:57:33 ERROR net.htmlparser.jericho:?  - StartTag div at (r669,c60,p33915) contains attribute name with invalid character at position (r669,c117,p33972)
+2017/10/01 12:57:33 ERROR net.htmlparser.jericho:?  - StartTag ul at (r683,c98,p35422) contains attribute name with invalid character at position (r683,c164,p35488)
+2017/10/01 12:57:33 ERROR net.htmlparser.jericho:?  - StartTag ul at (r683,c98,p35422) contains attribute name with invalid character at position (r683,c165,p35489)
+2017/10/01 12:57:33 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r781,c64,p42714) whose content does not match a registered StartTagType
+2017/10/01 12:57:33 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r781,c27,p42677) whose content does not match a registered StartTagType
+2017/10/01 12:57:46 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r529,c39,p35434) whose content does not match a registered StartTagType
+2017/10/01 12:57:46 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r528,c39,p35364) whose content does not match a registered StartTagType
+2017/10/01 12:57:46 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r527,c38,p35300) whose content does not match a registered StartTagType
+2017/10/01 12:57:46 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r526,c38,p35237) whose content does not match a registered StartTagType
+2017/10/01 12:57:46 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r524,c41,p35131) whose content does not match a registered StartTagType
+2017/10/01 12:57:46 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r635,c53,p39345) whose content does not match a registered StartTagType
+2017/10/01 12:57:46 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r622,c55,p38804) whose content does not match a registered StartTagType
+2017/10/01 12:57:46 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r725,c96,p42785) whose content does not match a registered StartTagType
+2017/10/01 12:57:46 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r749,c53,p44041) whose content does not match a registered StartTagType
+2017/10/01 12:57:46 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r881,c59,p53114) rejected because the name contains an invalid character at position (r881,c69,p53124)
+2017/10/01 12:57:46 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r881,c59,p53114) whose content does not match a registered StartTagType
+2017/10/01 12:57:46 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r856,c62,p51364) whose content does not match a registered StartTagType
+2017/10/01 12:57:46 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r841,c68,p50439) whose content does not match a registered StartTagType
+2017/10/01 12:57:46 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r818,c62,p48590) whose content does not match a registered StartTagType
+2017/10/01 12:57:46 ERROR net.htmlparser.jericho:?  - StartTag li at (r908,c82,p55419) contains attribute name with invalid character at position (r908,c114,p55451)
+2017/10/01 12:57:46 ERROR net.htmlparser.jericho:?  - StartTag li at (r908,c82,p55419) contains attribute name with invalid character at position (r908,c115,p55452)
+2017/10/01 12:57:46 ERROR net.htmlparser.jericho:?  - StartTag li at (r913,c82,p55842) contains attribute name with invalid character at position (r913,c114,p55874)
+2017/10/01 12:57:46 ERROR net.htmlparser.jericho:?  - StartTag li at (r913,c82,p55842) contains attribute name with invalid character at position (r913,c115,p55875)
+2017/10/01 12:57:46 ERROR net.htmlparser.jericho:?  - StartTag div at (r933,c60,p57565) contains attribute name with invalid character at position (r933,c116,p57621)
+2017/10/01 12:57:46 ERROR net.htmlparser.jericho:?  - StartTag div at (r933,c60,p57565) contains attribute name with invalid character at position (r933,c117,p57622)
+2017/10/01 12:57:46 ERROR net.htmlparser.jericho:?  - StartTag ul at (r947,c98,p59072) contains attribute name with invalid character at position (r947,c164,p59138)
+2017/10/01 12:57:46 ERROR net.htmlparser.jericho:?  - StartTag ul at (r947,c98,p59072) contains attribute name with invalid character at position (r947,c165,p59139)
+2017/10/01 12:57:46 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r1045,c64,p66364) whose content does not match a registered StartTagType
+2017/10/01 12:57:46 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r1045,c27,p66327) whose content does not match a registered StartTagType
+2017/10/01 13:04:26 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r265,c39,p11791) whose content does not match a registered StartTagType
+2017/10/01 13:04:26 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r264,c39,p11721) whose content does not match a registered StartTagType
+2017/10/01 13:04:26 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r263,c38,p11657) whose content does not match a registered StartTagType
+2017/10/01 13:04:26 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r262,c38,p11594) whose content does not match a registered StartTagType
+2017/10/01 13:04:26 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r260,c41,p11488) whose content does not match a registered StartTagType
+2017/10/01 13:04:26 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r371,c53,p15702) whose content does not match a registered StartTagType
+2017/10/01 13:04:26 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r358,c55,p15161) whose content does not match a registered StartTagType
+2017/10/01 13:04:26 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r461,c96,p19142) whose content does not match a registered StartTagType
+2017/10/01 13:04:26 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r485,c53,p20398) whose content does not match a registered StartTagType
+2017/10/01 13:04:26 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r617,c59,p29471) rejected because the name contains an invalid character at position (r617,c69,p29481)
+2017/10/01 13:04:26 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r617,c59,p29471) whose content does not match a registered StartTagType
+2017/10/01 13:04:26 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r592,c62,p27721) whose content does not match a registered StartTagType
+2017/10/01 13:04:26 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r577,c68,p26796) whose content does not match a registered StartTagType
+2017/10/01 13:04:26 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r554,c62,p24947) whose content does not match a registered StartTagType
+2017/10/01 13:04:26 ERROR net.htmlparser.jericho:?  - StartTag li at (r644,c82,p31776) contains attribute name with invalid character at position (r644,c114,p31808)
+2017/10/01 13:04:26 ERROR net.htmlparser.jericho:?  - StartTag li at (r644,c82,p31776) contains attribute name with invalid character at position (r644,c115,p31809)
+2017/10/01 13:04:26 ERROR net.htmlparser.jericho:?  - StartTag li at (r649,c82,p32199) contains attribute name with invalid character at position (r649,c114,p32231)
+2017/10/01 13:04:26 ERROR net.htmlparser.jericho:?  - StartTag li at (r649,c82,p32199) contains attribute name with invalid character at position (r649,c115,p32232)
+2017/10/01 13:04:26 ERROR net.htmlparser.jericho:?  - StartTag div at (r669,c60,p33922) contains attribute name with invalid character at position (r669,c116,p33978)
+2017/10/01 13:04:26 ERROR net.htmlparser.jericho:?  - StartTag div at (r669,c60,p33922) contains attribute name with invalid character at position (r669,c117,p33979)
+2017/10/01 13:04:26 ERROR net.htmlparser.jericho:?  - StartTag ul at (r683,c98,p35429) contains attribute name with invalid character at position (r683,c164,p35495)
+2017/10/01 13:04:26 ERROR net.htmlparser.jericho:?  - StartTag ul at (r683,c98,p35429) contains attribute name with invalid character at position (r683,c165,p35496)
+2017/10/01 13:04:26 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r781,c64,p42721) whose content does not match a registered StartTagType
+2017/10/01 13:04:26 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r781,c27,p42684) whose content does not match a registered StartTagType
+2017/10/01 13:04:29 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r377,c39,p18717) whose content does not match a registered StartTagType
+2017/10/01 13:04:29 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r376,c39,p18647) whose content does not match a registered StartTagType
+2017/10/01 13:04:29 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r375,c38,p18583) whose content does not match a registered StartTagType
+2017/10/01 13:04:29 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r374,c38,p18520) whose content does not match a registered StartTagType
+2017/10/01 13:04:29 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r372,c41,p18414) whose content does not match a registered StartTagType
+2017/10/01 13:04:29 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r483,c53,p22628) whose content does not match a registered StartTagType
+2017/10/01 13:04:29 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r470,c55,p22087) whose content does not match a registered StartTagType
+2017/10/01 13:04:29 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r573,c96,p26068) whose content does not match a registered StartTagType
+2017/10/01 13:04:29 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r597,c53,p27324) whose content does not match a registered StartTagType
+2017/10/01 13:04:29 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r729,c59,p36397) rejected because the name contains an invalid character at position (r729,c69,p36407)
+2017/10/01 13:04:29 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r729,c59,p36397) whose content does not match a registered StartTagType
+2017/10/01 13:04:29 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r704,c62,p34647) whose content does not match a registered StartTagType
+2017/10/01 13:04:29 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r689,c68,p33722) whose content does not match a registered StartTagType
+2017/10/01 13:04:29 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r666,c62,p31873) whose content does not match a registered StartTagType
+2017/10/01 13:04:29 ERROR net.htmlparser.jericho:?  - StartTag li at (r756,c82,p38702) contains attribute name with invalid character at position (r756,c114,p38734)
+2017/10/01 13:04:29 ERROR net.htmlparser.jericho:?  - StartTag li at (r756,c82,p38702) contains attribute name with invalid character at position (r756,c115,p38735)
+2017/10/01 13:04:29 ERROR net.htmlparser.jericho:?  - StartTag li at (r761,c82,p39125) contains attribute name with invalid character at position (r761,c114,p39157)
+2017/10/01 13:04:29 ERROR net.htmlparser.jericho:?  - StartTag li at (r761,c82,p39125) contains attribute name with invalid character at position (r761,c115,p39158)
+2017/10/01 13:04:29 ERROR net.htmlparser.jericho:?  - StartTag div at (r781,c60,p40848) contains attribute name with invalid character at position (r781,c116,p40904)
+2017/10/01 13:04:29 ERROR net.htmlparser.jericho:?  - StartTag div at (r781,c60,p40848) contains attribute name with invalid character at position (r781,c117,p40905)
+2017/10/01 13:04:29 ERROR net.htmlparser.jericho:?  - StartTag ul at (r795,c98,p42355) contains attribute name with invalid character at position (r795,c164,p42421)
+2017/10/01 13:04:29 ERROR net.htmlparser.jericho:?  - StartTag ul at (r795,c98,p42355) contains attribute name with invalid character at position (r795,c165,p42422)
+2017/10/01 13:04:29 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r893,c64,p49647) whose content does not match a registered StartTagType
+2017/10/01 13:04:29 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r893,c27,p49610) whose content does not match a registered StartTagType
+2017/10/01 13:04:56 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r497,c39,p30150) whose content does not match a registered StartTagType
+2017/10/01 13:04:56 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r496,c39,p30080) whose content does not match a registered StartTagType
+2017/10/01 13:04:56 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r495,c38,p30016) whose content does not match a registered StartTagType
+2017/10/01 13:04:56 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r494,c38,p29953) whose content does not match a registered StartTagType
+2017/10/01 13:04:56 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r492,c41,p29847) whose content does not match a registered StartTagType
+2017/10/01 13:04:56 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r603,c53,p34061) whose content does not match a registered StartTagType
+2017/10/01 13:04:56 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r590,c55,p33520) whose content does not match a registered StartTagType
+2017/10/01 13:04:56 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r693,c96,p37501) whose content does not match a registered StartTagType
+2017/10/01 13:04:56 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r717,c53,p38757) whose content does not match a registered StartTagType
+2017/10/01 13:04:56 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r849,c59,p47830) rejected because the name contains an invalid character at position (r849,c69,p47840)
+2017/10/01 13:04:56 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r849,c59,p47830) whose content does not match a registered StartTagType
+2017/10/01 13:04:56 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r824,c62,p46080) whose content does not match a registered StartTagType
+2017/10/01 13:04:56 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r809,c68,p45155) whose content does not match a registered StartTagType
+2017/10/01 13:04:56 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r786,c62,p43306) whose content does not match a registered StartTagType
+2017/10/01 13:04:56 ERROR net.htmlparser.jericho:?  - StartTag li at (r876,c82,p50135) contains attribute name with invalid character at position (r876,c114,p50167)
+2017/10/01 13:04:56 ERROR net.htmlparser.jericho:?  - StartTag li at (r876,c82,p50135) contains attribute name with invalid character at position (r876,c115,p50168)
+2017/10/01 13:04:56 ERROR net.htmlparser.jericho:?  - StartTag li at (r881,c82,p50558) contains attribute name with invalid character at position (r881,c114,p50590)
+2017/10/01 13:04:56 ERROR net.htmlparser.jericho:?  - StartTag li at (r881,c82,p50558) contains attribute name with invalid character at position (r881,c115,p50591)
+2017/10/01 13:04:56 ERROR net.htmlparser.jericho:?  - StartTag div at (r901,c60,p52281) contains attribute name with invalid character at position (r901,c116,p52337)
+2017/10/01 13:04:56 ERROR net.htmlparser.jericho:?  - StartTag div at (r901,c60,p52281) contains attribute name with invalid character at position (r901,c117,p52338)
+2017/10/01 13:04:56 ERROR net.htmlparser.jericho:?  - StartTag ul at (r915,c98,p53788) contains attribute name with invalid character at position (r915,c164,p53854)
+2017/10/01 13:04:56 ERROR net.htmlparser.jericho:?  - StartTag ul at (r915,c98,p53788) contains attribute name with invalid character at position (r915,c165,p53855)
+2017/10/01 13:04:56 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r1013,c64,p61080) whose content does not match a registered StartTagType
+2017/10/01 13:04:56 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r1013,c27,p61043) whose content does not match a registered StartTagType
+2017/10/01 13:07:27 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r391,c39,p20612) whose content does not match a registered StartTagType
+2017/10/01 13:07:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r390,c39,p20542) whose content does not match a registered StartTagType
+2017/10/01 13:07:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r389,c38,p20478) whose content does not match a registered StartTagType
+2017/10/01 13:07:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r388,c38,p20415) whose content does not match a registered StartTagType
+2017/10/01 13:07:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r386,c41,p20309) whose content does not match a registered StartTagType
+2017/10/01 13:07:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r497,c53,p24523) whose content does not match a registered StartTagType
+2017/10/01 13:07:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r484,c55,p23982) whose content does not match a registered StartTagType
+2017/10/01 13:07:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r587,c96,p27963) whose content does not match a registered StartTagType
+2017/10/01 13:07:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r611,c53,p29219) whose content does not match a registered StartTagType
+2017/10/01 13:07:28 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r743,c59,p38292) rejected because the name contains an invalid character at position (r743,c69,p38302)
+2017/10/01 13:07:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r743,c59,p38292) whose content does not match a registered StartTagType
+2017/10/01 13:07:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r718,c62,p36542) whose content does not match a registered StartTagType
+2017/10/01 13:07:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r703,c68,p35617) whose content does not match a registered StartTagType
+2017/10/01 13:07:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r680,c62,p33768) whose content does not match a registered StartTagType
+2017/10/01 13:07:28 ERROR net.htmlparser.jericho:?  - StartTag li at (r770,c82,p40597) contains attribute name with invalid character at position (r770,c114,p40629)
+2017/10/01 13:07:28 ERROR net.htmlparser.jericho:?  - StartTag li at (r770,c82,p40597) contains attribute name with invalid character at position (r770,c115,p40630)
+2017/10/01 13:07:28 ERROR net.htmlparser.jericho:?  - StartTag li at (r775,c82,p41020) contains attribute name with invalid character at position (r775,c114,p41052)
+2017/10/01 13:07:28 ERROR net.htmlparser.jericho:?  - StartTag li at (r775,c82,p41020) contains attribute name with invalid character at position (r775,c115,p41053)
+2017/10/01 13:07:28 ERROR net.htmlparser.jericho:?  - StartTag div at (r795,c60,p42743) contains attribute name with invalid character at position (r795,c116,p42799)
+2017/10/01 13:07:28 ERROR net.htmlparser.jericho:?  - StartTag div at (r795,c60,p42743) contains attribute name with invalid character at position (r795,c117,p42800)
+2017/10/01 13:07:28 ERROR net.htmlparser.jericho:?  - StartTag ul at (r809,c98,p44250) contains attribute name with invalid character at position (r809,c164,p44316)
+2017/10/01 13:07:28 ERROR net.htmlparser.jericho:?  - StartTag ul at (r809,c98,p44250) contains attribute name with invalid character at position (r809,c165,p44317)
+2017/10/01 13:07:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r907,c64,p51542) whose content does not match a registered StartTagType
+2017/10/01 13:07:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r907,c27,p51505) whose content does not match a registered StartTagType
+2017/10/03 18:29:06 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r445,c39,p26313) whose content does not match a registered StartTagType
+2017/10/03 18:29:06 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r444,c39,p26243) whose content does not match a registered StartTagType
+2017/10/03 18:29:06 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r443,c38,p26179) whose content does not match a registered StartTagType
+2017/10/03 18:29:06 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r442,c38,p26116) whose content does not match a registered StartTagType
+2017/10/03 18:29:06 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r440,c41,p26010) whose content does not match a registered StartTagType
+2017/10/03 18:29:06 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r551,c53,p30224) whose content does not match a registered StartTagType
+2017/10/03 18:29:06 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r538,c55,p29683) whose content does not match a registered StartTagType
+2017/10/03 18:29:06 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r641,c96,p33664) whose content does not match a registered StartTagType
+2017/10/03 18:29:06 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r665,c53,p34920) whose content does not match a registered StartTagType
+2017/10/03 18:29:06 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r797,c59,p43993) rejected because the name contains an invalid character at position (r797,c69,p44003)
+2017/10/03 18:29:06 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r797,c59,p43993) whose content does not match a registered StartTagType
+2017/10/03 18:29:06 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r772,c62,p42243) whose content does not match a registered StartTagType
+2017/10/03 18:29:06 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r757,c68,p41318) whose content does not match a registered StartTagType
+2017/10/03 18:29:06 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r734,c62,p39469) whose content does not match a registered StartTagType
+2017/10/03 18:29:06 ERROR net.htmlparser.jericho:?  - StartTag li at (r824,c82,p46298) contains attribute name with invalid character at position (r824,c114,p46330)
+2017/10/03 18:29:06 ERROR net.htmlparser.jericho:?  - StartTag li at (r824,c82,p46298) contains attribute name with invalid character at position (r824,c115,p46331)
+2017/10/03 18:29:06 ERROR net.htmlparser.jericho:?  - StartTag li at (r829,c82,p46721) contains attribute name with invalid character at position (r829,c114,p46753)
+2017/10/03 18:29:06 ERROR net.htmlparser.jericho:?  - StartTag li at (r829,c82,p46721) contains attribute name with invalid character at position (r829,c115,p46754)
+2017/10/03 18:29:06 ERROR net.htmlparser.jericho:?  - StartTag div at (r849,c60,p48444) contains attribute name with invalid character at position (r849,c116,p48500)
+2017/10/03 18:29:06 ERROR net.htmlparser.jericho:?  - StartTag div at (r849,c60,p48444) contains attribute name with invalid character at position (r849,c117,p48501)
+2017/10/03 18:29:06 ERROR net.htmlparser.jericho:?  - StartTag ul at (r863,c98,p49951) contains attribute name with invalid character at position (r863,c164,p50017)
+2017/10/03 18:29:06 ERROR net.htmlparser.jericho:?  - StartTag ul at (r863,c98,p49951) contains attribute name with invalid character at position (r863,c165,p50018)
+2017/10/03 18:29:06 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r961,c64,p57243) whose content does not match a registered StartTagType
+2017/10/03 18:29:06 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r961,c27,p57206) whose content does not match a registered StartTagType
+2017/10/03 18:29:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r455,c39,p26085) whose content does not match a registered StartTagType
+2017/10/03 18:29:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r454,c39,p26015) whose content does not match a registered StartTagType
+2017/10/03 18:29:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r453,c38,p25951) whose content does not match a registered StartTagType
+2017/10/03 18:29:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r452,c38,p25888) whose content does not match a registered StartTagType
+2017/10/03 18:29:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r450,c41,p25782) whose content does not match a registered StartTagType
+2017/10/03 18:29:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r561,c53,p29996) whose content does not match a registered StartTagType
+2017/10/03 18:29:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r548,c55,p29455) whose content does not match a registered StartTagType
+2017/10/03 18:29:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r651,c96,p33436) whose content does not match a registered StartTagType
+2017/10/03 18:29:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r675,c53,p34692) whose content does not match a registered StartTagType
+2017/10/03 18:29:28 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r807,c59,p43765) rejected because the name contains an invalid character at position (r807,c69,p43775)
+2017/10/03 18:29:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r807,c59,p43765) whose content does not match a registered StartTagType
+2017/10/03 18:29:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r782,c62,p42015) whose content does not match a registered StartTagType
+2017/10/03 18:29:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r767,c68,p41090) whose content does not match a registered StartTagType
+2017/10/03 18:29:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r744,c62,p39241) whose content does not match a registered StartTagType
+2017/10/03 18:29:28 ERROR net.htmlparser.jericho:?  - StartTag li at (r834,c82,p46070) contains attribute name with invalid character at position (r834,c114,p46102)
+2017/10/03 18:29:28 ERROR net.htmlparser.jericho:?  - StartTag li at (r834,c82,p46070) contains attribute name with invalid character at position (r834,c115,p46103)
+2017/10/03 18:29:28 ERROR net.htmlparser.jericho:?  - StartTag li at (r839,c82,p46493) contains attribute name with invalid character at position (r839,c114,p46525)
+2017/10/03 18:29:28 ERROR net.htmlparser.jericho:?  - StartTag li at (r839,c82,p46493) contains attribute name with invalid character at position (r839,c115,p46526)
+2017/10/03 18:29:28 ERROR net.htmlparser.jericho:?  - StartTag div at (r859,c60,p48216) contains attribute name with invalid character at position (r859,c116,p48272)
+2017/10/03 18:29:28 ERROR net.htmlparser.jericho:?  - StartTag div at (r859,c60,p48216) contains attribute name with invalid character at position (r859,c117,p48273)
+2017/10/03 18:29:28 ERROR net.htmlparser.jericho:?  - StartTag ul at (r873,c98,p49723) contains attribute name with invalid character at position (r873,c164,p49789)
+2017/10/03 18:29:28 ERROR net.htmlparser.jericho:?  - StartTag ul at (r873,c98,p49723) contains attribute name with invalid character at position (r873,c165,p49790)
+2017/10/03 18:29:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r971,c64,p57015) whose content does not match a registered StartTagType
+2017/10/03 18:29:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r971,c27,p56978) whose content does not match a registered StartTagType
+2017/10/03 18:31:11 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r609,c39,p45536) whose content does not match a registered StartTagType
+2017/10/03 18:31:11 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r608,c39,p45466) whose content does not match a registered StartTagType
+2017/10/03 18:31:11 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r607,c38,p45402) whose content does not match a registered StartTagType
+2017/10/03 18:31:11 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r606,c38,p45339) whose content does not match a registered StartTagType
+2017/10/03 18:31:11 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r604,c41,p45233) whose content does not match a registered StartTagType
+2017/10/03 18:31:11 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r715,c53,p49447) whose content does not match a registered StartTagType
+2017/10/03 18:31:11 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r702,c55,p48906) whose content does not match a registered StartTagType
+2017/10/03 18:31:11 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r805,c96,p52887) whose content does not match a registered StartTagType
+2017/10/03 18:31:11 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r829,c53,p54143) whose content does not match a registered StartTagType
+2017/10/03 18:31:11 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r961,c59,p63216) rejected because the name contains an invalid character at position (r961,c69,p63226)
+2017/10/03 18:31:11 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r961,c59,p63216) whose content does not match a registered StartTagType
+2017/10/03 18:31:11 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r936,c62,p61466) whose content does not match a registered StartTagType
+2017/10/03 18:31:11 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r921,c68,p60541) whose content does not match a registered StartTagType
+2017/10/03 18:31:11 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r898,c62,p58692) whose content does not match a registered StartTagType
+2017/10/03 18:31:11 ERROR net.htmlparser.jericho:?  - StartTag li at (r988,c82,p65521) contains attribute name with invalid character at position (r988,c114,p65553)
+2017/10/03 18:31:11 ERROR net.htmlparser.jericho:?  - StartTag li at (r988,c82,p65521) contains attribute name with invalid character at position (r988,c115,p65554)
+2017/10/03 18:31:11 ERROR net.htmlparser.jericho:?  - StartTag li at (r993,c82,p65944) contains attribute name with invalid character at position (r993,c114,p65976)
+2017/10/03 18:31:11 ERROR net.htmlparser.jericho:?  - StartTag li at (r993,c82,p65944) contains attribute name with invalid character at position (r993,c115,p65977)
+2017/10/03 18:31:11 ERROR net.htmlparser.jericho:?  - StartTag div at (r1013,c60,p67667) contains attribute name with invalid character at position (r1013,c116,p67723)
+2017/10/03 18:31:11 ERROR net.htmlparser.jericho:?  - StartTag div at (r1013,c60,p67667) contains attribute name with invalid character at position (r1013,c117,p67724)
+2017/10/03 18:31:11 ERROR net.htmlparser.jericho:?  - StartTag ul at (r1027,c98,p69174) contains attribute name with invalid character at position (r1027,c164,p69240)
+2017/10/03 18:31:11 ERROR net.htmlparser.jericho:?  - StartTag ul at (r1027,c98,p69174) contains attribute name with invalid character at position (r1027,c165,p69241)
+2017/10/03 18:31:11 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r1125,c64,p76466) whose content does not match a registered StartTagType
+2017/10/03 18:31:11 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r1125,c27,p76429) whose content does not match a registered StartTagType
+2017/10/03 18:31:32 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r457,c39,p23603) whose content does not match a registered StartTagType
+2017/10/03 18:31:32 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r456,c39,p23533) whose content does not match a registered StartTagType
+2017/10/03 18:31:32 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r455,c38,p23469) whose content does not match a registered StartTagType
+2017/10/03 18:31:32 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r454,c38,p23406) whose content does not match a registered StartTagType
+2017/10/03 18:31:32 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r452,c41,p23300) whose content does not match a registered StartTagType
+2017/10/03 18:31:32 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r563,c53,p27514) whose content does not match a registered StartTagType
+2017/10/03 18:31:32 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r550,c55,p26973) whose content does not match a registered StartTagType
+2017/10/03 18:31:32 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r653,c96,p30954) whose content does not match a registered StartTagType
+2017/10/03 18:31:32 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r677,c53,p32210) whose content does not match a registered StartTagType
+2017/10/03 18:31:32 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r809,c59,p41283) rejected because the name contains an invalid character at position (r809,c69,p41293)
+2017/10/03 18:31:32 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r809,c59,p41283) whose content does not match a registered StartTagType
+2017/10/03 18:31:32 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r784,c62,p39533) whose content does not match a registered StartTagType
+2017/10/03 18:31:32 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r769,c68,p38608) whose content does not match a registered StartTagType
+2017/10/03 18:31:32 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r746,c62,p36759) whose content does not match a registered StartTagType
+2017/10/03 18:31:32 ERROR net.htmlparser.jericho:?  - StartTag li at (r836,c82,p43588) contains attribute name with invalid character at position (r836,c114,p43620)
+2017/10/03 18:31:32 ERROR net.htmlparser.jericho:?  - StartTag li at (r836,c82,p43588) contains attribute name with invalid character at position (r836,c115,p43621)
+2017/10/03 18:31:32 ERROR net.htmlparser.jericho:?  - StartTag li at (r841,c82,p44011) contains attribute name with invalid character at position (r841,c114,p44043)
+2017/10/03 18:31:32 ERROR net.htmlparser.jericho:?  - StartTag li at (r841,c82,p44011) contains attribute name with invalid character at position (r841,c115,p44044)
+2017/10/03 18:31:32 ERROR net.htmlparser.jericho:?  - StartTag div at (r861,c60,p45734) contains attribute name with invalid character at position (r861,c116,p45790)
+2017/10/03 18:31:32 ERROR net.htmlparser.jericho:?  - StartTag div at (r861,c60,p45734) contains attribute name with invalid character at position (r861,c117,p45791)
+2017/10/03 18:31:32 ERROR net.htmlparser.jericho:?  - StartTag ul at (r875,c98,p47241) contains attribute name with invalid character at position (r875,c164,p47307)
+2017/10/03 18:31:32 ERROR net.htmlparser.jericho:?  - StartTag ul at (r875,c98,p47241) contains attribute name with invalid character at position (r875,c165,p47308)
+2017/10/03 18:31:32 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r973,c64,p54533) whose content does not match a registered StartTagType
+2017/10/03 18:31:32 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r973,c27,p54496) whose content does not match a registered StartTagType
+2017/10/07 07:39:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r499,c39,p31888) whose content does not match a registered StartTagType
+2017/10/07 07:39:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r498,c39,p31818) whose content does not match a registered StartTagType
+2017/10/07 07:39:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r497,c38,p31754) whose content does not match a registered StartTagType
+2017/10/07 07:39:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r496,c38,p31691) whose content does not match a registered StartTagType
+2017/10/07 07:39:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r494,c41,p31585) whose content does not match a registered StartTagType
+2017/10/07 07:39:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r605,c53,p35799) whose content does not match a registered StartTagType
+2017/10/07 07:39:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r592,c55,p35258) whose content does not match a registered StartTagType
+2017/10/07 07:39:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r695,c96,p39239) whose content does not match a registered StartTagType
+2017/10/07 07:39:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r719,c53,p40495) whose content does not match a registered StartTagType
+2017/10/07 07:39:12 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r851,c59,p49568) rejected because the name contains an invalid character at position (r851,c69,p49578)
+2017/10/07 07:39:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r851,c59,p49568) whose content does not match a registered StartTagType
+2017/10/07 07:39:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r826,c62,p47818) whose content does not match a registered StartTagType
+2017/10/07 07:39:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r811,c68,p46893) whose content does not match a registered StartTagType
+2017/10/07 07:39:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r788,c62,p45044) whose content does not match a registered StartTagType
+2017/10/07 07:39:12 ERROR net.htmlparser.jericho:?  - StartTag li at (r878,c82,p51873) contains attribute name with invalid character at position (r878,c114,p51905)
+2017/10/07 07:39:12 ERROR net.htmlparser.jericho:?  - StartTag li at (r878,c82,p51873) contains attribute name with invalid character at position (r878,c115,p51906)
+2017/10/07 07:39:12 ERROR net.htmlparser.jericho:?  - StartTag li at (r883,c82,p52296) contains attribute name with invalid character at position (r883,c114,p52328)
+2017/10/07 07:39:12 ERROR net.htmlparser.jericho:?  - StartTag li at (r883,c82,p52296) contains attribute name with invalid character at position (r883,c115,p52329)
+2017/10/07 07:39:12 ERROR net.htmlparser.jericho:?  - StartTag div at (r903,c60,p54019) contains attribute name with invalid character at position (r903,c116,p54075)
+2017/10/07 07:39:12 ERROR net.htmlparser.jericho:?  - StartTag div at (r903,c60,p54019) contains attribute name with invalid character at position (r903,c117,p54076)
+2017/10/07 07:39:12 ERROR net.htmlparser.jericho:?  - StartTag ul at (r917,c98,p55526) contains attribute name with invalid character at position (r917,c164,p55592)
+2017/10/07 07:39:12 ERROR net.htmlparser.jericho:?  - StartTag ul at (r917,c98,p55526) contains attribute name with invalid character at position (r917,c165,p55593)
+2017/10/07 07:39:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r1015,c64,p62818) whose content does not match a registered StartTagType
+2017/10/07 07:39:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r1015,c27,p62781) whose content does not match a registered StartTagType
+2017/10/07 07:39:32 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r265,c39,p11798) whose content does not match a registered StartTagType
+2017/10/07 07:39:32 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r264,c39,p11728) whose content does not match a registered StartTagType
+2017/10/07 07:39:32 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r263,c38,p11664) whose content does not match a registered StartTagType
+2017/10/07 07:39:32 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r262,c38,p11601) whose content does not match a registered StartTagType
+2017/10/07 07:39:32 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r260,c41,p11495) whose content does not match a registered StartTagType
+2017/10/07 07:39:32 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r371,c53,p15709) whose content does not match a registered StartTagType
+2017/10/07 07:39:32 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r358,c55,p15168) whose content does not match a registered StartTagType
+2017/10/07 07:39:32 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r461,c96,p19149) whose content does not match a registered StartTagType
+2017/10/07 07:39:32 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r485,c53,p20405) whose content does not match a registered StartTagType
+2017/10/07 07:39:32 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r617,c59,p29478) rejected because the name contains an invalid character at position (r617,c69,p29488)
+2017/10/07 07:39:32 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r617,c59,p29478) whose content does not match a registered StartTagType
+2017/10/07 07:39:32 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r592,c62,p27728) whose content does not match a registered StartTagType
+2017/10/07 07:39:32 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r577,c68,p26803) whose content does not match a registered StartTagType
+2017/10/07 07:39:32 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r554,c62,p24954) whose content does not match a registered StartTagType
+2017/10/07 07:39:32 ERROR net.htmlparser.jericho:?  - StartTag li at (r644,c82,p31783) contains attribute name with invalid character at position (r644,c114,p31815)
+2017/10/07 07:39:32 ERROR net.htmlparser.jericho:?  - StartTag li at (r644,c82,p31783) contains attribute name with invalid character at position (r644,c115,p31816)
+2017/10/07 07:39:32 ERROR net.htmlparser.jericho:?  - StartTag li at (r649,c82,p32206) contains attribute name with invalid character at position (r649,c114,p32238)
+2017/10/07 07:39:32 ERROR net.htmlparser.jericho:?  - StartTag li at (r649,c82,p32206) contains attribute name with invalid character at position (r649,c115,p32239)
+2017/10/07 07:39:32 ERROR net.htmlparser.jericho:?  - StartTag div at (r669,c60,p33929) contains attribute name with invalid character at position (r669,c116,p33985)
+2017/10/07 07:39:32 ERROR net.htmlparser.jericho:?  - StartTag div at (r669,c60,p33929) contains attribute name with invalid character at position (r669,c117,p33986)
+2017/10/07 07:39:32 ERROR net.htmlparser.jericho:?  - StartTag ul at (r683,c98,p35436) contains attribute name with invalid character at position (r683,c164,p35502)
+2017/10/07 07:39:32 ERROR net.htmlparser.jericho:?  - StartTag ul at (r683,c98,p35436) contains attribute name with invalid character at position (r683,c165,p35503)
+2017/10/07 07:39:32 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r781,c64,p42728) whose content does not match a registered StartTagType
+2017/10/07 07:39:32 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r781,c27,p42691) whose content does not match a registered StartTagType
+2017/10/07 07:39:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r265,c39,p11805) whose content does not match a registered StartTagType
+2017/10/07 07:39:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r264,c39,p11735) whose content does not match a registered StartTagType
+2017/10/07 07:39:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r263,c38,p11671) whose content does not match a registered StartTagType
+2017/10/07 07:39:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r262,c38,p11608) whose content does not match a registered StartTagType
+2017/10/07 07:39:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r260,c41,p11502) whose content does not match a registered StartTagType
+2017/10/07 07:39:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r371,c53,p15716) whose content does not match a registered StartTagType
+2017/10/07 07:39:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r358,c55,p15175) whose content does not match a registered StartTagType
+2017/10/07 07:39:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r461,c96,p19156) whose content does not match a registered StartTagType
+2017/10/07 07:39:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r485,c53,p20412) whose content does not match a registered StartTagType
+2017/10/07 07:39:43 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r617,c59,p29485) rejected because the name contains an invalid character at position (r617,c69,p29495)
+2017/10/07 07:39:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r617,c59,p29485) whose content does not match a registered StartTagType
+2017/10/07 07:39:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r592,c62,p27735) whose content does not match a registered StartTagType
+2017/10/07 07:39:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r577,c68,p26810) whose content does not match a registered StartTagType
+2017/10/07 07:39:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r554,c62,p24961) whose content does not match a registered StartTagType
+2017/10/07 07:39:43 ERROR net.htmlparser.jericho:?  - StartTag li at (r644,c82,p31790) contains attribute name with invalid character at position (r644,c114,p31822)
+2017/10/07 07:39:43 ERROR net.htmlparser.jericho:?  - StartTag li at (r644,c82,p31790) contains attribute name with invalid character at position (r644,c115,p31823)
+2017/10/07 07:39:43 ERROR net.htmlparser.jericho:?  - StartTag li at (r649,c82,p32213) contains attribute name with invalid character at position (r649,c114,p32245)
+2017/10/07 07:39:43 ERROR net.htmlparser.jericho:?  - StartTag li at (r649,c82,p32213) contains attribute name with invalid character at position (r649,c115,p32246)
+2017/10/07 07:39:43 ERROR net.htmlparser.jericho:?  - StartTag div at (r669,c60,p33936) contains attribute name with invalid character at position (r669,c116,p33992)
+2017/10/07 07:39:43 ERROR net.htmlparser.jericho:?  - StartTag div at (r669,c60,p33936) contains attribute name with invalid character at position (r669,c117,p33993)
+2017/10/07 07:39:43 ERROR net.htmlparser.jericho:?  - StartTag ul at (r683,c98,p35443) contains attribute name with invalid character at position (r683,c164,p35509)
+2017/10/07 07:39:43 ERROR net.htmlparser.jericho:?  - StartTag ul at (r683,c98,p35443) contains attribute name with invalid character at position (r683,c165,p35510)
+2017/10/07 07:39:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r781,c64,p42735) whose content does not match a registered StartTagType
+2017/10/07 07:39:43 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r781,c27,p42698) whose content does not match a registered StartTagType
+2017/10/07 07:40:05 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r265,c39,p11805) whose content does not match a registered StartTagType
+2017/10/07 07:40:05 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r264,c39,p11735) whose content does not match a registered StartTagType
+2017/10/07 07:40:05 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r263,c38,p11671) whose content does not match a registered StartTagType
+2017/10/07 07:40:05 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r262,c38,p11608) whose content does not match a registered StartTagType
+2017/10/07 07:40:05 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r260,c41,p11502) whose content does not match a registered StartTagType
+2017/10/07 07:40:05 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r371,c53,p15716) whose content does not match a registered StartTagType
+2017/10/07 07:40:05 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r358,c55,p15175) whose content does not match a registered StartTagType
+2017/10/07 07:40:05 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r461,c96,p19156) whose content does not match a registered StartTagType
+2017/10/07 07:40:05 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r485,c53,p20412) whose content does not match a registered StartTagType
+2017/10/07 07:40:05 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r617,c59,p29485) rejected because the name contains an invalid character at position (r617,c69,p29495)
+2017/10/07 07:40:05 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r617,c59,p29485) whose content does not match a registered StartTagType
+2017/10/07 07:40:05 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r592,c62,p27735) whose content does not match a registered StartTagType
+2017/10/07 07:40:05 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r577,c68,p26810) whose content does not match a registered StartTagType
+2017/10/07 07:40:05 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r554,c62,p24961) whose content does not match a registered StartTagType
+2017/10/07 07:40:05 ERROR net.htmlparser.jericho:?  - StartTag li at (r644,c82,p31790) contains attribute name with invalid character at position (r644,c114,p31822)
+2017/10/07 07:40:05 ERROR net.htmlparser.jericho:?  - StartTag li at (r644,c82,p31790) contains attribute name with invalid character at position (r644,c115,p31823)
+2017/10/07 07:40:05 ERROR net.htmlparser.jericho:?  - StartTag li at (r649,c82,p32213) contains attribute name with invalid character at position (r649,c114,p32245)
+2017/10/07 07:40:05 ERROR net.htmlparser.jericho:?  - StartTag li at (r649,c82,p32213) contains attribute name with invalid character at position (r649,c115,p32246)
+2017/10/07 07:40:05 ERROR net.htmlparser.jericho:?  - StartTag div at (r669,c60,p33936) contains attribute name with invalid character at position (r669,c116,p33992)
+2017/10/07 07:40:05 ERROR net.htmlparser.jericho:?  - StartTag div at (r669,c60,p33936) contains attribute name with invalid character at position (r669,c117,p33993)
+2017/10/07 07:40:05 ERROR net.htmlparser.jericho:?  - StartTag ul at (r683,c98,p35443) contains attribute name with invalid character at position (r683,c164,p35509)
+2017/10/07 07:40:05 ERROR net.htmlparser.jericho:?  - StartTag ul at (r683,c98,p35443) contains attribute name with invalid character at position (r683,c165,p35510)
+2017/10/07 07:40:05 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r781,c64,p42735) whose content does not match a registered StartTagType
+2017/10/07 07:40:05 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r781,c27,p42698) whose content does not match a registered StartTagType
+2017/10/07 07:40:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r301,c39,p12909) whose content does not match a registered StartTagType
+2017/10/07 07:40:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r300,c39,p12839) whose content does not match a registered StartTagType
+2017/10/07 07:40:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r299,c38,p12775) whose content does not match a registered StartTagType
+2017/10/07 07:40:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r298,c38,p12712) whose content does not match a registered StartTagType
+2017/10/07 07:40:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r296,c41,p12606) whose content does not match a registered StartTagType
+2017/10/07 07:40:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r407,c53,p16820) whose content does not match a registered StartTagType
+2017/10/07 07:40:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r394,c55,p16279) whose content does not match a registered StartTagType
+2017/10/07 07:40:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r497,c96,p20260) whose content does not match a registered StartTagType
+2017/10/07 07:40:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r521,c53,p21516) whose content does not match a registered StartTagType
+2017/10/07 07:40:12 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r653,c59,p30589) rejected because the name contains an invalid character at position (r653,c69,p30599)
+2017/10/07 07:40:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r653,c59,p30589) whose content does not match a registered StartTagType
+2017/10/07 07:40:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r628,c62,p28839) whose content does not match a registered StartTagType
+2017/10/07 07:40:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r613,c68,p27914) whose content does not match a registered StartTagType
+2017/10/07 07:40:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r590,c62,p26065) whose content does not match a registered StartTagType
+2017/10/07 07:40:12 ERROR net.htmlparser.jericho:?  - StartTag li at (r680,c82,p32894) contains attribute name with invalid character at position (r680,c114,p32926)
+2017/10/07 07:40:12 ERROR net.htmlparser.jericho:?  - StartTag li at (r680,c82,p32894) contains attribute name with invalid character at position (r680,c115,p32927)
+2017/10/07 07:40:12 ERROR net.htmlparser.jericho:?  - StartTag li at (r685,c82,p33317) contains attribute name with invalid character at position (r685,c114,p33349)
+2017/10/07 07:40:12 ERROR net.htmlparser.jericho:?  - StartTag li at (r685,c82,p33317) contains attribute name with invalid character at position (r685,c115,p33350)
+2017/10/07 07:40:12 ERROR net.htmlparser.jericho:?  - StartTag div at (r705,c60,p35040) contains attribute name with invalid character at position (r705,c116,p35096)
+2017/10/07 07:40:12 ERROR net.htmlparser.jericho:?  - StartTag div at (r705,c60,p35040) contains attribute name with invalid character at position (r705,c117,p35097)
+2017/10/07 07:40:12 ERROR net.htmlparser.jericho:?  - StartTag ul at (r719,c98,p36547) contains attribute name with invalid character at position (r719,c164,p36613)
+2017/10/07 07:40:12 ERROR net.htmlparser.jericho:?  - StartTag ul at (r719,c98,p36547) contains attribute name with invalid character at position (r719,c165,p36614)
+2017/10/07 07:40:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r817,c64,p43839) whose content does not match a registered StartTagType
+2017/10/07 07:40:12 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r817,c27,p43802) whose content does not match a registered StartTagType
+2017/10/08 21:32:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r565,c39,p40322) whose content does not match a registered StartTagType
+2017/10/08 21:32:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r564,c39,p40252) whose content does not match a registered StartTagType
+2017/10/08 21:32:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r563,c38,p40188) whose content does not match a registered StartTagType
+2017/10/08 21:32:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r562,c38,p40125) whose content does not match a registered StartTagType
+2017/10/08 21:32:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r560,c41,p40019) whose content does not match a registered StartTagType
+2017/10/08 21:32:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r671,c53,p44233) whose content does not match a registered StartTagType
+2017/10/08 21:32:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r658,c55,p43692) whose content does not match a registered StartTagType
+2017/10/08 21:32:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r761,c96,p47673) whose content does not match a registered StartTagType
+2017/10/08 21:32:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r785,c53,p48929) whose content does not match a registered StartTagType
+2017/10/08 21:32:28 ERROR net.htmlparser.jericho:?  - StartTag tablength at (r917,c59,p58002) rejected because the name contains an invalid character at position (r917,c69,p58012)
+2017/10/08 21:32:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r917,c59,p58002) whose content does not match a registered StartTagType
+2017/10/08 21:32:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r892,c62,p56252) whose content does not match a registered StartTagType
+2017/10/08 21:32:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r877,c68,p55327) whose content does not match a registered StartTagType
+2017/10/08 21:32:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r854,c62,p53478) whose content does not match a registered StartTagType
+2017/10/08 21:32:28 ERROR net.htmlparser.jericho:?  - StartTag li at (r944,c82,p60307) contains attribute name with invalid character at position (r944,c114,p60339)
+2017/10/08 21:32:28 ERROR net.htmlparser.jericho:?  - StartTag li at (r944,c82,p60307) contains attribute name with invalid character at position (r944,c115,p60340)
+2017/10/08 21:32:28 ERROR net.htmlparser.jericho:?  - StartTag li at (r949,c82,p60730) contains attribute name with invalid character at position (r949,c114,p60762)
+2017/10/08 21:32:28 ERROR net.htmlparser.jericho:?  - StartTag li at (r949,c82,p60730) contains attribute name with invalid character at position (r949,c115,p60763)
+2017/10/08 21:32:28 ERROR net.htmlparser.jericho:?  - StartTag div at (r969,c60,p62453) contains attribute name with invalid character at position (r969,c116,p62509)
+2017/10/08 21:32:28 ERROR net.htmlparser.jericho:?  - StartTag div at (r969,c60,p62453) contains attribute name with invalid character at position (r969,c117,p62510)
+2017/10/08 21:32:28 ERROR net.htmlparser.jericho:?  - StartTag ul at (r983,c98,p63960) contains attribute name with invalid character at position (r983,c164,p64026)
+2017/10/08 21:32:28 ERROR net.htmlparser.jericho:?  - StartTag ul at (r983,c98,p63960) contains attribute name with invalid character at position (r983,c165,p64027)
+2017/10/08 21:32:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r1081,c64,p71252) whose content does not match a registered StartTagType
+2017/10/08 21:32:28 ERROR net.htmlparser.jericho:?  - Encountered possible StartTag at (r1081,c27,p71215) whose content does not match a registered StartTagType
