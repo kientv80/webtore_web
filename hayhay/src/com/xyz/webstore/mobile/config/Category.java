@@ -34,17 +34,18 @@ public class Category {
 	public void setItems(List<Item> items) {
 		this.items = items;
 	}
-	public Category(String name,String label, String url, String icon) {
+	public Category(String name,String label, String url, String icon, boolean isDefault) {
 		this.name = name;
 		this.label = label;
 		this.url = url;
 		this.setIcon(icon);
+		this.isDefault = isDefault;
 	}
 	String name;
 	String label;
 	String url;
 	String icon;
-	
+	private boolean isDefault;
 	List<Item> items;
 	boolean openLink;
 	public boolean getOpenLink() {
@@ -52,6 +53,12 @@ public class Category {
 	}
 	public void setOpenLink(boolean openLink) {
 		this.openLink = openLink;
+	}
+	public boolean getIsDefault() {
+		return isDefault;
+	}
+	public void setIsDefault(boolean isDefault) {
+		this.isDefault = isDefault;
 	}
 	
 }

@@ -30,7 +30,7 @@ public class WebstoreMobileAppConfig {
 		news.add(new Item("nhadat", "Nhà Đất", "http://360hay.com/news/batdongsan"));
 		news.add(new Item("khoinghiep", "Khởi Nghiệp", "http://360hay.com/news/KHOINGHIEP"));
 		news.add(new Item("ngoisao", "Ngôi Sao", "http://360hay.com/cate/ngoisao"));
-		Category newsCate = new Category("news", "Tin Tức", null,"");
+		Category newsCate = new Category("news", "Tin Tức", null,"",true);
 		newsCate.setItems(news);
 		newsCate.setIcon("http://360hay.com/images/icons/mobile/ic_update.png");
 		
@@ -38,7 +38,7 @@ public class WebstoreMobileAppConfig {
 		entertainment.add(new Item("ngoisao", "Ngôi Sao", "http://360hay.com/cate/ngoisao"));
 		entertainment.add(new Item("tinhyeu", "Tình Yêu", "http://360hay.com/cate/tinhyeu"));
 		entertainment.add(new Item("cuoi", "Chuyện Cười", "http://360hay.com/cate/funystory"));
-		Category entertainmentCate = new Category("entertainment", "Giải Trí", null,"");
+		Category entertainmentCate = new Category("entertainment", "Giải Trí", null,"",true);
 		entertainmentCate.setItems(entertainment);
 		entertainmentCate.setIcon("http://360hay.com/images/icons/mobile/ic_smile.png");
 		
@@ -46,14 +46,14 @@ public class WebstoreMobileAppConfig {
 		music.add(new Item("nhac", "Nghe Nhạc", "http://360hay.com/cate/nhac"));
 		music.add(new Item("film", "Xem Phim", "http://360hay.com/cate/film"));
 		music.add(new Item("galaxy", "Galaxy", "http://360hay.com/cate/movie"));
-		Category musicCate = new Category("music_film", "Giải Trí", null,"");
+		Category musicCate = new Category("music_film", "Giải Trí", null,"",true);
 		musicCate.setItems(music);
 		musicCate.setIcon("http://360hay.com/images/icons/mobile/ic_music.png");
 		
 		List<Item> kienthuc = new ArrayList<>();
 		kienthuc.add(new Item("baithuoc", "Sức Khỏe-Bài Thuốc", "http://360hay.com/cate/suckhoe"));
 		kienthuc.add(new Item("nauan", "Nấu Ăn", "http://360hay.com/cate/nauan"));
-		Category kienthucCate = new Category("knowledge", "Giải Trí", null,"");
+		Category kienthucCate = new Category("knowledge", "Giải Trí", null,"",true);
 		kienthucCate.setItems(kienthuc);
 		kienthucCate.setIcon("http://360hay.com/images/icons/mobile/ic_books.png");
 		
@@ -62,7 +62,7 @@ public class WebstoreMobileAppConfig {
 		tienich.add(new Item("lichtv", "Lịch TV", "http://360hay.com/entertainment/tvprogram"));
 		tienich.add(new Item("tudien", "Từ Điển", "http://m.dict.laban.vn"));
 		tienich.add(new Item("timquanhday", "Tìm Quanh Đây", "http://360hay.com/location/nearby"));
-		Category tienichCate = new Category("util", "Tiện Ích", null,"");
+		Category tienichCate = new Category("util", "Tiện Ích", null,"",true);
 		tienichCate.setItems(tienich);
 		tienichCate.setIcon("http://360hay.com/images/icons/mobile/ic_apps.png");
 		
@@ -71,12 +71,12 @@ public class WebstoreMobileAppConfig {
 		categories.add(entertainmentCate);
 		categories.add(musicCate);
 		categories.add(kienthucCate);
-		Category findAround = new Category("findaround","Tình Quanh Đây","http://360hay.com/location/nearby","");
+		Category findAround = new Category("findaround","Tình Quanh Đây","http://360hay.com/location/nearby","",true);
 		findAround.setIcon("http://360hay.com/images/icons/mobile/ic_location.png");
 		categories.add(findAround);
 		
 		categories.add(tienichCate);
-		Category web = new Category("webstore","WebStore","http://360hay.com/webstore","");
+		Category web = new Category("webstore","WebStore","http://360hay.com/webstore","",true);
 		web.setIcon("http://360hay.com/images/icons/mobile/ic_web.png");
 		categories.add(web);
 		
@@ -89,25 +89,25 @@ public class WebstoreMobileAppConfig {
 	}
 	public static List<Category> getCategories(String version) throws JSONException{
 		List<Category> categories = new ArrayList<>();
-		Category tintuc = new Category(NewsTypes.TINTUC,"Tin Tức","http://360hay.com/mobile/article/"+NewsTypes.TINTUC,"http://360hay.com/images/icons/category/ic_news.png");
-		Category kinhte = new Category(NewsTypes.KINHTE,"Kinh Tế","http://360hay.com/mobile/article/"+NewsTypes.KINHTE,"http://360hay.com/images/icons/category/ic_economy.png");
-		Category kinhdoanh = new Category(NewsTypes.KINH_DOANH,"Kinh Doanh","http://360hay.com/mobile/article/"+NewsTypes.KINH_DOANH,"http://360hay.com/images/icons/category/ic_kinhdoanh.png");
-		Category congnghe = new Category(NewsTypes.CONGNGHE,"Công Nghệ","http://360hay.com/mobile/article/"+NewsTypes.CONGNGHE,"http://360hay.com/images/icons/category/ic_tech.png");
-		Category thethao = new Category(NewsTypes.THETHAO,"Thể Thao","http://360hay.com/mobile/article/"+NewsTypes.THETHAO,"http://360hay.com/images/icons/category/ic_sport.png");
-		Category xe = new Category(NewsTypes.XE,"Ô Tô-Xe Máy","http://360hay.com/mobile/article/"+NewsTypes.XE,"http://360hay.com/images/icons/category/ic_xe.png");
-		Category nhadat = new Category(NewsTypes.BATDONGSAN,"Nhà Đất","http://360hay.com/mobile/article/"+NewsTypes.BATDONGSAN,"http://360hay.com/images/icons/category/ic_building.png");
-		Category khoinghiep = new Category(NewsTypes.KHOINGHIEP,"Khởi Nghiệp","http://360hay.com/mobile/article/" +NewsTypes.KHOINGHIEP,"http://360hay.com/images/icons/category/ic_ngoisao.png");
-		Category ngoisao = new Category(NewsTypes.NGOISAO,"Ngôi Sao","http://360hay.com/mobile/article/"+NewsTypes.NGOISAO,"http://360hay.com/images/icons/category/ngoisao.png");
-		Category suckhoe = new Category(NewsTypes.SUCKHOE,"Sức Khỏe","http://360hay.com/mobile/article/"+NewsTypes.SUCKHOE,"http://360hay.com/images/icons/category/ic_suckhoe.png");
-		Category tinhyeugiadinh = new Category(NewsTypes.TINHYEU,"Tinh Yêu-Gia Đình","http://360hay.com/mobile/article/" + NewsTypes.TINHYEU,"http://360hay.com/images/icons/category/ic_love.png");
-		Category nauan = new Category(NewsTypes.NAUAN,"Nấu Ăn","http://360hay.com/mobile/article/"+NewsTypes.NAUAN,"http://360hay.com/images/icons/category/cooking.png");
-		Category nhac = new Category(NewsTypes.NHAC,"Nghe Nhạc","http://360hay.com/mobile/article/"+NewsTypes.NHAC,"http://360hay.com/images/icons/category/ic_music.png");
-		Category funy = new Category(NewsTypes.FUNYSTORY,"Cười","http://360hay.com/mobile/article/"+NewsTypes.FUNYSTORY,"http://360hay.com/images/icons/category/ic_smile.png");
+		Category tintuc = new Category(NewsTypes.TINTUC,"Tin Tức","http://360hay.com/mobile/article/"+NewsTypes.TINTUC,"http://360hay.com/images/icons/category/ic_news.png", true);
+		Category kinhte = new Category(NewsTypes.KINHTE,"Kinh Tế","http://360hay.com/mobile/article/"+NewsTypes.KINHTE,"http://360hay.com/images/icons/category/ic_economy.png",true);
+		Category kinhdoanh = new Category(NewsTypes.KINH_DOANH,"Kinh Doanh","http://360hay.com/mobile/article/"+NewsTypes.KINH_DOANH,"http://360hay.com/images/icons/category/ic_kinhdoanh.png",true);
+		Category congnghe = new Category(NewsTypes.CONGNGHE,"Công Nghệ","http://360hay.com/mobile/article/"+NewsTypes.CONGNGHE,"http://360hay.com/images/icons/category/ic_tech.png",true);
+		Category thethao = new Category(NewsTypes.THETHAO,"Thể Thao","http://360hay.com/mobile/article/"+NewsTypes.THETHAO,"http://360hay.com/images/icons/category/ic_sport.png",false);
+		Category xe = new Category(NewsTypes.XE,"Ô Tô-Xe Máy","http://360hay.com/mobile/article/"+NewsTypes.XE,"http://360hay.com/images/icons/category/ic_xe.png",false);
+		Category nhadat = new Category(NewsTypes.BATDONGSAN,"Nhà Đất","http://360hay.com/mobile/article/"+NewsTypes.BATDONGSAN,"http://360hay.com/images/icons/category/ic_building.png",false);
+		Category khoinghiep = new Category(NewsTypes.KHOINGHIEP,"Khởi Nghiệp","http://360hay.com/mobile/article/" +NewsTypes.KHOINGHIEP,"http://360hay.com/images/icons/category/ic_ngoisao.png",true);
+		Category ngoisao = new Category(NewsTypes.NGOISAO,"Ngôi Sao","http://360hay.com/mobile/article/"+NewsTypes.NGOISAO,"http://360hay.com/images/icons/category/ngoisao.png", false);
+		Category suckhoe = new Category(NewsTypes.SUCKHOE,"Sức Khỏe","http://360hay.com/mobile/article/"+NewsTypes.SUCKHOE,"http://360hay.com/images/icons/category/ic_suckhoe.png",false);
+		Category tinhyeugiadinh = new Category(NewsTypes.TINHYEU,"Tinh Yêu-Gia Đình","http://360hay.com/mobile/article/" + NewsTypes.TINHYEU,"http://360hay.com/images/icons/category/ic_love.png", false);
+		Category nauan = new Category(NewsTypes.NAUAN,"Nấu Ăn","http://360hay.com/mobile/article/"+NewsTypes.NAUAN,"http://360hay.com/images/icons/category/cooking.png", false);
+		Category nhac = new Category(NewsTypes.NHAC,"Nghe Nhạc","http://360hay.com/mobile/article/"+NewsTypes.NHAC,"http://360hay.com/images/icons/category/ic_music.png", false);
+		Category funy = new Category(NewsTypes.FUNYSTORY,"Cười","http://360hay.com/mobile/article/"+NewsTypes.FUNYSTORY,"http://360hay.com/images/icons/category/ic_smile.png",false);
 		
-		Category soxo = new Category(NewsTypes.NHAC,"Kết Qủa Sổ Xố","http://360hay.com/webstore/lottery","http://360hay.com/images/icons/category/ic_lottery.png");
-		soxo.setOpenLink(true);
-		Category tv = new Category(NewsTypes.NHAC,"Lịch Phát Sóng TV","http://360hay.com/entertainment/tvprogram","http://360hay.com/images/icons/category/ic_tv.png");
-		tv.setOpenLink(true);
+		//Category soxo = new Category(NewsTypes.NHAC,"Kết Qủa Sổ Xố","http://360hay.com/webstore/lottery","http://360hay.com/images/icons/category/ic_lottery.png");
+		//soxo.setOpenLink(true);
+		//Category tv = new Category(NewsTypes.NHAC,"Lịch Phát Sóng TV","http://360hay.com/entertainment/tvprogram","http://360hay.com/images/icons/category/ic_tv.png");
+		//tv.setOpenLink(true);
 		categories.add(tintuc);
 		categories.add(kinhte);
 		categories.add(kinhdoanh);
@@ -122,17 +122,17 @@ public class WebstoreMobileAppConfig {
 		categories.add(nauan);
 		categories.add(nhac);
 		categories.add(funy);
-		categories.add(soxo);
+		//categories.add(soxo);
 		return categories;
 	}
 	public static List<Category> getWorldNewsCategories(String version) throws JSONException{
 		List<Category> categories = new ArrayList<>();
-		Category news = new Category(NewsTypes.WN_HOME,"Hot News","http://360hay.com/mobile/article/"+NewsTypes.WN_HOME,"http://360hay.com/images/icons/category/ic_news.png");
-		Category economy = new Category(NewsTypes.WN_BIZ,"Economic","http://360hay.com/mobile/article/"+NewsTypes.WN_BIZ,"http://360hay.com/images/icons/category/ic_economy.png");
-		Category sience = new Category(NewsTypes.WN_SIENCE,"Sience","http://360hay.com/mobile/article/"+NewsTypes.WN_SIENCE,"http://360hay.com/images/icons/category/ic_kinhdoanh.png");
-		Category tech = new Category(NewsTypes.WN_TECH,"Tech","http://360hay.com/mobile/article/"+NewsTypes.WN_TECH,"http://360hay.com/images/icons/category/ic_tech.png");
-		Category health = new Category(NewsTypes.WN_HEALTH,"Health","http://360hay.com/mobile/article/"+NewsTypes.WN_HEALTH,"http://360hay.com/images/icons/category/ic_suckhoe.png");
-		Category politic = new Category(NewsTypes.WN_POLITICS,"Politics","http://360hay.com/mobile/article/"+NewsTypes.WN_POLITICS,"http://360hay.com/images/icons/category/ic_kinhdoanh.png");
+		Category news = new Category(NewsTypes.WN_HOME,"Hot News","http://360hay.com/mobile/article/"+NewsTypes.WN_HOME,"http://360hay.com/images/icons/category/ic_news.png",true);
+		Category economy = new Category(NewsTypes.WN_BIZ,"Economic","http://360hay.com/mobile/article/"+NewsTypes.WN_BIZ,"http://360hay.com/images/icons/category/ic_economy.png",true);
+		Category sience = new Category(NewsTypes.WN_SIENCE,"Sience","http://360hay.com/mobile/article/"+NewsTypes.WN_SIENCE,"http://360hay.com/images/icons/category/ic_kinhdoanh.png",true);
+		Category tech = new Category(NewsTypes.WN_TECH,"Tech","http://360hay.com/mobile/article/"+NewsTypes.WN_TECH,"http://360hay.com/images/icons/category/ic_tech.png",true);
+		Category health = new Category(NewsTypes.WN_HEALTH,"Health","http://360hay.com/mobile/article/"+NewsTypes.WN_HEALTH,"http://360hay.com/images/icons/category/ic_suckhoe.png",true);
+		Category politic = new Category(NewsTypes.WN_POLITICS,"Politics","http://360hay.com/mobile/article/"+NewsTypes.WN_POLITICS,"http://360hay.com/images/icons/category/ic_kinhdoanh.png",true);
 		
 		categories.add(news);
 		categories.add(politic);

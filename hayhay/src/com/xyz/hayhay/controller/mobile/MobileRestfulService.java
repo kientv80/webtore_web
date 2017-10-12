@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONException;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,7 @@ import com.xyz.hayhay.entirty.WebsiteInfo;
 import com.xyz.hayhay.util.JSONHelper;
 import com.xyz.hayhay.website.collector.TranslateService;
 import com.xyz.webstore.mobile.config.Category;
+import com.xyz.webstore.mobile.config.UserSettings;
 import com.xyz.webstore.mobile.config.WebstoreMobileAppConfig;
 
 @Controller
@@ -99,7 +101,7 @@ public class MobileRestfulService extends BaseController {
 	}
 	@ResponseBody
 	@RequestMapping(value = "/mobile/article/{category}", method = RequestMethod.GET)
-	public void getArticles(@PathVariable String category, String userid, String from, HttpServletResponse resp) {
+	public void getArticles(@PathVariable String category, String uid, String from, HttpServletResponse resp) {
 		try {
 			if (category == null || category.isEmpty())
 				category = NewsTypes.TINTUC;
@@ -134,7 +136,7 @@ public class MobileRestfulService extends BaseController {
 
 	@ResponseBody
 	@RequestMapping(value = "/mobile/article/update", method = RequestMethod.GET)
-	public void getArticles(String userid, String time, HttpServletResponse resp) {
+	public void getArticles(String uid, String time, HttpServletResponse resp) {
 		try {
 			long filterTime = System.currentTimeMillis() - 5 * 60 * 1000;
 			if (time != null && !time.isEmpty()) {
@@ -151,6 +153,30 @@ public class MobileRestfulService extends BaseController {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	@ResponseBody
+	@RequestMapping(value = "/mobile/settings/get", method = RequestMethod.GET)
+	public void getSettings(String uid, String option, HttpServletResponse resp) {
+		try {
+			JSONObject settings = UserSettings.getSettings(uid, "favorite_cates");
+			System.out.println(settings.toJSONString());
+			writeSimpleJSONObjectResponse(resp, settings);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	@ResponseBody
+	@RequestMapping(value = "/mobile/settings/update", method = RequestMethod.POST)
+	public void updateSettings(String uid, String settings, HttpServletResponse resp) {
+		try {
+			System.out.println(settings);
+			
+			JSONObject st = (JSONObject)new JSONParser().parse(settings);
+			UserSettings.saveUserSettings(st.get("title").toString(), st.get("serviceUrl").toString(), uid, "favorite_cates", st.get("settings").toString());
+			writeSuccessResponse(resp, "Saved");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
