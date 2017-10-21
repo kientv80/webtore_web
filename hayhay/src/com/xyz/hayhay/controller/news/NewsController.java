@@ -2,6 +2,7 @@ package com.xyz.hayhay.controller.news;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -60,35 +61,6 @@ public class NewsController extends BaseController {
 		}
 	}
 
-	@RequestMapping(value = "/latestnews", method = RequestMethod.GET)
-	public String getUpdate(HttpServletResponse resp, ModelMap model) {
-		try {
-			Map<String, Category> categoryList = new LinkedHashMap<>();
-			List<News> news = NewsService.getInstance().getLatestNews(50, -1);
-			for (News n : news) {
-				Category c = categoryList.get(n.getType());
-				if (c == null) {
-					if (MappingHelper.categoryTypeLabelMapping.get(n.getType()) != null) {
-						c = new Category(new ArrayList<News>(), MappingHelper.categoryTypeLabelMapping.get(n.getType()),
-								n.getType());
-					} else {
-						c = new Category(new ArrayList<News>(), "", n.getParentCateName());
-					}
-					categoryList.put(c.getCateId(), c);
-				}
-				c.addNews(n);
-			}
-			org.json.simple.JSONArray list = (org.json.simple.JSONArray) new JSONParser()
-					.parse(JSONHelper.toJSONArray(categoryList.values()).toString());
-			model.put("from", "dashboard");
-			model.put("fromIndex", 10);
-			model.put("categories", list);
-			model.put("giavang", GoldCollector.giaVang);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return "dashboard_news";
-	}
 
 	@RequestMapping(value = "/news/opennews.html", method = RequestMethod.GET)
 	public String openNews(String articleId, String targetUrl, String ref, HttpServletRequest req,
@@ -132,20 +104,37 @@ public class NewsController extends BaseController {
 			model.put("target", target);
 			return "category_news";
 		} else {
-			return homeOfNews(cate, target, model);
+			return getNewsByCate(NewsTypes.CATEGORY.HotNews.name(), target, model);
 		}
 	}
 
 	@RequestMapping(value = "/news/{cate}", method = RequestMethod.GET)
 	public String newsCategory(@PathVariable String cate, String target, HttpServletRequest req,
 			HttpServletResponse resp, ModelMap model) {
-		return homeOfNews(cate, target, model);
+		return getNewsByCate(cate, target, model);
 	}
+	private String getNewsByCate(String cate, String target, ModelMap model) {
+		try {
+			if (target != null && !target.isEmpty()) {
+				model.put("target", target);
+				return "category_news";
+			} else {
+				JSONObject result = new JSONObject();
+				model.put("fromIndex", 10);
+				if (cate == null || cate.isEmpty()) {
+					cate = NewsTypes.CATEGORY.HotNews.name();
+				}
+				model.put("from", "dashboard");
+				model.put("cate", cate);
+				result = newsService.getHighlightNews(cate, Arrays.asList(new String[]{cate}), 10, 0);
+				model.put("categories", result.get("categories"));
+				model.put("giavang", GoldCollector.giaVang);
+			}
 
-	@RequestMapping(value = "/cate/{cate}", method = RequestMethod.GET)
-	public String category(@PathVariable String cate, String target, HttpServletRequest req, HttpServletResponse resp,
-			ModelMap model) {
-		return homeOfNews(cate, target, model);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "dashboard_news";
 	}
 
 	@RequestMapping(value = "/news/type/{cate}", method = RequestMethod.GET)
@@ -161,43 +150,7 @@ public class NewsController extends BaseController {
 		return "news_in_one_cate";
 	}
 
-	private String homeOfNews(String cate, String target, ModelMap model) {
-		try {
-			if (target != null && !target.isEmpty()) {
-				model.put("target", target);
-				return "category_news";
-			} else {
-				JSONObject result = new JSONObject();
-				model.put("fromIndex", 10);
-				if (cate == null || cate.isEmpty()) {
-					cate = NewsTypes.TINTUC;
-				}
-				if (NewsTypes.TINTUC.equals(cate) || NewsTypes.ENTERTAINMENT.equals(cate)
-						|| NewsTypes.NHAC_FILMS.equals(cate)) {
-					model.put("from", "dashboard");
-				}
-				model.put("cate", cate);
-				List<String> categories = MappingHelper.cateGroup.get(cate);
-
-				if (categories != null && categories.size() > 0) {
-					List<String> queryCate = categories.subList(0, 1);
-					if (NewsTypes.TINTUC.equals(cate) || NewsTypes.ENTERTAINMENT.equals(cate)
-							|| NewsTypes.NHAC_FILMS.equals(cate)) {
-						result = newsService.getHighlightNews(cate, queryCate, 10, 0);
-					} else {
-						result = newsService.getNews(cate, queryCate, 10, 0);
-					}
-
-					model.put("categories", result.get("categories"));
-					model.put("giavang", GoldCollector.giaVang);
-				}
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return "dashboard_news";
-	}
+	
 
 	@ResponseBody
 	@RequestMapping(value = "/news/json/{cate}", method = RequestMethod.GET)
@@ -205,20 +158,29 @@ public class NewsController extends BaseController {
 			ModelMap model) {
 		try {
 			if (cate == null || cate.isEmpty()) {
-				cate = NewsTypes.TINTUC;
+				cate = NewsTypes.CATEGORY.HotNews.name();
+			}
+			JSONObject result = null;
+			result = newsService.getHighlightNews(cate + "_more2", Arrays.asList(new String[]{cate}), 10, 0);
+			if (result != null)
+				writeSimpleJSONObjectResponse(resp, result);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	@ResponseBody
+	@RequestMapping(value = "/news/type/json/{cate}", method = RequestMethod.GET)
+	public void newsByType(@PathVariable String cate, String target, HttpServletRequest req, HttpServletResponse resp,
+			ModelMap model) {
+		try {
+			if (cate == null || cate.isEmpty()) {
+				cate = NewsTypes.TYPE.HotNews.name();
 			}
 			List<String> categories = MappingHelper.cateGroup.get(cate);
 			JSONObject result = null;
 
-			if (categories != null && categories.size() >= 2) {
-				List<String> queryCate = categories.subList(1, categories.size());
-				if (NewsTypes.TINTUC.equals(cate) || NewsTypes.ENTERTAINMENT.equals(cate)
-						|| NewsTypes.NHAC_FILMS.equals(cate))
-					result = newsService.getHighlightNews(cate + "_more2", queryCate, 10, 0);
-				else {
-					result = newsService.getNews(cate + "_more2", queryCate, 10, 0);
-				}
-			}
+			result = newsService.getNews(cate + "_more2", Arrays.asList(new String[]{cate}), 10, 0);
 
 			if (result != null)
 				writeSimpleJSONObjectResponse(resp, result);
@@ -226,7 +188,6 @@ public class NewsController extends BaseController {
 			e.printStackTrace();
 		}
 	}
-
 	@RequestMapping(value = "/publish_article.html", method = RequestMethod.GET)
 	public String getPuslishFeed(String feedid, ModelMap model, HttpServletRequest request) {
 		List<Category> categories = SocialPostFeedNews.getFeedNews(feedid);

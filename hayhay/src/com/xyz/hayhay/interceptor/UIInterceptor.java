@@ -11,6 +11,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import com.xyz.hayhay.controller.BaseController;
 import com.xyz.hayhay.db.dummydata.MappingHelper;
 import com.xyz.hayhay.entirty.ColorPicker;
+import com.xyz.hayhay.entirty.NewsTypes;
 import com.xyz.hayhay.util.MyUtil;
 import com.xyz.hayhay.util.TargetingUtil;
 
@@ -34,7 +35,7 @@ public class UIInterceptor extends HandlerInterceptorAdapter {
 				if(fromAndroidApp == null || !"true".equals(fromAndroidApp.getValue())){
 					Cookie c = MyUtil.getCookie("newstype", request);
 					if (c != null && c.getValue().endsWith("worldnews")) {
-						modelAndView.getModelMap().put("menuitems", BaseController.worldnews);
+						modelAndView.getModelMap().put("menuitems", new BaseController().getListMenuItems(null));
 					} else {
 						String uri = request.getRequestURI();
 						String category = "";
@@ -50,7 +51,6 @@ public class UIInterceptor extends HandlerInterceptorAdapter {
 						if (category == null || category.isEmpty() || category.indexOf("home") >= 0)
 							category = "news";
 						modelAndView.getModelMap().put("menuitems", MappingHelper.mainMenuitems);
-						modelAndView.getModelMap().put("othermenuitems", MappingHelper.otherMenuitems);
 					}
 				}
 				
@@ -60,9 +60,9 @@ public class UIInterceptor extends HandlerInterceptorAdapter {
 				modelAndView.getModelMap().put("colorpicker", ColorPicker.getInstance());
 				if (modelAndView.getModelMap().get("cate") != null) {
 					String cate = modelAndView.getModelMap().get("cate").toString();
-					modelAndView.getModelMap().put("cateInfo", MappingHelper.getCateInfo(cate));
+					modelAndView.getModelMap().put("cateInfo", MappingHelper.cateInfo.get(cate));
 				} else {
-					modelAndView.getModelMap().put("cateInfo", MappingHelper.getCateInfo("default"));// default
+					modelAndView.getModelMap().put("cateInfo", MappingHelper.cateInfo.get(NewsTypes.CATEGORY.HotNews.name()));// default
 				}
 			}
 		} catch (Exception e) {

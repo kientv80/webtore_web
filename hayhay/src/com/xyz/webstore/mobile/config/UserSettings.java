@@ -10,33 +10,60 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import com.xyz.hayhay.db.JDBCConnection;
+import com.xyz.hayhay.localization.LocalizedResource;
 
 public class UserSettings {
-	public static JSONObject getSettings(String userId, String type) throws Exception {
-		JSONObject result = getUserSettings(userId, type);
+	public static String TYPE_FAVORITE_CATE = "favorite_cates";
+	public static String TYPE_FAVORITE_COUNTRIES = "favorite_countries";
+	public static String TYPE_SETTING = "settings";
+
+	public static JSONObject getSettings(String userId, String type, String locale) throws Exception {
+		JSONObject result = getUserSettings(userId, type,locale);
 		if (result == null) {
-			result = getDefaultFavoriteCatesSettings();
+			if (TYPE_FAVORITE_CATE.equals(type))
+				result = getDefaultFavoriteCatesSettings(locale);
+			else
+				result = getDefaultFavoriteCountriesSettings(locale);
 		}
 		return result;
 	}
 
-	private static JSONObject getDefaultFavoriteCatesSettings() throws JSONException {
+	public static JSONObject getDefaultFavoriteCatesSettings(String locale) throws JSONException {
 		JSONObject result = new JSONObject();
 		JSONArray settings = new JSONArray();
 		int count = 0;
-		for (Category cate : WebstoreMobileAppConfig.getCategories("")) {
-			settings.add(createSetting(count, cate.getName(), cate.getLabel(), "checkbox",cate.getIsDefault()));
+		for (Category cate : WebstoreMobileAppConfig.getCategories("",locale)) {
+			settings.add(createSetting(count, cate.getName(), cate.getLabel(), "checkbox", cate.getIsDefault()));
 			count++;
 		}
 		result.put("settings", settings);
-		result.put("title", "Danh Mục Yêu Thích");
+		result.put("title", LocalizedResource.getInstance().getValue("favorite_cate", locale));
 		result.put("serviceUrl", "http://360hay.com/mobile/settings/update");
+		result.put("type", TYPE_FAVORITE_CATE);
+		return result;
+	}
+	
+	public static JSONObject getDefaultFavoriteCountriesSettings(String locale) throws JSONException {
+		JSONObject result = new JSONObject();
+		JSONArray settings = new JSONArray();
+		settings.add(createSetting(0, "vn", LocalizedResource.getInstance().getValue("country.vn", locale), "checkbox", false));
+		settings.add(createSetting(0, "us", LocalizedResource.getInstance().getValue("country.us", locale), "checkbox", false));
+		
+		result.put("settings", settings);
+		result.put("title", LocalizedResource.getInstance().getValue("settings", locale));
+		result.put("serviceUrl", "http://360hay.com/mobile/settings/update");
+		result.put("type", TYPE_FAVORITE_COUNTRIES);
 		return result;
 	}
 
-	private static JSONObject getUserSettings(String userId, String type) throws Exception {
+	private static JSONObject getUserSettings(String userId, String type, String locale) throws Exception {
 		JSONObject result = null;
-		JSONObject defaultSetting = getDefaultFavoriteCatesSettings();
+		JSONObject defaultSetting = getDefaultFavoriteCatesSettings(locale);
+		if(TYPE_SETTING.equals(type)){
+			defaultSetting = getDefaultFavoriteCountriesSettings(locale);
+		}else{
+			defaultSetting = getDefaultFavoriteCatesSettings(locale);
+		}
 		String sql = "select * from settings where userid=? and type=?";
 		try (Connection conn = JDBCConnection.getInstance().getConnection()) {
 			try (PreparedStatement stm = conn.prepareStatement(sql)) {
@@ -46,25 +73,28 @@ public class UserSettings {
 					while (rs.next()) {
 						result = new JSONObject();
 						result.put("title", rs.getString("title"));
+						result.put("type", rs.getString("type"));
 						result.put("serviceUlr", rs.getString("service_url"));
 						result.put("settings", rs.getString("settings"));
 					}
 				}
-				
+
 			}
 		}
-		if(result != null){
-			JSONArray settings =(JSONArray) new JSONParser().parse(result.get("settings").toString());
-			JSONArray dsettings = (JSONArray)defaultSetting.get("settings");
-			for(int i=0;i<settings.size();i++){
-				JSONObject st = (JSONObject)settings.get(i);
-				((JSONObject)dsettings.get(((Long)st.get("id")).intValue())).put("value", st.get("value"));
+		if (result != null) {
+			JSONArray settings = (JSONArray) new JSONParser().parse(result.get("settings").toString());
+			JSONArray dsettings = (JSONArray) defaultSetting.get("settings");
+			for (int i = 0; i < settings.size(); i++) {
+				JSONObject st = (JSONObject) settings.get(i);
+				((JSONObject) dsettings.get(((Long) st.get("id")).intValue())).put("value", st.get("value"));
 			}
 			result = defaultSetting;
 		}
 		return result;
 	}
-	public static JSONObject saveUserSettings(String title, String serviceUrl,String userId, String type, String settings) throws Exception {
+
+	public static JSONObject saveUserSettings(String title, String serviceUrl, String userId, String type,
+			String settings) throws Exception {
 		JSONObject result = null;
 		String sql = "insert into settings(title,service_url,type,userid,settings)values(?,?,?,?,?)";
 		try (Connection conn = JDBCConnection.getInstance().getConnection()) {
@@ -84,6 +114,7 @@ public class UserSettings {
 		}
 		return result;
 	}
+
 	private static JSONObject createSetting(int id, String name, String label, String type, Object value) {
 		JSONObject st = new JSONObject();
 		st.put("id", id);

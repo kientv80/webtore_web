@@ -64,7 +64,7 @@ public class NewsService {
 
 	private void loadLatestArticles() throws SQLException {
 		StringBuilder filterTypes = new StringBuilder();
-		for (String type : MappingHelper.cateGroup.get(NewsTypes.TINTUC)) {
+		for (String type : MappingHelper.cateGroup.get(NewsTypes.CATEGORY.HotNews.name())) {
 			filterTypes.append("'").append(type).append("'").append(",");
 		}
 		String sql = "SELECT distinct url,id,title, shotdesc,fromwebsite,imageurl,type,collectedtime,title_id,parent_catename FROM news WHERE parent_catename in ("
@@ -507,7 +507,7 @@ public class NewsService {
 
 	private List<String> getUserInterestedCategories(String userId) {
 		// not yet know user interested so return default
-		return MappingHelper.cateGroup.get(NewsTypes.TINTUC);
+		return MappingHelper.cateGroup.get(NewsTypes.CATEGORY.HotNews.name());
 	}
 
 }

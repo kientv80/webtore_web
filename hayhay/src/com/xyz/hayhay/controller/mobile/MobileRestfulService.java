@@ -1,10 +1,12 @@
 package com.xyz.hayhay.controller.mobile;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-
 import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONException;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.springframework.stereotype.Controller;
@@ -22,6 +24,8 @@ import com.xyz.hayhay.website.collector.TranslateService;
 import com.xyz.webstore.mobile.config.Category;
 import com.xyz.webstore.mobile.config.UserSettings;
 import com.xyz.webstore.mobile.config.WebstoreMobileAppConfig;
+
+import akka.util.Collections;
 
 @Controller
 public class MobileRestfulService extends BaseController {
@@ -44,12 +48,10 @@ public class MobileRestfulService extends BaseController {
 
 	@ResponseBody
 	@RequestMapping(value = "/mobile/category", method = RequestMethod.GET)
-	public void getMobileConfig(String version, String type, HttpServletResponse resp) {
+	public void getMobileConfig(String version, String type, String locale, HttpServletResponse resp) {
 		try {
-			List<Category> categories = WebstoreMobileAppConfig.getCategories(version);
-			if (type != null && "worldnews".equals(type)) {
-				categories = WebstoreMobileAppConfig.getWorldNewsCategories(version);
-			}
+			List<Category> categories = null;
+			categories = WebstoreMobileAppConfig.getCategories(version, locale);
 			JSONObject conf = new JSONObject();
 			// if (version != null && !version.isEmpty() &&
 			// WebstoreMobileAppConfig.CURRENT_VERSION.equals(version)) {
@@ -99,31 +101,60 @@ public class MobileRestfulService extends BaseController {
 		appversion.put("forceUpdate", "false");
 		writeJSONResponsed(resp, appversion);
 	}
+
+	
 	@ResponseBody
 	@RequestMapping(value = "/mobile/article/{category}", method = RequestMethod.GET)
-	public void getArticles(@PathVariable String category, String uid, String from, HttpServletResponse resp) {
+	public void getArticlesV2(@PathVariable String category, String uid, String from, String locale,
+			HttpServletResponse resp) {
 		try {
-			if (category == null || category.isEmpty())
-				category = NewsTypes.TINTUC;
+			System.out.println("Locale = " + locale);
+			JSONObject result = null;
+			List<String> cates = new ArrayList<>();
+			StringBuilder cachedKey = new StringBuilder();
+			if (category == null || category.isEmpty()) {
+				category = NewsTypes.CATEGORY.HotNews.name();
+			}
 			int fromIndex;
 			if (from == null || from.isEmpty())
 				fromIndex = 0;
 			else
 				fromIndex = Integer.parseInt(from);
-
-			try {
-
-				List<String> categories = MappingHelper.cateGroup.get(category);
-				JSONObject result = null;
-				if (categories != null && categories.size() > 0) {
-					if (NewsTypes.TINTUC.equals(category)) {
-						System.out.println("==============getHighlightNews=" + category);
-						result = newsService.getHighlightNews(category + "article" + fromIndex, categories, 10, fromIndex);
-					}else{
-						System.out.println("==============getNews=" + category);
-						result = newsService.getNews(category + "article" + fromIndex, categories, 10, fromIndex);
+			
+			if (NewsTypes.CATEGORY.HotNews.name().equals(category)) {
+				JSONObject favoriteCates = UserSettings.getSettings(uid, UserSettings.TYPE_FAVORITE_CATE, locale);
+				JSONObject dfFavoriteCates = UserSettings.getDefaultFavoriteCatesSettings(locale);
+				JSONArray settings = (JSONArray) new JSONParser().parse(favoriteCates.get("settings").toString());
+				JSONArray dfSettings = (JSONArray) new JSONParser().parse(dfFavoriteCates.get("settings").toString());
+				for (int i = 0; i < settings.size(); i++) {
+					JSONObject st = (JSONObject) settings.get(i);
+					if (st.get("value").equals(true)) {
+						JSONObject dfst = (JSONObject) dfSettings.get(((Long) st.get("id")).intValue());
+						cates.add(dfst.get("name").toString());
 					}
 				}
+				JSONObject st = UserSettings.getSettings(uid, UserSettings.TYPE_FAVORITE_COUNTRIES, locale);
+				JSONObject dfFavoriteCountries = UserSettings.getDefaultFavoriteCountriesSettings(locale);
+				JSONArray countries = (JSONArray) new JSONParser().parse(st.get("settings").toString());
+				List<String> favoriteCountries  = new ArrayList<>();
+				for(int i=0;i< countries.size();i++){
+					JSONObject ct = (JSONObject) countries.get(i);
+					if (st.get("value").equals(true)) {
+						JSONObject dfst = (JSONObject) dfFavoriteCountries.get(((Long) st.get("id")).intValue());
+						favoriteCountries.add(dfst.get("name").toString());
+					}
+				}
+
+				java.util.Collections.sort(cates);
+				for (String c : cates) {
+					cachedKey.append(c);
+				}
+				result = newsService.getHighlightNews(cachedKey.toString() + fromIndex, cates, 10,fromIndex);
+			}else{
+				result = newsService.getNews(category + "article" + fromIndex, Arrays.asList(new String[]{category}), 10, fromIndex);
+				
+			}
+			try {
 				if (result != null)
 					writeSimpleJSONObjectResponse(resp, result);
 			} catch (Exception e) {
@@ -143,7 +174,7 @@ public class MobileRestfulService extends BaseController {
 				filterTime = Long.parseLong(time);
 			}
 			try {
-				List<String> categories = MappingHelper.cateGroup.get(NewsTypes.TINTUC);
+				List<String> categories = Arrays.asList(new String[]{NewsTypes.CATEGORY.HotNews.name()});
 				JSONObject result = null;
 				if (categories != null && categories.size() > 0) {
 					result = newsService.getLatestNews(categories, 10, filterTime);
@@ -157,25 +188,27 @@ public class MobileRestfulService extends BaseController {
 			e.printStackTrace();
 		}
 	}
+
 	@ResponseBody
 	@RequestMapping(value = "/mobile/settings/get", method = RequestMethod.GET)
-	public void getSettings(String uid, String option, HttpServletResponse resp) {
+	public void getSettings(String uid, String option, String locale, HttpServletResponse resp) {
 		try {
-			JSONObject settings = UserSettings.getSettings(uid, "favorite_cates");
+			JSONObject settings = UserSettings.getSettings(uid, option, locale);
 			System.out.println(settings.toJSONString());
 			writeSimpleJSONObjectResponse(resp, settings);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+
 	@ResponseBody
 	@RequestMapping(value = "/mobile/settings/update", method = RequestMethod.POST)
 	public void updateSettings(String uid, String settings, HttpServletResponse resp) {
 		try {
 			System.out.println(settings);
-			
-			JSONObject st = (JSONObject)new JSONParser().parse(settings);
-			UserSettings.saveUserSettings(st.get("title").toString(), st.get("serviceUrl").toString(), uid, "favorite_cates", st.get("settings").toString());
+			JSONObject st = (JSONObject) new JSONParser().parse(settings);
+			UserSettings.saveUserSettings(st.get("title").toString(), st.get("serviceUrl").toString(), uid,
+					st.get("type").toString(), st.get("settings").toString());
 			writeSuccessResponse(resp, "Saved");
 		} catch (Exception e) {
 			e.printStackTrace();
