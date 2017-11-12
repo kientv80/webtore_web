@@ -9,6 +9,7 @@ import org.json.JSONException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -121,6 +122,8 @@ public class MobileRestfulService extends BaseController {
 			else
 				fromIndex = Integer.parseInt(from);
 			
+			List<String> favoriteCountries = getFavoriteCountry(uid, locale);
+			
 			if (NewsTypes.CATEGORY.HotNews.name().equals(category)) {
 				JSONObject favoriteCates = UserSettings.getSettings(uid, UserSettings.TYPE_FAVORITE_CATE, locale);
 				JSONObject dfFavoriteCates = UserSettings.getDefaultFavoriteCatesSettings(locale);
@@ -133,25 +136,15 @@ public class MobileRestfulService extends BaseController {
 						cates.add(dfst.get("name").toString());
 					}
 				}
-				JSONObject st = UserSettings.getSettings(uid, UserSettings.TYPE_FAVORITE_COUNTRIES, locale);
-				JSONObject dfFavoriteCountries = UserSettings.getDefaultFavoriteCountriesSettings(locale);
-				JSONArray countries = (JSONArray) new JSONParser().parse(st.get("settings").toString());
-				List<String> favoriteCountries  = new ArrayList<>();
-				for(int i=0;i< countries.size();i++){
-					JSONObject ct = (JSONObject) countries.get(i);
-					if (st.get("value").equals(true)) {
-						JSONObject dfst = (JSONObject) dfFavoriteCountries.get(((Long) st.get("id")).intValue());
-						favoriteCountries.add(dfst.get("name").toString());
-					}
-				}
 
 				java.util.Collections.sort(cates);
 				for (String c : cates) {
 					cachedKey.append(c);
 				}
-				result = newsService.getHighlightNews(cachedKey.toString() + fromIndex, cates, 10,fromIndex);
+				result = newsService.getHighlightNews(cachedKey.toString() + fromIndex, cates,favoriteCountries, 10,fromIndex);
 			}else{
-				result = newsService.getNews(category + "article" + fromIndex, Arrays.asList(new String[]{category}), 10, fromIndex);
+				
+				result = newsService.getNews(category + "article" + fromIndex, MappingHelper.cateGroup.get(category), favoriteCountries,10, fromIndex);
 				
 			}
 			try {
@@ -165,19 +158,52 @@ public class MobileRestfulService extends BaseController {
 		}
 	}
 
+	private List<String> getFavoriteCountry(String uid, String locale) throws Exception, JSONException, ParseException {
+		JSONObject countrySt = UserSettings.getSettings(uid, UserSettings.TYPE_FAVORITE_COUNTRIES, locale);
+		JSONObject dfFavoriteCountries = UserSettings.getDefaultFavoriteCountriesSettings(locale);
+		JSONArray dfCountrySettings = (JSONArray) new JSONParser().parse(dfFavoriteCountries.get("settings").toString());
+		JSONArray countries = (JSONArray) new JSONParser().parse(countrySt.get("settings").toString());
+		List<String> favoriteCountries  = new ArrayList<>();
+		for(int i=0;i< countries.size();i++){
+			JSONObject ct = (JSONObject) countries.get(i);
+			if (ct.get("value").equals(true)) {
+				System.out.println(ct.toJSONString());
+				System.out.println(((Long) ct.get("id")).intValue());
+				JSONObject dfst = (JSONObject) dfCountrySettings.get(((Long) ct.get("id")).intValue());
+				favoriteCountries.add(dfst.get("name").toString());
+			}
+		}
+		return favoriteCountries;
+	}
+
 	@ResponseBody
 	@RequestMapping(value = "/mobile/article/update", method = RequestMethod.GET)
-	public void getArticles(String uid, String time, HttpServletResponse resp) {
+	public void getArticles(String uid, String time,String locale, HttpServletResponse resp) {
 		try {
 			long filterTime = System.currentTimeMillis() - 5 * 60 * 1000;
 			if (time != null && !time.isEmpty()) {
 				filterTime = Long.parseLong(time);
 			}
 			try {
-				List<String> categories = Arrays.asList(new String[]{NewsTypes.CATEGORY.HotNews.name()});
+				List<String> cates = new ArrayList<>();
+				List<String> favoriteCountries = getFavoriteCountry(uid, locale);
+				JSONObject favoriteCates = UserSettings.getSettings(uid, UserSettings.TYPE_FAVORITE_CATE, locale);
+				JSONObject dfFavoriteCates = UserSettings.getDefaultFavoriteCatesSettings(locale);
+				JSONArray settings = (JSONArray) new JSONParser().parse(favoriteCates.get("settings").toString());
+				JSONArray dfSettings = (JSONArray) new JSONParser().parse(dfFavoriteCates.get("settings").toString());
+				for (int i = 0; i < settings.size(); i++) {
+					JSONObject st = (JSONObject) settings.get(i);
+					if (st.get("value").equals(true)) {
+						JSONObject dfst = (JSONObject) dfSettings.get(((Long) st.get("id")).intValue());
+						cates.add(dfst.get("name").toString());
+					}
+				}
+
+				java.util.Collections.sort(cates);
+				
 				JSONObject result = null;
-				if (categories != null && categories.size() > 0) {
-					result = newsService.getLatestNews(categories, 10, filterTime);
+				if (cates != null && cates.size() > 0) {
+					result = newsService.getLatestNews(cates,favoriteCountries, 10, filterTime);
 				}
 				if (result != null)
 					writeSimpleJSONObjectResponse(resp, result);

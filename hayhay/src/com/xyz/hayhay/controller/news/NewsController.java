@@ -10,6 +10,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.simple.JSONArray;
 //import org.json.JSONObject;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -34,6 +35,7 @@ import com.xyz.hayhay.util.MyUtil;
 import com.xyz.hayhay.util.ValidationHelper;
 import com.xyz.hayhay.website.collector.GoldCollector;
 import com.xyz.hayhay.worker.SocialPostFeedNews;
+import com.xyz.webstore.mobile.config.UserSettings;
 
 @Controller
 public class NewsController extends BaseController {
@@ -49,7 +51,7 @@ public class NewsController extends BaseController {
 		int index = Integer.valueOf(fromIndex);
 		try {
 			if (!"dashboard".equals(from)) {
-				List<News> news = newsService.getMoreNews(cate, index, 12);
+				List<News> news = newsService.getMoreNews(cate,Arrays.asList(new String[]{"VN"}), index, 12);
 				writeJSONResponse(resp, JSONHelper.toJSONArray(news));
 			} else {
 				List<News> news = newsService.getMoreHighlightNews(cate, index, 12);
@@ -115,18 +117,40 @@ public class NewsController extends BaseController {
 	}
 	private String getNewsByCate(String cate, String target, ModelMap model) {
 		try {
+			StringBuilder cachedKey = new StringBuilder();
 			if (target != null && !target.isEmpty()) {
 				model.put("target", target);
 				return "category_news";
 			} else {
 				JSONObject result = new JSONObject();
 				model.put("fromIndex", 10);
-				if (cate == null || cate.isEmpty()) {
+				List<String> cates = new ArrayList<>();
+				if (cate == null || cate.isEmpty() ||  NewsTypes.CATEGORY.HotNews.name().equals(cate)) {
 					cate = NewsTypes.CATEGORY.HotNews.name();
+					JSONObject favoriteCates = UserSettings.getSettings("web", UserSettings.TYPE_FAVORITE_CATE, null);
+					JSONObject dfFavoriteCates = UserSettings.getDefaultFavoriteCatesSettings("VN");
+					JSONArray settings = (JSONArray) new JSONParser().parse(favoriteCates.get("settings").toString());
+					JSONArray dfSettings = (JSONArray) new JSONParser().parse(dfFavoriteCates.get("settings").toString());
+					for (int i = 0; i < settings.size(); i++) {
+						JSONObject st = (JSONObject) settings.get(i);
+						if (st.get("value").equals(true)) {
+							JSONObject dfst = (JSONObject) dfSettings.get(((Long) st.get("id")).intValue());
+							cates.add(dfst.get("name").toString());
+						}
+					}
+
+					java.util.Collections.sort(cates);
+					for (String c : cates) {
+						cachedKey.append(c);
+					}
+					result = newsService.getHighlightNews(cachedKey.toString(), cates,Arrays.asList(new String[]{"VN"}), 10, 0);
+					
+				}else{
+					result = newsService.getNews(cate+"VN"+"Web", MappingHelper.cateGroup.get(cate), Arrays.asList(new String[]{"VN"}), 10, 0);
+					
 				}
 				model.put("from", "dashboard");
 				model.put("cate", cate);
-				result = newsService.getHighlightNews(cate, Arrays.asList(new String[]{cate}), 10, 0);
 				model.put("categories", result.get("categories"));
 				model.put("giavang", GoldCollector.giaVang);
 			}
@@ -157,11 +181,20 @@ public class NewsController extends BaseController {
 	public void news(@PathVariable String cate, String target, HttpServletRequest req, HttpServletResponse resp,
 			ModelMap model) {
 		try {
+			List<String> cates = new ArrayList<>();
 			if (cate == null || cate.isEmpty()) {
 				cate = NewsTypes.CATEGORY.HotNews.name();
+				JSONObject defaltCates = UserSettings.getDefaultFavoriteCatesSettings("VN");
+				JSONArray dfSettings = (JSONArray) new JSONParser().parse(defaltCates.get("settings").toString());
+				for (int i = 0; i < dfSettings.size(); i++) {
+					JSONObject st = (JSONObject) dfSettings.get(i);
+					if (st.get("value").equals(true)) {
+						cates.add(st.get("name").toString());
+					}
+				}
 			}
 			JSONObject result = null;
-			result = newsService.getHighlightNews(cate + "_more2", Arrays.asList(new String[]{cate}), 10, 0);
+			result = newsService.getHighlightNews(cate + "_more2", cates, Arrays.asList(new String[]{"VN"}),10, 0);
 			if (result != null)
 				writeSimpleJSONObjectResponse(resp, result);
 			
@@ -174,14 +207,8 @@ public class NewsController extends BaseController {
 	public void newsByType(@PathVariable String cate, String target, HttpServletRequest req, HttpServletResponse resp,
 			ModelMap model) {
 		try {
-			if (cate == null || cate.isEmpty()) {
-				cate = NewsTypes.TYPE.HotNews.name();
-			}
-			List<String> categories = MappingHelper.cateGroup.get(cate);
 			JSONObject result = null;
-
-			result = newsService.getNews(cate + "_more2", Arrays.asList(new String[]{cate}), 10, 0);
-
+			result = newsService.getNews(cate + "_more2", MappingHelper.cateGroup.get(cate),Arrays.asList(new String[]{"VN"}), 10, 0);
 			if (result != null)
 				writeSimpleJSONObjectResponse(resp, result);
 		} catch (Exception e) {

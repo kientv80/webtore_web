@@ -10,6 +10,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import com.xyz.hayhay.db.JDBCConnection;
+import com.xyz.hayhay.entirty.News;
 import com.xyz.hayhay.localization.LocalizedResource;
 
 public class UserSettings {
@@ -18,7 +19,7 @@ public class UserSettings {
 	public static String TYPE_SETTING = "settings";
 
 	public static JSONObject getSettings(String userId, String type, String locale) throws Exception {
-		JSONObject result = getUserSettings(userId, type,locale);
+		JSONObject result = getUserSettings(userId, type, locale);
 		if (result == null) {
 			if (TYPE_FAVORITE_CATE.equals(type))
 				result = getDefaultFavoriteCatesSettings(locale);
@@ -32,25 +33,34 @@ public class UserSettings {
 		JSONObject result = new JSONObject();
 		JSONArray settings = new JSONArray();
 		int count = 0;
-		for (Category cate : WebstoreMobileAppConfig.getCategories("",locale)) {
+		for (Category cate : WebstoreMobileAppConfig.getCategories("", locale)) {
 			settings.add(createSetting(count, cate.getName(), cate.getLabel(), "checkbox", cate.getIsDefault()));
 			count++;
 		}
 		result.put("settings", settings);
-		result.put("title", LocalizedResource.getInstance().getValue("favorite_cate", locale));
+		result.put("title", LocalizedResource.getInstance().getValue(TYPE_FAVORITE_CATE, locale));
 		result.put("serviceUrl", "http://360hay.com/mobile/settings/update");
 		result.put("type", TYPE_FAVORITE_CATE);
 		return result;
 	}
-	
+
 	public static JSONObject getDefaultFavoriteCountriesSettings(String locale) throws JSONException {
 		JSONObject result = new JSONObject();
 		JSONArray settings = new JSONArray();
-		settings.add(createSetting(0, "vn", LocalizedResource.getInstance().getValue("country.vn", locale), "checkbox", false));
-		settings.add(createSetting(0, "us", LocalizedResource.getInstance().getValue("country.us", locale), "checkbox", false));
-		
+		if ("vi_VN".equals(locale)) {
+			settings.add(createSetting(0, News.COUNTRY.VN.name(), LocalizedResource.getInstance().getValue("country.vn", locale),"checkbox", true));
+			settings.add(createSetting(1, News.COUNTRY.US.name(), LocalizedResource.getInstance().getValue("country.us", locale),"checkbox", false));
+			settings.add(createSetting(2, News.COUNTRY.CHINA.name(), LocalizedResource.getInstance().getValue("country.china", locale),"checkbox", false));
+			
+		} else {
+			settings.add(createSetting(0,News.COUNTRY.VN.name(), LocalizedResource.getInstance().getValue("country.vn", locale),"checkbox", false));
+			settings.add(createSetting(1,News.COUNTRY.US.name(), LocalizedResource.getInstance().getValue("country.us", locale),"checkbox", true));
+			settings.add(createSetting(2, News.COUNTRY.CHINA.name(), LocalizedResource.getInstance().getValue("country.china", locale),"checkbox", false));
+			
+		}
+
 		result.put("settings", settings);
-		result.put("title", LocalizedResource.getInstance().getValue("settings", locale));
+		result.put("title", LocalizedResource.getInstance().getValue(TYPE_FAVORITE_COUNTRIES, locale));
 		result.put("serviceUrl", "http://360hay.com/mobile/settings/update");
 		result.put("type", TYPE_FAVORITE_COUNTRIES);
 		return result;
@@ -59,9 +69,9 @@ public class UserSettings {
 	private static JSONObject getUserSettings(String userId, String type, String locale) throws Exception {
 		JSONObject result = null;
 		JSONObject defaultSetting = getDefaultFavoriteCatesSettings(locale);
-		if(TYPE_SETTING.equals(type)){
+		if (TYPE_FAVORITE_COUNTRIES.equals(type)) {
 			defaultSetting = getDefaultFavoriteCountriesSettings(locale);
-		}else{
+		} else if (TYPE_FAVORITE_CATE.equals(type)) {
 			defaultSetting = getDefaultFavoriteCatesSettings(locale);
 		}
 		String sql = "select * from settings where userid=? and type=?";

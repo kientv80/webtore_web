@@ -70,7 +70,7 @@ public class SocialPostFeedNews implements Runnable {
 						Arrays.asList(new String[] { NewsTypes.SHOWBIZVIET, NewsTypes.HOLLYWOOD, NewsTypes.PHONGCACH,
 								NewsTypes.TINHYEU, NewsTypes.GIOITINH, NewsTypes.GIADINH, NewsTypes.YHOCCOTRUYEN,
 								NewsTypes.BAITHUOC, NewsTypes.THUOCQUANHTA, NewsTypes.AMTHUC, NewsTypes.HUONGTHIEN,
-								NewsTypes.TYPE_TINTRONGNUOC, NewsTypes.TYPE_TINQUOCTE, NewsTypes.NHACMOI }),
+								NewsTypes.TYPE_TINTRONGNUOC, NewsTypes.TYPE_TINQUOCTE, NewsTypes.NHACMOI }),Arrays.asList(new String[]{"VN"}),
 						1,0);
 				SocialPostFeedNews.lastPostedHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
 				JSONArray listNewsCates = (JSONArray) news.get("categories");

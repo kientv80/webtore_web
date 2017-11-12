@@ -11,7 +11,7 @@ public class News {
 	
 	
 	
-	
+	public static enum COUNTRY{VN,US,CHINA}
 	public static enum NEWS_ORDER {H,HI,M};//hotnews,highlight news, mid news
 	
 	
