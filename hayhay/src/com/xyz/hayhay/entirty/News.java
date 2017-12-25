@@ -10,8 +10,8 @@ public class News {
 	
 	
 	
-	
-	public static enum COUNTRY{VN,US,CHINA}
+	public static enum LANGUAGE{VIETNAMESE,ENGLISH,CHINESE}
+	public static enum COUNTRY{VN,US,CHINA, ASIAN}
 	public static enum NEWS_ORDER {H,HI,M};//hotnews,highlight news, mid news
 	
 	

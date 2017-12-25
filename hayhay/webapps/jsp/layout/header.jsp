@@ -6,7 +6,7 @@
 		<div class="hidden-xs col-sm-12 col-md-12 col-lg-12" style="padding: 0px;">
 			<div style="float: left;">
 				<a href="/home.html">
-			 		<span style="font-weight: bold;font-size: 30px;color: white;padding-left: 10px;">36<img src="/images/icons/earth.png" style="padding-bottom: 10px;"></span><span style="color: white;">hay</span>
+			 		<span style="font-weight: bold;font-size: 30px;color: white;padding-left: 10px;">Gl<img src="/images/icons/earth.png" style="padding-bottom: 10px;">bal</span><span style="color: white;">NewsIndex</span>
 			 	</a>
 		 	</div>
 <!-- 		 	<div style="float: right;padding-right: 10px;"> -->

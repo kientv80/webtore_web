@@ -29,6 +29,10 @@ public class WebstoreMobileAppConfig {
 		cateIconMapping.put(NewsTypes.CATEGORY.Realty.name(), "http://360hay.com/images/icons/category/ic_building.png");
 		cateIconMapping.put(NewsTypes.CATEGORY.Sport.name(), "http://360hay.com/images/icons/category/ic_sport.png");
 		cateIconMapping.put(NewsTypes.CATEGORY.Tech.name(), "http://360hay.com/images/icons/category/ic_tech.png");
+		
+		cateIconMapping.put(NewsTypes.CATEGORY.Opinion.name(), "http://360hay.com/images/icons/category/opinion.png");
+		cateIconMapping.put(NewsTypes.CATEGORY.Politics.name(), "http://360hay.com/images/icons/category/politic.png");
+		cateIconMapping.put(NewsTypes.CATEGORY.Science.name(), "http://360hay.com/images/icons/category/science.png");
 	}
 	public static List<Category> getCategories(String version, String locale) throws JSONException{
 		List<Category> categories = new ArrayList<>();

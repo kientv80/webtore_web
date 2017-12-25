@@ -36,12 +36,12 @@
 	    }
     </style>
 <head>
-<title>360hay!</title>
+<title>GlobalNewsIndex</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta property="fb:app_id" content="1641687746054225" />
-<meta property="cookbook:author" content="http://360hay.com" />
-<meta name="author" content="360hay.com" />
+<meta property="cookbook:author" content="http://globalnewsindex.com" />
+<meta name="author" content="globalnewsindex.com" />
 <meta content="vi-VN" />
 
 <c:if test="${cateInfo != null }">

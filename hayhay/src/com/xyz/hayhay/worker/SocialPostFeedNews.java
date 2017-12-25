@@ -61,58 +61,58 @@ public class SocialPostFeedNews implements Runnable {
 
 	@Override
 	public void run() {
-		try {
-			if (runningHours.contains(Calendar.getInstance().get(Calendar.HOUR_OF_DAY))
-					&& Calendar.getInstance().get(Calendar.HOUR_OF_DAY) != SocialPostFeedNews.lastPostedHour) {
-
-				log.info(">>>>>>>>>>>>>>> START running SocialPostFeedNews");
-				JSONObject news = NewsService.getInstance().getNews("all",
-						Arrays.asList(new String[] { NewsTypes.SHOWBIZVIET, NewsTypes.HOLLYWOOD, NewsTypes.PHONGCACH,
-								NewsTypes.TINHYEU, NewsTypes.GIOITINH, NewsTypes.GIADINH, NewsTypes.YHOCCOTRUYEN,
-								NewsTypes.BAITHUOC, NewsTypes.THUOCQUANHTA, NewsTypes.AMTHUC, NewsTypes.HUONGTHIEN,
-								NewsTypes.TYPE_TINTRONGNUOC, NewsTypes.TYPE_TINQUOCTE, NewsTypes.NHACMOI }),Arrays.asList(new String[]{"VN"}),
-						1,0);
-				SocialPostFeedNews.lastPostedHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
-				JSONArray listNewsCates = (JSONArray) news.get("categories");
-				JSONObject oneCate = (JSONObject) listNewsCates.get(count);
-				JSONArray newsInOneCate = (JSONArray) oneCate.get("news");
-				JSONObject oneNews = (JSONObject)newsInOneCate.get(0);
-
-				String imageUrl = oneNews.get("imageUrl").toString();
-
-				count++;
-				if (count == runningHours.size())
-					count = 0;
-
-				if (oneNews != null) {
-					String dayName = new SimpleDateFormat("E").format(new Date());
-					try {
-						String url = oneNews.get("url").toString();
-						FaceBookFeed f = null;
-						if (url.indexOf("~") < 0) {
-							url = MyUtil.encodeUrl(url);
-							url = "http://360hay.com/news/open/" + url;
-						} else {
-							url = "http://360hay.com?target=" + URLEncoder.encode(url, "UTF-8");
-
-						}
-						f = new FaceBookFeed(url, oneNews.get("title").toString(), oneNews.get("shotDesc").toString(),
-								imageUrl);
-						SocialServiceFactory.getFaceBookService().postFeed(f);
-					} catch (Exception ex) {
-						ex.printStackTrace();
-						log.error("Post FB feed failed", ex);
-					}
-
-				} else {// Sun,Mon,Tue,Wed,Thu,Fri,Sat
-					log.info(">>>>>>>>>>>>>>> Cannot find postNews for FB current time=" + Calendar.HOUR_OF_DAY
-							+ " -- last time processed=" + SocialPostFeedNews.lastPostedHour);
-				}
-			}
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
+//		try {
+//			if (runningHours.contains(Calendar.getInstance().get(Calendar.HOUR_OF_DAY))
+//					&& Calendar.getInstance().get(Calendar.HOUR_OF_DAY) != SocialPostFeedNews.lastPostedHour) {
+//
+//				log.info(">>>>>>>>>>>>>>> START running SocialPostFeedNews");
+//				JSONObject news = NewsService.getInstance().getNews("all",
+//						Arrays.asList(new String[] { NewsTypes.SHOWBIZVIET, NewsTypes.HOLLYWOOD, NewsTypes.PHONGCACH,
+//								NewsTypes.TINHYEU, NewsTypes.GIOITINH, NewsTypes.GIADINH, NewsTypes.YHOCCOTRUYEN,
+//								NewsTypes.BAITHUOC, NewsTypes.THUOCQUANHTA, NewsTypes.AMTHUC, NewsTypes.HUONGTHIEN,
+//								NewsTypes.TYPE_TINTRONGNUOC, NewsTypes.TYPE_TINQUOCTE, NewsTypes.NHACMOI }),Arrays.asList(new String[]{"VN"}),
+//						1,0);
+//				SocialPostFeedNews.lastPostedHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+//				JSONArray listNewsCates = (JSONArray) news.get("categories");
+//				JSONObject oneCate = (JSONObject) listNewsCates.get(count);
+//				JSONArray newsInOneCate = (JSONArray) oneCate.get("news");
+//				JSONObject oneNews = (JSONObject)newsInOneCate.get(0);
+//
+//				String imageUrl = oneNews.get("imageUrl").toString();
+//
+//				count++;
+//				if (count == runningHours.size())
+//					count = 0;
+//
+//				if (oneNews != null) {
+//					String dayName = new SimpleDateFormat("E").format(new Date());
+//					try {
+//						String url = oneNews.get("url").toString();
+//						FaceBookFeed f = null;
+//						if (url.indexOf("~") < 0) {
+//							url = MyUtil.encodeUrl(url);
+//							url = "http://360hay.com/news/open/" + url;
+//						} else {
+//							url = "http://360hay.com?target=" + URLEncoder.encode(url, "UTF-8");
+//
+//						}
+//						f = new FaceBookFeed(url, oneNews.get("title").toString(), oneNews.get("shotDesc").toString(),
+//								imageUrl);
+//						SocialServiceFactory.getFaceBookService().postFeed(f);
+//					} catch (Exception ex) {
+//						ex.printStackTrace();
+//						log.error("Post FB feed failed", ex);
+//					}
+//
+//				} else {// Sun,Mon,Tue,Wed,Thu,Fri,Sat
+//					log.info(">>>>>>>>>>>>>>> Cannot find postNews for FB current time=" + Calendar.HOUR_OF_DAY
+//							+ " -- last time processed=" + SocialPostFeedNews.lastPostedHour);
+//				}
+//			}
+//		} catch (Exception e) {
+//			// TODO: handle exception
+//			e.printStackTrace();
+//		}
 
 	}
 

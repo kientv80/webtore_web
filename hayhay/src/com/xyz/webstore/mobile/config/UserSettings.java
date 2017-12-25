@@ -3,6 +3,9 @@ package com.xyz.webstore.mobile.config;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 import org.json.JSONException;
 import org.json.simple.JSONArray;
@@ -11,11 +14,13 @@ import org.json.simple.parser.JSONParser;
 
 import com.xyz.hayhay.db.JDBCConnection;
 import com.xyz.hayhay.entirty.News;
+import com.xyz.hayhay.entirty.NewsTypes;
 import com.xyz.hayhay.localization.LocalizedResource;
 
 public class UserSettings {
 	public static String TYPE_FAVORITE_CATE = "favorite_cates";
 	public static String TYPE_FAVORITE_COUNTRIES = "favorite_countries";
+	public static String TYPE_FAVORITE_LANGUAGES = "favorite_languages";
 	public static String TYPE_SETTING = "settings";
 
 	public static JSONObject getSettings(String userId, String type, String locale) throws Exception {
@@ -23,9 +28,35 @@ public class UserSettings {
 		if (result == null) {
 			if (TYPE_FAVORITE_CATE.equals(type))
 				result = getDefaultFavoriteCatesSettings(locale);
-			else
+			else if (TYPE_FAVORITE_COUNTRIES.equals(type))
 				result = getDefaultFavoriteCountriesSettings(locale);
+			else if (TYPE_FAVORITE_LANGUAGES.equals(type))
+				result = getDefaultFavoriteLanguagesSettings(locale);
 		}
+		return result;
+	}
+
+	private static JSONObject getDefaultFavoriteLanguagesSettings(String locale) {
+		JSONObject result = new JSONObject();
+		JSONArray settings = new JSONArray();
+		if ("vi_VN".equals(locale)) {
+			settings.add(createSetting(News.LANGUAGE.VIETNAMESE.ordinal(), News.LANGUAGE.VIETNAMESE.name(), LocalizedResource.getInstance().getValue("language.vn", locale), "checkbox",
+					true));
+		}else{
+			settings.add(createSetting(News.LANGUAGE.VIETNAMESE.ordinal(), News.LANGUAGE.VIETNAMESE.name(), LocalizedResource.getInstance().getValue("language.vn", locale), "checkbox",
+					false));
+		}
+
+		settings.add(createSetting(News.LANGUAGE.ENGLISH.ordinal(), News.LANGUAGE.ENGLISH.name(), LocalizedResource.getInstance().getValue("language.en", locale),
+				"checkbox", true));
+		settings.add(createSetting(News.LANGUAGE.CHINESE.ordinal(),  News.LANGUAGE.CHINESE.name(), LocalizedResource.getInstance().getValue("language.china", locale),
+				"checkbox", false));
+
+
+		result.put("settings", settings);
+		result.put("title", LocalizedResource.getInstance().getValue("setting.languages", locale));
+		result.put("serviceUrl", "http://360hay.com/mobile/settings/update");
+		result.put("type", TYPE_FAVORITE_LANGUAGES);
 		return result;
 	}
 
@@ -48,15 +79,24 @@ public class UserSettings {
 		JSONObject result = new JSONObject();
 		JSONArray settings = new JSONArray();
 		if ("vi_VN".equals(locale)) {
-			settings.add(createSetting(0, News.COUNTRY.VN.name(), LocalizedResource.getInstance().getValue("country.vn", locale),"checkbox", true));
-			settings.add(createSetting(1, News.COUNTRY.US.name(), LocalizedResource.getInstance().getValue("country.us", locale),"checkbox", false));
-			settings.add(createSetting(2, News.COUNTRY.CHINA.name(), LocalizedResource.getInstance().getValue("country.china", locale),"checkbox", false));
-			
+			settings.add(createSetting(News.COUNTRY.VN.ordinal(), News.COUNTRY.VN.name(),
+					LocalizedResource.getInstance().getValue("country.vn", locale), "checkbox", true));
+			settings.add(createSetting(News.COUNTRY.US.ordinal(), News.COUNTRY.US.name(),
+					LocalizedResource.getInstance().getValue("country.us", locale), "checkbox", true));
+			settings.add(createSetting(News.COUNTRY.CHINA.ordinal(), News.COUNTRY.CHINA.name(),
+					LocalizedResource.getInstance().getValue("country.china", locale), "checkbox", false));
+			settings.add(createSetting(News.COUNTRY.ASIAN.ordinal(), News.COUNTRY.ASIAN.name(),
+					LocalizedResource.getInstance().getValue("country.asian", locale), "checkbox", false));
+
 		} else {
-			settings.add(createSetting(0,News.COUNTRY.VN.name(), LocalizedResource.getInstance().getValue("country.vn", locale),"checkbox", false));
-			settings.add(createSetting(1,News.COUNTRY.US.name(), LocalizedResource.getInstance().getValue("country.us", locale),"checkbox", true));
-			settings.add(createSetting(2, News.COUNTRY.CHINA.name(), LocalizedResource.getInstance().getValue("country.china", locale),"checkbox", false));
-			
+			settings.add(createSetting(News.COUNTRY.VN.ordinal(), News.COUNTRY.VN.name(),
+					LocalizedResource.getInstance().getValue("country.vn", locale), "checkbox", false));
+			settings.add(createSetting(News.COUNTRY.US.ordinal(), News.COUNTRY.US.name(),
+					LocalizedResource.getInstance().getValue("country.us", locale), "checkbox", true));
+			settings.add(createSetting(News.COUNTRY.CHINA.ordinal(), News.COUNTRY.CHINA.name(),
+					LocalizedResource.getInstance().getValue("country.china", locale), "checkbox", false));
+			settings.add(createSetting(News.COUNTRY.ASIAN.ordinal(), News.COUNTRY.ASIAN.name(),
+					LocalizedResource.getInstance().getValue("country.asian", locale), "checkbox", false));
 		}
 
 		result.put("settings", settings);
@@ -73,6 +113,8 @@ public class UserSettings {
 			defaultSetting = getDefaultFavoriteCountriesSettings(locale);
 		} else if (TYPE_FAVORITE_CATE.equals(type)) {
 			defaultSetting = getDefaultFavoriteCatesSettings(locale);
+		} else if (TYPE_FAVORITE_LANGUAGES.equals(type)) {
+			defaultSetting = getDefaultFavoriteLanguagesSettings(locale);
 		}
 		String sql = "select * from settings where userid=? and type=?";
 		try (Connection conn = JDBCConnection.getInstance().getConnection()) {
@@ -123,6 +165,37 @@ public class UserSettings {
 			}
 		}
 		return result;
+	}
+
+	public static List<String> getUserSetting(String userId,final String type, String locale) throws Exception {
+		List<String> settingParams = new ArrayList<String>();
+		JSONObject favoriteCates = UserSettings.getSettings(userId, type, locale);
+		JSONArray settings = (JSONArray) new JSONParser().parse(favoriteCates.get("settings").toString());
+		for (int i = 0; i < settings.size(); i++) {
+			JSONObject st = (JSONObject) settings.get(i);
+			if (st.get("value").equals(true)) {
+				settingParams.add(st.get("name").toString());
+			}
+		}
+		java.util.Collections.sort(settingParams, new Comparator<String>() {
+			@Override
+			public int compare(String s1, String s2) {
+				if (TYPE_FAVORITE_CATE.equals(type)) {
+					return Long.compare(NewsTypes.CATEGORY.valueOf(s1).ordinal(),
+							NewsTypes.CATEGORY.valueOf(s2).ordinal());
+				}else if (TYPE_FAVORITE_COUNTRIES.equals(type)) {
+					return Long.compare(News.COUNTRY.valueOf(s1).ordinal(),
+							News.COUNTRY.valueOf(s2).ordinal());
+				}else if (TYPE_FAVORITE_LANGUAGES.equals(type)) {
+					return Long.compare(News.LANGUAGE.valueOf(s1).ordinal(),
+							News.LANGUAGE.valueOf(s2).ordinal());
+				}else{
+					return 0;
+				}
+				
+			}
+		});
+		return settingParams;
 	}
 
 	private static JSONObject createSetting(int id, String name, String label, String type, Object value) {
