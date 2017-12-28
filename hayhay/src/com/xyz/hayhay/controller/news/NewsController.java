@@ -162,18 +162,26 @@ public class NewsController extends BaseController {
 
 	@ResponseBody
 	@RequestMapping(value = "/news/json/{cate}", method = RequestMethod.GET)
-	public void news(@PathVariable String cate, String target, HttpServletRequest req, HttpServletResponse resp,
+	public void news(@PathVariable String cate, String target,String fromIndex, HttpServletRequest req, HttpServletResponse resp,
 			ModelMap model) {
 		try {
+			int fIndex = 0;
+			if(fromIndex != null && !fromIndex.isEmpty()){
+				try{
+					fIndex = Integer.parseInt(fromIndex);
+				}catch(Exception ex){
+					ex.printStackTrace();
+				}
+			}
 			JSONObject result = null;
 			List<String> cates = new ArrayList<>();
 			if (cate == null || cate.isEmpty()) {
 				cate = NewsTypes.CATEGORY.HotNews.name();
-				result = newsService.getHighlightNews("-1",LocalizedResource.VI_VN, 10, 0);
+				result = newsService.getHighlightNews("-1",LocalizedResource.VI_VN, 10, fIndex);
 			}else{
 				cates = new ArrayList<>();
 				cates.add(cate);
-				result = newsService.getNews("-1", LocalizedResource.VI_VN, cates, 10, 0);
+				result = newsService.getNews("-1", LocalizedResource.VI_VN, cates, 10, fIndex);
 			}
 			
 			if (result != null)
@@ -185,11 +193,19 @@ public class NewsController extends BaseController {
 	}
 	@ResponseBody
 	@RequestMapping(value = "/news/type/json/{cate}", method = RequestMethod.GET)
-	public void newsByType(@PathVariable String cate, String target, HttpServletRequest req, HttpServletResponse resp,
+	public void newsByType(@PathVariable String cate, String target,String fromIndex,  HttpServletRequest req, HttpServletResponse resp,
 			ModelMap model) {
 		try {
+			int fIndex = 0;
+			if(fromIndex != null && !fromIndex.isEmpty()){
+				try{
+					fIndex = Integer.parseInt(fromIndex);
+				}catch(Exception ex){
+					
+				}
+			}
 			JSONObject result = null;
-			result = newsService.getNews("-1", LocalizedResource.VI_VN, MappingHelper.cateGroup.get(cate), 10, 0);
+			result = newsService.getNews("-1", LocalizedResource.VI_VN, MappingHelper.cateGroup.get(cate), 10, fIndex);
 			if (result != null)
 				writeSimpleJSONObjectResponse(resp, result);
 		} catch (Exception e) {

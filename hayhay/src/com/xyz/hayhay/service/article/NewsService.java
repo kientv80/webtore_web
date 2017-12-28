@@ -180,89 +180,92 @@ public class NewsService {
 		return newsList;
 	}
 
-	public JSONObject getHighlightNews(String uid,String locale, int limit, int fromIndex)
-			throws Exception {
+	public JSONObject getHighlightNews(String uid, String locale, int limit, int fromIndex) throws Exception {
 		JSONObject result = new JSONObject();
 		Map<String, Category> categoryList = new LinkedHashMap<>();
-		List<String> cateNames = UserSettings.getUserSetting(uid,UserSettings.TYPE_FAVORITE_CATE, locale);
+		List<String> cateNames = UserSettings.getUserSetting(uid, UserSettings.TYPE_FAVORITE_CATE, locale);
 		List<String> languages = UserSettings.getUserSetting(uid, UserSettings.TYPE_FAVORITE_LANGUAGES, locale);
 		List<String> countries = UserSettings.getUserSetting(uid, UserSettings.TYPE_FAVORITE_COUNTRIES, locale);
 		StringBuilder cachedKey = new StringBuilder("article_");
-		cachedKey.append(StringUtils.join(cateNames,"_"));
-		cachedKey.append(StringUtils.join(languages,"_"));
-		cachedKey.append(StringUtils.join(countries,"_")).append("_from_"+fromIndex);
+		cachedKey.append(StringUtils.join(cateNames, "_"));
+		cachedKey.append(StringUtils.join(languages, "_"));
+		cachedKey.append(StringUtils.join(countries, "_")).append("_from_" + fromIndex);
 		System.out.println(cateNames.toString());
 		System.out.println(languages.toString());
 		System.out.println(countries.toString());
-		
+		System.out.println("fromIndex=" + fromIndex);
+
+
 		StringBuilder country = new StringBuilder();
 		StringBuilder cates = new StringBuilder();
 		StringBuilder language = new StringBuilder();
-		
-		for(String c : countries){
+
+		for (String c : countries) {
 			country.append("?,");
 		}
-		country.deleteCharAt(country.length()-1);
+		country.deleteCharAt(country.length() - 1);
 		for (String type : cateNames) {
 			cates.append("?,");
 		}
-		cates.deleteCharAt(cates.length()-1);
+		cates.deleteCharAt(cates.length() - 1);
 		for (String l : languages) {
 			language.append("?,");
 		}
-		language.deleteCharAt(language.length()-1);
-		
+		language.deleteCharAt(language.length() - 1);
+
 		JCSCacheClient cache = JSCCacheManager.getInstace().getCache(cachedKey.toString());
 		Object newsList = cache.get(cachedKey);
-		if (newsList != null && ((org.json.simple.JSONArray) newsList).size()>0) {
+		if (newsList != null && ((org.json.simple.JSONArray) newsList).size() > 0) {
 			result.put("categories", (org.json.simple.JSONArray) newsList);
 		} else {
-			String sql = "select distinct url,id,title, shotdesc,fromwebsite,imageurl,type,collectedtime,title_id,parent_catename  from news where parent_catename in ("+cates.toString()+") and country in ("+country.toString()+") and language in ("+language.toString()+")  order by id desc limit "
-					+ limit + " offset " + fromIndex;
+			String sql = "select distinct url,id,title, shotdesc,fromwebsite,imageurl,type,collectedtime,title_id,parent_catename  from news where parent_catename in ("
+					+ cates.toString() + ") and country in (" + country.toString() + ") and language in ("
+					+ language.toString() + ")  order by id desc limit " + limit + " offset " + fromIndex;
 			int count = 0;
 			try (Connection conn = JDBCConnection.getInstance().getConnection()) {
 				try (PreparedStatement stm = conn.prepareStatement(sql)) {
-					for(int i =0;i< cateNames.size();i++){
+					for (int i = 0; i < cateNames.size(); i++) {
 						count++;
 						stm.setString(count, cateNames.get(i));
 					}
-					for(int i =0;i< countries.size();i++){
+					for (int i = 0; i < countries.size(); i++) {
 						count++;
 						stm.setString(count, countries.get(i));
 					}
-					for(int i =0;i< languages.size();i++){
+					for (int i = 0; i < languages.size(); i++) {
 						count++;
 						stm.setString(count, languages.get(i));
 					}
 					System.out.println(sql);
 					System.out.println("count=" + count);
-					try(ResultSet rs = stm.executeQuery()){
+					try (ResultSet rs = stm.executeQuery()) {
 						while (rs.next()) {
 							News n = dataToNews(rs);
 							Category c = categoryList.get(n.getParentCateName());
-							if(c == null){
+							if (c == null) {
 								c = new Category(n.getParentCateName());
 								c.setNews(new ArrayList<News>());
 								categoryList.put(n.getParentCateName(), c);
-							}else{
-								c.addNews(n);
 							}
+							c.addNews(n);
 						}
 					}
 					List<Category> sortCates = new ArrayList<>(categoryList.values());
-					java.util.Collections.sort(sortCates,new Comparator<Category>(){
+					java.util.Collections.sort(sortCates, new Comparator<Category>() {
 						@Override
 						public int compare(Category o1, Category o2) {
 							// TODO Auto-generated method stub
-							return Integer.compare(NewsTypes.CATEGORY.valueOf(o1.getCateId()).ordinal(), NewsTypes.CATEGORY.valueOf(o2.getCateId()).ordinal());
+							return Integer.compare(NewsTypes.CATEGORY.valueOf(o1.getCateId()).ordinal(),
+									NewsTypes.CATEGORY.valueOf(o2.getCateId()).ordinal());
 						}
 					});
 
 					for (Category c : sortCates) {
 						c.setSubcates(MappingHelper.parentCateMapping.get(c.getCateId()));
 					}
-					org.json.simple.JSONArray list = (org.json.simple.JSONArray) new JSONParser().parse(JSONHelper.toJSONArray(sortCates).toString());
-					cache.put(cachedKey, list);
+					org.json.simple.JSONArray list = (org.json.simple.JSONArray) new JSONParser()
+							.parse(JSONHelper.toJSONArray(sortCates).toString());
+					//cache.put(cachedKey, list);
 					result.put("categories", list);
 				}
 			}
@@ -270,8 +273,8 @@ public class NewsService {
 		return result;
 	}
 
-	public JSONObject getNews(String uid,String locale, List<String> types, int limit, int fromIndex)
-			throws Exception{
+	public JSONObject getNews(String uid, String locale, List<String> types, int limit, int fromIndex)
+			throws Exception {
 		JSONObject result = new JSONObject();
 		List<Category> categoryList = new ArrayList<>();
 		List<String> languages = UserSettings.getUserSetting(uid, UserSettings.TYPE_FAVORITE_LANGUAGES, locale);
@@ -280,13 +283,13 @@ public class NewsService {
 		System.out.println(types.toString());
 		System.out.println(languages.toString());
 		System.out.println(countries.toString());
-		
-		cachedKey.append(StringUtils.join(types,"_"));
-		cachedKey.append(StringUtils.join(languages,"_"));
-		cachedKey.append(StringUtils.join(countries,"_")).append("_from_"+fromIndex);
+
+		cachedKey.append(StringUtils.join(types, "_"));
+		cachedKey.append(StringUtils.join(languages, "_"));
+		cachedKey.append(StringUtils.join(countries, "_")).append("_from_" + fromIndex);
 		JCSCacheClient cache = JSCCacheManager.getInstace().getCache(cachedKey.toString());
 		Object newsList = cache.get(cachedKey.toString());
-		
+
 		if (newsList != null) {
 			result.put("categories", (org.json.simple.JSONArray) newsList);
 		}
@@ -294,46 +297,47 @@ public class NewsService {
 			StringBuilder type = new StringBuilder();
 			StringBuilder langs = new StringBuilder();
 			StringBuilder counts = new StringBuilder();
-			for(int i=0;i<types.size();i++){
+			for (int i = 0; i < types.size(); i++) {
 				type.append("?,");
 			}
-			type.deleteCharAt(type.length()-1);
+			type.deleteCharAt(type.length() - 1);
 			for (String l : languages) {
 				langs.append("?,");
 			}
-			langs.deleteCharAt(langs.length()-1);
+			langs.deleteCharAt(langs.length() - 1);
 			for (String c : countries) {
 				counts.append("?,");
 			}
-			counts.deleteCharAt(counts.length()-1);
-			
-			String sql = "select distinct url,id,title, shotdesc,fromwebsite,imageurl,type,collectedtime,title_id,parent_catename from news where type in ("+type.toString()+") and country in ("+counts+") and language in ("+langs.toString()+")  order by id desc limit "
-					+ limit + " offset " + fromIndex;
+			counts.deleteCharAt(counts.length() - 1);
+
+			String sql = "select distinct url,id,title, shotdesc,fromwebsite,imageurl,type,collectedtime,title_id,parent_catename from news where type in ("
+					+ type.toString() + ") and country in (" + counts + ") and language in (" + langs.toString()
+					+ ")  order by id desc limit " + limit + " offset " + fromIndex;
 			System.out.println(sql);
-			
+
 			Map<String, Category> news = new HashMap<>();
-			try(Connection conn = JDBCConnection.getInstance().getConnection()){
-				try(PreparedStatement stm = conn.prepareStatement(sql)){
+			try (Connection conn = JDBCConnection.getInstance().getConnection()) {
+				try (PreparedStatement stm = conn.prepareStatement(sql)) {
 					int count = 0;
-					for(int i =0;i<types.size();i++){
+					for (int i = 0; i < types.size(); i++) {
 						count++;
 						stm.setString(count, types.get(i));
 					}
-					for(int i =0;i<countries.size();i++){
+					for (int i = 0; i < countries.size(); i++) {
 						count++;
 						stm.setString(count, countries.get(i));
 					}
-					for(int i =0;i<languages.size();i++){
+					for (int i = 0; i < languages.size(); i++) {
 						count++;
 						stm.setString(count, languages.get(i));
 					}
-			
+
 					System.out.println("count=" + count);
-					try(ResultSet rs = stm.executeQuery()){
-						while(rs.next()){
+					try (ResultSet rs = stm.executeQuery()) {
+						while (rs.next()) {
 							News n = dataToNews(rs);
 							Category c = news.get(n.getType());
-							if(c == null){
+							if (c == null) {
 								c = new Category(n.getType());
 								c.setNews(new ArrayList<News>());
 								news.put(n.getType(), c);
@@ -343,14 +347,15 @@ public class NewsService {
 					}
 				}
 			}
-			if(!news.isEmpty()){
+			if (!news.isEmpty()) {
 				categoryList = new ArrayList<>(news.values());
-				java.util.Collections.sort(categoryList,new Comparator<Category>() {
+				java.util.Collections.sort(categoryList, new Comparator<Category>() {
 					@Override
 					public int compare(Category o1, Category o2) {
-						return Integer.compare(NewsTypes.TYPE.valueOf(o1.getCateId()).ordinal(),NewsTypes.TYPE.valueOf(o2.getCateId()).ordinal());
+						return Integer.compare(NewsTypes.TYPE.valueOf(o1.getCateId()).ordinal(),
+								NewsTypes.TYPE.valueOf(o2.getCateId()).ordinal());
 					}
-					
+
 				});
 				for (Category c : categoryList) {
 					c.setSubcates(MappingHelper.parentCateMapping.get(c.getCateId()));
@@ -360,38 +365,39 @@ public class NewsService {
 						.parse(JSONHelper.toJSONArray(categoryList).toString());
 				result.put("categories", list);
 				if (cachedKey != null) {
-					cache.put(cachedKey, list);
+					//cache.put(cachedKey, list);
 				}
 			}
-			
+
 		}
 		return result;
 	}
 
-	public JSONObject getLatestNews(List<String> types,List<String> countries, int limit, long time) throws SQLException, JSONException {
+	public JSONObject getLatestNews(List<String> types, List<String> countries, int limit, long time)
+			throws SQLException, JSONException {
 		JSONObject result = new JSONObject();
 		List<Category> categoryList = new ArrayList<>();
 		StringBuilder country = new StringBuilder();
 		StringBuilder cacheCountry = new StringBuilder();
-		for(String c : countries){
+		for (String c : countries) {
 			country.append("?,");
 			cacheCountry.append(c);
 		}
-		country.deleteCharAt(country.length()-1);
+		country.deleteCharAt(country.length() - 1);
 
 		if (categoryList == null || categoryList.isEmpty()) {
-			String sql = "select distinct url,id,title, shotdesc,fromwebsite,imageurl,type,collectedtime,title_id,parent_catename from news where type = ? and collectedtime > ? and country in ("+country.toString()+")  order by id desc limit "
-					+ limit;
+			String sql = "select distinct url,id,title, shotdesc,fromwebsite,imageurl,type,collectedtime,title_id,parent_catename from news where type = ? and collectedtime > ? and country in ("
+					+ country.toString() + ")  order by id desc limit " + limit;
 			Connection conn = JDBCConnection.getInstance().getConnection();
 			PreparedStatement stm = conn.prepareStatement(sql);
 			try {
-				
+
 				for (String type : types) {
 					stm.clearParameters();
 					stm.setString(1, type);
 					stm.setTimestamp(2, new Timestamp(time));
-					int count=3;
-					for(String c : countries){
+					int count = 3;
+					for (String c : countries) {
 						stm.setString(count, c);
 						count++;
 					}
@@ -434,19 +440,20 @@ public class NewsService {
 		return result;
 	}
 
-	public List<News> getMoreNews(String type,List<String> countries, int fromIndex, int limit) throws SQLException {
+	public List<News> getMoreNews(String type, List<String> countries, int fromIndex, int limit) throws SQLException {
 		List<News> newsList = new ArrayList<>();
 		StringBuilder country = new StringBuilder();
-		for(String c : countries){
+		for (String c : countries) {
 			country.append("?,");
 		}
-		country.deleteCharAt(country.length()-1);
-		String sql = "select * from news where type=? and country in ("+country.toString()+")  order by id desc limit " + limit + " offset " + fromIndex;
+		country.deleteCharAt(country.length() - 1);
+		String sql = "select * from news where type=? and country in (" + country.toString()
+				+ ")  order by id desc limit " + limit + " offset " + fromIndex;
 		Connection conn = JDBCConnection.getInstance().getConnection();
 		PreparedStatement stm = conn.prepareStatement(sql);
 		stm.setString(1, type);
-		int count=2;
-		for(String c : countries){
+		int count = 2;
+		for (String c : countries) {
 			stm.setString(count, c);
 			count++;
 		}
@@ -460,23 +467,24 @@ public class NewsService {
 		return newsList;
 	}
 
-	public List<News> getArticles(String cate, Set<String> types,List<String> countries, int fromIndex, int limit) throws SQLException {
-		
+	public List<News> getArticles(String cate, Set<String> types, List<String> countries, int fromIndex, int limit)
+			throws SQLException {
+
 		StringBuilder country = new StringBuilder();
 		StringBuilder cacheCountry = new StringBuilder();
-		for(String c : countries){
+		for (String c : countries) {
 			country.append("?,");
 			cacheCountry.append(c);
 		}
-		country.deleteCharAt(country.length()-1);
+		country.deleteCharAt(country.length() - 1);
 		for (String type : types) {
 			cacheCountry.append(type);
 		}
-		String cached =cate+cacheCountry.toString()+ fromIndex;
+		String cached = cate + cacheCountry.toString() + fromIndex;
 		JCSCacheClient cache = JSCCacheManager.getInstace().getCache(cached);
-		Object newsList = cache.get(cate+ cached + fromIndex);
+		Object newsList = cache.get(cate + cached + fromIndex);
 		List<News> news = null;
-		
+
 		if (newsList != null) {
 			news = (List<News>) newsList;
 		}
@@ -487,13 +495,13 @@ public class NewsService {
 				filterTypes.append("'").append(type).append("'").append(",");
 			}
 			String sql = "select * from news where parent_catename in ("
-					+ filterTypes.substring(0, filterTypes.length() - 1) + ") and country in ("+country.toString()+") order by id desc limit " + limit
-					+ " offset " + fromIndex;
-			
+					+ filterTypes.substring(0, filterTypes.length() - 1) + ") and country in (" + country.toString()
+					+ ") order by id desc limit " + limit + " offset " + fromIndex;
+
 			Connection conn = JDBCConnection.getInstance().getConnection();
 			PreparedStatement stm = conn.prepareStatement(sql);
-			int count=1;
-			for(String c : countries){
+			int count = 1;
+			for (String c : countries) {
 				stm.setString(count, c);
 				count++;
 			}
@@ -504,8 +512,8 @@ public class NewsService {
 			rs.close();
 			stm.close();
 			conn.close();
-			if (news.size() > 0)
-				cache.put(cached, news);
+			//if (news.size() > 0)
+				//cache.put(cached, news);
 		}
 		return news;
 

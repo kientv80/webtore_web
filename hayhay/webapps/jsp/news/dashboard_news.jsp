@@ -72,7 +72,6 @@
 <c:if test="${device != 'mobile'}">
 	<div class="container-fluid" style="padding: 2px 0px 15px 0px;">
 		<div class="row w3-card-2"   style="padding: 0px; background-color:#fff ;color: white;width: 100%;">
-<!-- 			<iframe id="caooc-728X90" width="100%" height="90" frameborder="0" src="http://s.tuoitre.vn/images/Folder5/2015-10-31-01-00-13_caooc-728X90/caooc-728X90.html?link=http://s.tuoitre.vn/DominoX/click.ashx?ID=6785;fff4ce74-30df-4acb-bd09-c0e1da34211a;http://tuoitre.vn/"></iframe> -->
 		</div>
 	</div>
 </c:if>
@@ -87,5 +86,24 @@
 <script type="text/javascript">
 	var cates = ${categories};
 	renderNewsHTML('${from}',${fromIndex},cates,'${cate}');
+	var fromIndex=${fromIndex};
+	var cate = '${cate}';
+	
+	function loadMore(){
+	    if(fromIndex > 100){
+	      return;
+	    }
+	    fromIndex+=10;
+	    loadNews2('${from}',fromIndex, cate);
+	}
+	var loading = false;
+	View.scroll(View.scrollPosition._50_PERCENT,function(){
+	  if(loading == false){
+	    loading = true;
+	    loadMore();
+	    loading = false;
+	  }
+	});	
+	
 </script>
 

@@ -154,7 +154,7 @@ View.renderHTML = function(containerId,jsonData, templateUrl, append){
     
 }
 
-View.scrollPosition={"_25_PERCENT":0.25,"_30_PERCENT":0.30,"_35_PERCENT":0.35,"_40_PERCENT":0.40,"_50_PERCENT":0.5,"_70_PERCENT":0.7,"_100_PERCENT":1};
+View.scrollPosition={"_25_PERCENT":0.25,"_30_PERCENT":0.30,"_35_PERCENT":0.35,"_40_PERCENT":0.40,"_50_PERCENT":0.5,"_60_PERCENT":0.6,"_70_PERCENT":0.7,"_100_PERCENT":1};
 View.scroll = function(position, callBack){
 	var scrollPosition = 0;
 	$( window ).scroll(function() {

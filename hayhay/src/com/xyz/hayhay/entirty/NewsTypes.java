@@ -7,7 +7,7 @@ import java.util.Map;
 
 
 public class NewsTypes {
-	public static enum CATEGORY {HotNews,Economic,Business,Tech,Realty,Sport,Health,CarAndMotor,Entertainment,Cooking,Love,Funny,Politics,Science,Opinion };
+	public static enum CATEGORY {HotNews,Economic,Business,Tech,Politics,Science,Opinion,Realty,Sport,Health,CarAndMotor,Entertainment,Cooking,Love,Funny };
 	public static enum TYPE{HotNews,
 		Economic,Finance,Budget,Banking,Gold,Stock,
 		Figure,Management,Job,Trademark,Experience,Company,Business,

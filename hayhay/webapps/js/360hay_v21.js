@@ -193,10 +193,10 @@ function renderNewsHTML(fromPage,fromNewsIndex, categories,cate){
 	var cates = categories;
 	var data ={categoriesNews:cates,from:fromPage,fromIndex:fromNewsIndex};
 	addNews(cates[0].news);
-	View.renderHTML("newsContainer",data, "/js/ejs/templates/groupnewsbycategory_v8.ejs", true)
-	swiper();
-	loadImages(cates[0].news);
-	scheduleLoadOtherCategories(fromPage,fromNewsIndex,cate);
+	View.renderHTML("newsContainer",data, "/js/ejs/templates/globalnewsindex_news_v2.ejs", true)
+	//swiper();
+	//loadImages(cates[0].news);
+	//scheduleLoadOtherCategories(fromPage,fromNewsIndex,cate);
 	
 }
 function addNews(news){
@@ -222,7 +222,8 @@ function scheduleLoadOtherCategories(fromPage,fromNewsIndex,cate){
 function loadNews(fromPage, fromIndex, cate){
 	$.ajax({
 		type : "GET",
-		url : "/news/json/" + cate,
+		url : "/news/json/" + cate+"?fromIndex=" + fromIndex,
+		async: true
 	}).done(function(result) {
 		if(result.categories != undefined && result.categories.length > 0){
 			var currentIndex = 0;
@@ -234,9 +235,9 @@ function loadNews(fromPage, fromIndex, cate){
 						var renderCate = [result.categories[currentIndex]];
 						currentIndex ++;
 						var data ={categoriesNews:renderCate,from:fromPage,fromIndex:fromIndex};
-						View.renderHTML("newsContainer",data, "/js/ejs/templates/groupnewsbycategory_v8.ejs", true)
-						swiper();
-						loadImages(renderCate[0].news);
+						View.renderHTML("newsContainer",data, "/js/ejs/templates/globalnewsindex_news_v2.ejs", true)
+						//swiper();
+						//loadImages(renderCate[0].news);
 						addNews(renderCate[0].news);
 					}
 					renderCount = renderCount -1;
@@ -246,20 +247,58 @@ function loadNews(fromPage, fromIndex, cate){
 
 	});
 }
-
+function loadNews2(fromPage, fromIndex, cate){
+	$.ajax({
+		type : "GET",
+		url : "/news/json/" + cate+"?fromIndex=" + fromIndex,
+		async: false,
+	success: function (result) {
+		if(result.categories != undefined && result.categories.length > 0){
+			var currentIndex = 0;
+			var renderCount = 0;
+			View.scroll(View.scrollPosition._35_PERCENT,function(){
+				renderCount = renderCount + 1;
+				while(renderCount > 0){
+					if(currentIndex < result.categories.length){
+						var renderCate = [result.categories[currentIndex]];
+						currentIndex ++;
+						var data ={categoriesNews:renderCate,from:fromPage,fromIndex:fromIndex};
+						View.renderHTML("newsContainer",data, "/js/ejs/templates/globalnewsindex_news_v2.ejs", true)
+						//swiper();
+						//loadImages(renderCate[0].news);
+						addNews(renderCate[0].news);
+					}
+					renderCount = renderCount -1;
+				}
+			});	
+		}
+        }, error: function (jqXHR, textStatus, errorThrown) {
+	  
+	  
+	  
+	   }
+	}).responseText;
+}
 function loadMore(from, fromIndex, cateName, cateContainer){
 	fromIndex = $("#"+cateName+"_fromIndex").val();
 	$.ajax({
 		type : "GET",
 		url : "/news/loadmorenews.html?from="+from+"&cate=" + cateName + "&fromIndex=" + fromIndex,
-	}).done(function(news) {
+		async: false,
+	success: function (news) {
 		if(news.length > 0){
 			var data ={news:news};
 			View.renderHTML(cateContainer,data, "/js/ejs/templates/news_v2.ejs", true)
 			$("#"+cateName+"_fromIndex").val(parseInt(fromIndex)+14);
 			addNews(news);
 		}
-	});
+        }, error: function (jqXHR, textStatus, errorThrown) {
+	  
+	  
+	  
+	   }
+	}).responseText;
+    
 }
 
 function loadImages(news){
