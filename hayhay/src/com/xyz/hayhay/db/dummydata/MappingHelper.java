@@ -37,11 +37,11 @@ public class MappingHelper {
 			List<CategoryInfo> subCates = new ArrayList<>();
 			parentCateMapping.put(cate.getKey().name(), subCates);
 			cateGroup.put(cate.getKey().name(),types);
-			cateInfo.put(cate.getKey().name(), new CategoryInfo(cate.getKey().name(), "http://360hay.com/news/" + cate.getKey().name(), "http://360hay.com/images/icons/360logo.png", LocalizedResource.getInstance().getValue(cate.getKey().name(), null),  LocalizedResource.getInstance().getValue(cate.getKey().name(), null),  LocalizedResource.getInstance().getValue(cate.getKey().name(), null)));
+			cateInfo.put(cate.getKey().name(), new CategoryInfo(cate.getKey().name(), "http://globalnewsindex.com/news/" + cate.getKey().name(), "http://globalnewsindex.com/images/icons/360logo.png", LocalizedResource.getInstance().getValue(cate.getKey().name(), null),  LocalizedResource.getInstance().getValue(cate.getKey().name(), null),  LocalizedResource.getInstance().getValue(cate.getKey().name(), null)));
 			for(TYPE type : cate.getValue()){
 				types.add(type.name());
 				subCates.add(new CategoryInfo(LocalizedResource.getInstance().getValue(type.name(), null), "/news/type/"+type.name(), null	, null, null, null) );
-				cateInfo.put(type.name(), new CategoryInfo(type.name(), "http://360hay.com/news/" + type.name(), "http://360hay.com/images/icons/360logo.png", LocalizedResource.getInstance().getValue(type.name(), null),  LocalizedResource.getInstance().getValue(type.name(), null),  LocalizedResource.getInstance().getValue(type.name(), null)));
+				cateInfo.put(type.name(), new CategoryInfo(type.name(), "http://globalnewsindex.com/news/" + type.name(), "http://globalnewsindex.com/images/icons/360logo.png", LocalizedResource.getInstance().getValue(type.name(), null),  LocalizedResource.getInstance().getValue(type.name(), null),  LocalizedResource.getInstance().getValue(type.name(), null)));
 			}
 		}
 	}

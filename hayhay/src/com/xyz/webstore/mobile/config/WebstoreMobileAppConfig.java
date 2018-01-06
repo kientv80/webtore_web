@@ -71,7 +71,9 @@ public class WebstoreMobileAppConfig {
 		
 		webs.add(new WebsiteInfo("foxbusiness.com", "", "http://360hay.com/images/website_icon/foxnews.png", "cover", "url",true));
 		webs.add(new WebsiteInfo("foxnews.com", "", "http://360hay.com/images/website_icon/foxnews.png", "cover", "url",true));
-		webs.add(new WebsiteInfo("nytimes.com", "", "http://360hay.com/images/website_icon/nytimes.png", "cover", "url",false));
+		webs.add(new WebsiteInfo("nytimes.com", "", "http://360hay.com/images/website_icon/nytimes.png", "cover", "url",true));
+		webs.add(new WebsiteInfo("washingtonpost.com", "", "", "cover", "url",false));
+		
 		
 		return webs;
 	}

@@ -1,16 +1,12 @@
 package com.xyz.hayhay.controller.mobile;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
+
 import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONException;
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,8 +22,6 @@ import com.xyz.hayhay.website.collector.TranslateService;
 import com.xyz.webstore.mobile.config.Category;
 import com.xyz.webstore.mobile.config.UserSettings;
 import com.xyz.webstore.mobile.config.WebstoreMobileAppConfig;
-
-import akka.util.Collections;
 
 @Controller
 public class MobileRestfulService extends BaseController {
@@ -104,7 +98,6 @@ public class MobileRestfulService extends BaseController {
 		writeJSONResponsed(resp, appversion);
 	}
 
-	
 	@ResponseBody
 	@RequestMapping(value = "/mobile/article/{category}", method = RequestMethod.GET)
 	public void getArticlesV2(@PathVariable String category, String uid, String from, String locale,
@@ -112,7 +105,7 @@ public class MobileRestfulService extends BaseController {
 		try {
 			System.out.println("Locale = " + locale);
 			JSONObject result = null;
-			
+
 			if (category == null || category.isEmpty()) {
 				category = NewsTypes.CATEGORY.HotNews.name();
 			}
@@ -121,11 +114,11 @@ public class MobileRestfulService extends BaseController {
 				fromIndex = 0;
 			else
 				fromIndex = Integer.parseInt(from);
-			
+
 			if (NewsTypes.CATEGORY.HotNews.name().equals(category)) {
-				result = newsService.getHighlightNews(uid,locale, 10,fromIndex);
-			}else{
-				result = newsService.getNews(uid,locale, MappingHelper.cateGroup.get(category),10, fromIndex);
+				result = newsService.getHighlightNews(uid, locale, 10, fromIndex);
+			} else {
+				result = newsService.getNews(uid, locale, MappingHelper.cateGroup.get(category), 10, fromIndex);
 			}
 			try {
 				if (result != null)
@@ -138,36 +131,22 @@ public class MobileRestfulService extends BaseController {
 		}
 	}
 
-	
-
 	@ResponseBody
 	@RequestMapping(value = "/mobile/article/update", method = RequestMethod.GET)
-	public void getArticles(String uid, String time,String locale, HttpServletResponse resp) {
+	public void getArticles(String uid, String time, String locale, HttpServletResponse resp) {
 		try {
 			long filterTime = System.currentTimeMillis() - 5 * 60 * 1000;
 			if (time != null && !time.isEmpty()) {
 				filterTime = Long.parseLong(time);
 			}
 			try {
-				List<String> cates = UserSettings.getUserSetting(uid, UserSettings.TYPE_FAVORITE_CATE, locale);
-				List<String> favoriteCountries = UserSettings.getUserSetting(uid, UserSettings.TYPE_FAVORITE_COUNTRIES, locale);
-				JSONObject favoriteCates = UserSettings.getSettings(uid, UserSettings.TYPE_FAVORITE_CATE, locale);
-				JSONObject dfFavoriteCates = UserSettings.getDefaultFavoriteCatesSettings(locale);
-				JSONArray settings = (JSONArray) new JSONParser().parse(favoriteCates.get("settings").toString());
-				JSONArray dfSettings = (JSONArray) new JSONParser().parse(dfFavoriteCates.get("settings").toString());
-				for (int i = 0; i < settings.size(); i++) {
-					JSONObject st = (JSONObject) settings.get(i);
-					if (st.get("value").equals(true)) {
-						JSONObject dfst = (JSONObject) dfSettings.get(((Long) st.get("id")).intValue());
-						cates.add(dfst.get("name").toString());
-					}
-				}
-
-				java.util.Collections.sort(cates);
-				
+				List<com.xyz.hayhay.entirty.Category> cates = newsService.getOfflineNews(uid, locale, 10, filterTime);
 				JSONObject result = null;
 				if (cates != null && cates.size() > 0) {
-					result = newsService.getLatestNews(cates,favoriteCountries, 10, filterTime);
+					org.json.simple.JSONArray list = (org.json.simple.JSONArray) new JSONParser()
+							.parse(JSONHelper.toJSONArray(cates).toString());
+					result = new JSONObject();
+					result.put("categories", list);
 				}
 				if (result != null)
 					writeSimpleJSONObjectResponse(resp, result);
@@ -183,9 +162,14 @@ public class MobileRestfulService extends BaseController {
 	@RequestMapping(value = "/mobile/settings/get", method = RequestMethod.GET)
 	public void getSettings(String uid, String option, String locale, HttpServletResponse resp) {
 		try {
+			System.out.println("getSettings " + uid + ":" + option + ":" + locale);
 			JSONObject settings = UserSettings.getSettings(uid, option, locale);
-			System.out.println(settings.toJSONString());
-			writeSimpleJSONObjectResponse(resp, settings);
+			if (settings != null) {
+				System.out.println(settings.toJSONString());
+				writeSimpleJSONObjectResponse(resp, settings);
+			} else {
+				System.out.println("getSettings return null");
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -12,6 +12,8 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+import com.xyz.hayhay.cache.JCSCacheClient;
+import com.xyz.hayhay.cache.JSCCacheManager;
 import com.xyz.hayhay.db.JDBCConnection;
 import com.xyz.hayhay.entirty.News;
 import com.xyz.hayhay.entirty.NewsTypes;
@@ -24,34 +26,42 @@ public class UserSettings {
 	public static String TYPE_SETTING = "settings";
 
 	public static JSONObject getSettings(String userId, String type, String locale) throws Exception {
-		JSONObject result = getUserSettings(userId, type, locale);
-		if (result == null) {
-			if (TYPE_FAVORITE_CATE.equals(type))
-				result = getDefaultFavoriteCatesSettings(locale);
-			else if (TYPE_FAVORITE_COUNTRIES.equals(type))
-				result = getDefaultFavoriteCountriesSettings(locale);
-			else if (TYPE_FAVORITE_LANGUAGES.equals(type))
-				result = getDefaultFavoriteLanguagesSettings(locale);
+		String cachedKey = userId + type;
+		JCSCacheClient cache = JSCCacheManager.getInstace().getCache(cachedKey.toString());
+		Object settings = cache.get(cachedKey.toString());
+		JSONObject result;
+		if (settings != null) {
+			result = (JSONObject) settings;
+		} else {
+			result = getUserSettings(userId, type, locale);
+			if (result == null) {
+				if (TYPE_FAVORITE_CATE.equals(type))
+					result = getDefaultFavoriteCatesSettings(locale);
+				else if (TYPE_FAVORITE_COUNTRIES.equals(type))
+					result = getDefaultFavoriteCountriesSettings(locale);
+				else if (TYPE_FAVORITE_LANGUAGES.equals(type))
+					result = getDefaultFavoriteLanguagesSettings(locale);
+			}
 		}
 		return result;
+
 	}
 
 	private static JSONObject getDefaultFavoriteLanguagesSettings(String locale) {
 		JSONObject result = new JSONObject();
 		JSONArray settings = new JSONArray();
 		if ("vi_VN".equals(locale)) {
-			settings.add(createSetting(News.LANGUAGE.VIETNAMESE.ordinal(), News.LANGUAGE.VIETNAMESE.name(), LocalizedResource.getInstance().getValue("language.vn", locale), "checkbox",
-					true));
-		}else{
-			settings.add(createSetting(News.LANGUAGE.VIETNAMESE.ordinal(), News.LANGUAGE.VIETNAMESE.name(), LocalizedResource.getInstance().getValue("language.vn", locale), "checkbox",
-					false));
+			settings.add(createSetting(News.LANGUAGE.VIETNAMESE.ordinal(), News.LANGUAGE.VIETNAMESE.name(),
+					LocalizedResource.getInstance().getValue("language.vn", locale), "checkbox", true));
+		} else {
+			settings.add(createSetting(News.LANGUAGE.VIETNAMESE.ordinal(), News.LANGUAGE.VIETNAMESE.name(),
+					LocalizedResource.getInstance().getValue("language.vn", locale), "checkbox", false));
 		}
 
-		settings.add(createSetting(News.LANGUAGE.ENGLISH.ordinal(), News.LANGUAGE.ENGLISH.name(), LocalizedResource.getInstance().getValue("language.en", locale),
-				"checkbox", true));
-		settings.add(createSetting(News.LANGUAGE.CHINESE.ordinal(),  News.LANGUAGE.CHINESE.name(), LocalizedResource.getInstance().getValue("language.china", locale),
-				"checkbox", false));
-
+		settings.add(createSetting(News.LANGUAGE.ENGLISH.ordinal(), News.LANGUAGE.ENGLISH.name(),
+				LocalizedResource.getInstance().getValue("language.en", locale), "checkbox", true));
+		settings.add(createSetting(News.LANGUAGE.CHINESE.ordinal(), News.LANGUAGE.CHINESE.name(),
+				LocalizedResource.getInstance().getValue("language.china", locale), "checkbox", false));
 
 		result.put("settings", settings);
 		result.put("title", LocalizedResource.getInstance().getValue("setting.languages", locale));
@@ -167,7 +177,7 @@ public class UserSettings {
 		return result;
 	}
 
-	public static List<String> getUserSetting(String userId,final String type, String locale) throws Exception {
+	public static List<String> getUserSetting(String userId, final String type, String locale) throws Exception {
 		List<String> settingParams = new ArrayList<String>();
 		JSONObject favoriteCates = UserSettings.getSettings(userId, type, locale);
 		JSONArray settings = (JSONArray) new JSONParser().parse(favoriteCates.get("settings").toString());
@@ -183,16 +193,14 @@ public class UserSettings {
 				if (TYPE_FAVORITE_CATE.equals(type)) {
 					return Long.compare(NewsTypes.CATEGORY.valueOf(s1).ordinal(),
 							NewsTypes.CATEGORY.valueOf(s2).ordinal());
-				}else if (TYPE_FAVORITE_COUNTRIES.equals(type)) {
-					return Long.compare(News.COUNTRY.valueOf(s1).ordinal(),
-							News.COUNTRY.valueOf(s2).ordinal());
-				}else if (TYPE_FAVORITE_LANGUAGES.equals(type)) {
-					return Long.compare(News.LANGUAGE.valueOf(s1).ordinal(),
-							News.LANGUAGE.valueOf(s2).ordinal());
-				}else{
+				} else if (TYPE_FAVORITE_COUNTRIES.equals(type)) {
+					return Long.compare(News.COUNTRY.valueOf(s1).ordinal(), News.COUNTRY.valueOf(s2).ordinal());
+				} else if (TYPE_FAVORITE_LANGUAGES.equals(type)) {
+					return Long.compare(News.LANGUAGE.valueOf(s1).ordinal(), News.LANGUAGE.valueOf(s2).ordinal());
+				} else {
 					return 0;
 				}
-				
+
 			}
 		});
 		return settingParams;

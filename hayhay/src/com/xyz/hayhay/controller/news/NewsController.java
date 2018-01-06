@@ -180,7 +180,7 @@ public class NewsController extends BaseController {
 				result = newsService.getHighlightNews("-1",LocalizedResource.VI_VN, 10, fIndex);
 			}else{
 				cates = new ArrayList<>();
-				cates.add(cate);
+				cates = MappingHelper.cateGroup.get(cate);
 				result = newsService.getNews("-1", LocalizedResource.VI_VN, cates, 10, fIndex);
 			}
 			

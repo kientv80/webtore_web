@@ -25,7 +25,7 @@ public class NotifyHandler extends BaseController{
 	private static final int ONE_HOUR = 60*60*1*1000;
 	@ResponseBody
 	@RequestMapping(value = "/getupdate", method = RequestMethod.GET)
-	public void getUpdate(String userid,String lasttimeupdate, HttpServletResponse resp){
+	public void getUpdate(String userid,String locale,String lasttimeupdate, HttpServletResponse resp){
 		if(userid == null || userid.isEmpty()){
 			//error
 		}
@@ -40,7 +40,7 @@ public class NotifyHandler extends BaseController{
 					e.printStackTrace();
 				}
 			}
-			List<News> news = NewsService.getInstance().getLatestNews(10, fromTime);
+			List<News> news = NewsService.getInstance().getLatestNews(userid,locale, 10, fromTime);
 			List<NotifyInfo> notifies = new ArrayList<>();
 			for(News n  : news){
 				NotifyInfo nf = new NotifyInfo(n.getId()+"",n.getType(), 0, n.getTitle(), n.getShotDesc(), n.getImageUrl(), n.getUrl(), n.getStrDate());

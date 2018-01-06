@@ -5,7 +5,6 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -18,11 +17,9 @@ import java.util.TimerTask;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.apache.commons.lang.StringUtils;
-import org.json.JSONException;
 import org.json.simple.JSONObject;
 //import org.json.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
 import com.xyz.hayhay.cache.JCSCacheClient;
 import com.xyz.hayhay.cache.JSCCacheManager;
@@ -34,25 +31,22 @@ import com.xyz.hayhay.entirty.NewsTypes;
 import com.xyz.hayhay.util.JSONHelper;
 import com.xyz.webstore.mobile.config.UserSettings;
 
-import akka.util.Collections;
-
 public class NewsService {
 
 	private static NewsService instance;
-	Map<String, Category> cachedArticles = new ConcurrentHashMap<>();
-
-	public static NewsService getInstance() {
-		if (instance == null)
+	private Map<String, Category> cachedArticles = new ConcurrentHashMap<>();
+	private Timer t = new Timer();
+	private static String block = new String("block");
+	public static synchronized NewsService getInstance() {
+		synchronized (block) {
+			if (instance == null)
 			instance = new NewsService();
+		}
 		return instance;
 	}
 
 	private NewsService() {
-		startLoadArticlesWorker();
-	}
-
-	private void startLoadArticlesWorker() {
-		TimerTask task = new TimerTask() {
+		t.schedule(new TimerTask(){
 			@Override
 			public void run() {
 				try {
@@ -61,94 +55,98 @@ public class NewsService {
 				} catch (Exception ex) {
 					ex.printStackTrace();
 				}
-
+				
 			}
-		};
-		// Timer t = new Timer();
-		// t.schedule(task, 0, 5 * 60 * 1000);// update every five minutes
+		}, 0, 5 * 60 * 1000);// update every five minutes
 	}
+
 
 	private void loadLatestArticles() throws SQLException {
 		StringBuilder filterTypes = new StringBuilder();
 		for (String type : MappingHelper.cateGroup.get(NewsTypes.CATEGORY.HotNews.name())) {
 			filterTypes.append("'").append(type).append("'").append(",");
 		}
-		String sql = "SELECT distinct url,id,title, shotdesc,fromwebsite,imageurl,type,collectedtime,title_id,parent_catename FROM news WHERE parent_catename in ("
-				+ filterTypes.substring(0, filterTypes.length() - 1) + ") order by id desc limit 200";
-		Connection conn = JDBCConnection.getInstance().getConnection();
-		PreparedStatement stm = null;
-		ResultSet rs = null;
-		try {
-			stm = conn.prepareStatement(sql);
-			rs = stm.executeQuery();
-			Map<String, Category> categoryList = new ConcurrentHashMap<>();
-			while (rs.next()) {
-				News n = dataToNews(rs);
-				try {
-					Category c = categoryList.get(n.getParentCateName());
-					if (c == null) {
-						c = new Category(new ArrayList<News>(), "", rs.getString("parent_catename"));
-						categoryList.put(n.getParentCateName(), c);
+		String sql = "SELECT distinct url,id,title, shotdesc,fromwebsite,imageurl,type,collectedtime,title_id,parent_catename,country,language FROM news WHERE parent_catename in ("
+				+ filterTypes.substring(0, filterTypes.length() - 1) + ") order by id desc limit 50";
+		try (Connection conn = JDBCConnection.getInstance().getConnection()) {
+			try (PreparedStatement stm = conn.prepareStatement(sql)) {
+				try (ResultSet rs = stm.executeQuery()) {
+					Map<String, Category> categoryList = new ConcurrentHashMap<>();
+					while (rs.next()) {
+						News n = dataToNews(rs);
+						try {
+							Category c = categoryList.get(n.getParentCateName());
+							if (c == null) {
+								c = new Category(new ArrayList<News>(), "", rs.getString("parent_catename"));
+								categoryList.put(n.getParentCateName(), c);
+							}
+							c.addNews(dataToNews(rs));
+						} catch (Exception ex) {
+							ex.printStackTrace();
+						}
 					}
-					c.addNews(dataToNews(rs));
-				} catch (Exception ex) {
-					ex.printStackTrace();
+					cachedArticles = categoryList;
+				}
+
+			}
+
+		}
+
+	}
+
+	public List<News> getLatestNews(String uid, String locale, int limit, long fromTime) throws Exception {
+		List<String> lgs = UserSettings.getUserSetting(uid, UserSettings.TYPE_FAVORITE_LANGUAGES, locale);
+		
+		List<News> news = new ArrayList<>();
+		for(Category c : cachedArticles.values()){
+			for(News n : c.getNews()){
+				if(lgs.contains(n.getLang()) && n.getDate().getTime() > fromTime){
+					news.add(n);
 				}
 			}
-			cachedArticles = categoryList;
-		} finally {
-			if (stm != null)
-				stm.close();
-			if (rs != null)
-				rs.close();
-			if (conn != null)
-				conn.close();
 		}
+		return news;
 	}
-
-	public List<News> getLatestNews(int limit, long fromTime) throws SQLException {
-		List<News> newsList = new ArrayList<>();
-		String sql = "select * from news where fromwebsite <> 'muabannhadat.vn' and type not like 'WN_%' and (UNIX_TIMESTAMP(collectedtime)*1000) > "
-				+ fromTime + " order by id desc limit " + limit;
-		if (fromTime == -1)
-			sql = "select * from news where fromwebsite <> 'muabannhadat.vn' order by id desc limit " + limit;
-
-		if (limit == -1)
-			sql = "select * from news where type=?";
-		Connection conn = JDBCConnection.getInstance().getConnection();
-		PreparedStatement stm = conn.prepareStatement(sql);
-
-		ResultSet rs = stm.executeQuery();
-		while (rs.next()) {
-			newsList.add(dataToNews(rs));
+	public List<Category> getOfflineNews(String uid, String locale, int limit, long fromTime) throws Exception {
+		List<News> news = getLatestNews(uid,locale,limit,fromTime);
+		Map<String,Category> cates =new HashMap<>();
+		if(news != null && !news.isEmpty()){
+			for(News n : news){
+				Category c = cates.get(n.getParentCateName());
+				if(c == null){
+					c = new Category(n.getParentCateName());
+					c.setNews(new ArrayList<News>());
+					cates.put(n.getParentCateName(), c);
+				}
+				c.addNews(n);
+			}
 		}
-		rs.close();
-		stm.close();
-		conn.close();
-		return newsList;
+		return new ArrayList<>(cates.values());
 	}
-
+	
+	
 	public List<News> getNews(String type, int limit) throws SQLException {
 		List<News> newsList = new ArrayList<>();
 		String sql = "select * from news where type=?  order by id desc limit " + limit;
 		if (limit == -1)
 			sql = "select * from news where type=?";
-		Connection conn = JDBCConnection.getInstance().getConnection();
-		PreparedStatement stm = conn.prepareStatement(sql);
-		stm.setString(1, type);
-		ResultSet rs = stm.executeQuery();
-		while (rs.next()) {
-			newsList.add(dataToNews(rs));
+		try (Connection conn = JDBCConnection.getInstance().getConnection()) {
+			try (PreparedStatement stm = conn.prepareStatement(sql)) {
+				stm.setString(1, type);
+				try (ResultSet rs = stm.executeQuery()) {
+					while (rs.next()) {
+						newsList.add(dataToNews(rs));
+					}
+				}
+			}
+
 		}
-		rs.close();
-		stm.close();
-		conn.close();
 		return newsList;
 	}
 
 	public List<News> getHighlightNews(String parentCate, int limit) throws SQLException {
 		List<News> newsList = new ArrayList<>();
-		String sql = "select distinct url,id,title, shotdesc,fromwebsite,imageurl,type,collectedtime,title_id,parent_catename from news where parent_catename = ?  order by id desc limit "
+		String sql = "select distinct url,id,title, shotdesc,fromwebsite,imageurl,type,collectedtime,title_id,parent_catename,country,language from news where parent_catename = ?  order by id desc limit "
 				+ limit;
 		if (limit == -1)
 			sql = "select * from news where parent_catename = ?";
@@ -179,7 +177,7 @@ public class NewsService {
 		}
 		return newsList;
 	}
-
+	private final int  MAX_CACHED = 200;
 	public JSONObject getHighlightNews(String uid, String locale, int limit, int fromIndex) throws Exception {
 		JSONObject result = new JSONObject();
 		Map<String, Category> categoryList = new LinkedHashMap<>();
@@ -194,7 +192,6 @@ public class NewsService {
 		System.out.println(languages.toString());
 		System.out.println(countries.toString());
 		System.out.println("fromIndex=" + fromIndex);
-
 
 		StringBuilder country = new StringBuilder();
 		StringBuilder cates = new StringBuilder();
@@ -215,10 +212,10 @@ public class NewsService {
 
 		JCSCacheClient cache = JSCCacheManager.getInstace().getCache(cachedKey.toString());
 		Object newsList = cache.get(cachedKey);
-		if (newsList != null && ((org.json.simple.JSONArray) newsList).size() > 0) {
+		if (fromIndex <= MAX_CACHED && newsList != null && ((org.json.simple.JSONArray) newsList).size() > 0) {
 			result.put("categories", (org.json.simple.JSONArray) newsList);
 		} else {
-			String sql = "select distinct url,id,title, shotdesc,fromwebsite,imageurl,type,collectedtime,title_id,parent_catename  from news where parent_catename in ("
+			String sql = "select distinct url,id,title, shotdesc,fromwebsite,imageurl,type,collectedtime,title_id,parent_catename,country,language  from news where parent_catename in ("
 					+ cates.toString() + ") and country in (" + country.toString() + ") and language in ("
 					+ language.toString() + ")  order by id desc limit " + limit + " offset " + fromIndex;
 			int count = 0;
@@ -260,18 +257,23 @@ public class NewsService {
 						}
 					});
 
-					for (Category c : sortCates) {
-						c.setSubcates(MappingHelper.parentCateMapping.get(c.getCateId()));
-					}
+
 					org.json.simple.JSONArray list = (org.json.simple.JSONArray) new JSONParser()
 							.parse(JSONHelper.toJSONArray(sortCates).toString());
-					//cache.put(cachedKey, list);
+					sortCates.clear();
+					categoryList.clear();
+					sortCates = null;
+					categoryList = null;
+					if (fromIndex <=MAX_CACHED && list != null && list.size() > 0)
+						cache.put(cachedKey, list);
 					result.put("categories", list);
 				}
 			}
 		}
 		return result;
 	}
+
+	
 
 	public JSONObject getNews(String uid, String locale, List<String> types, int limit, int fromIndex)
 			throws Exception {
@@ -290,10 +292,9 @@ public class NewsService {
 		JCSCacheClient cache = JSCCacheManager.getInstace().getCache(cachedKey.toString());
 		Object newsList = cache.get(cachedKey.toString());
 
-		if (newsList != null) {
+		if ( fromIndex <= MAX_CACHED && newsList != null) {
 			result.put("categories", (org.json.simple.JSONArray) newsList);
-		}
-		if (categoryList == null || categoryList.isEmpty()) {
+		}else {
 			StringBuilder type = new StringBuilder();
 			StringBuilder langs = new StringBuilder();
 			StringBuilder counts = new StringBuilder();
@@ -310,7 +311,7 @@ public class NewsService {
 			}
 			counts.deleteCharAt(counts.length() - 1);
 
-			String sql = "select distinct url,id,title, shotdesc,fromwebsite,imageurl,type,collectedtime,title_id,parent_catename from news where type in ("
+			String sql = "select distinct url,id,title, shotdesc,fromwebsite,imageurl,type,collectedtime,title_id,parent_catename,country,language from news where type in ("
 					+ type.toString() + ") and country in (" + counts + ") and language in (" + langs.toString()
 					+ ")  order by id desc limit " + limit + " offset " + fromIndex;
 			System.out.println(sql);
@@ -357,15 +358,15 @@ public class NewsService {
 					}
 
 				});
-				for (Category c : categoryList) {
-					c.setSubcates(MappingHelper.parentCateMapping.get(c.getCateId()));
-				}
 
 				org.json.simple.JSONArray list = (org.json.simple.JSONArray) new JSONParser()
 						.parse(JSONHelper.toJSONArray(categoryList).toString());
+				categoryList.clear();
+				categoryList = null;
 				result.put("categories", list);
-				if (cachedKey != null) {
-					//cache.put(cachedKey, list);
+				
+				if (fromIndex <= MAX_CACHED && list != null && list.size() > 0 && cachedKey != null) {
+					cache.put(cachedKey, list);
 				}
 			}
 
@@ -373,72 +374,26 @@ public class NewsService {
 		return result;
 	}
 
-	public JSONObject getLatestNews(List<String> types, List<String> countries, int limit, long time)
-			throws SQLException, JSONException {
-		JSONObject result = new JSONObject();
-		List<Category> categoryList = new ArrayList<>();
-		StringBuilder country = new StringBuilder();
-		StringBuilder cacheCountry = new StringBuilder();
-		for (String c : countries) {
-			country.append("?,");
-			cacheCountry.append(c);
-		}
-		country.deleteCharAt(country.length() - 1);
-
-		if (categoryList == null || categoryList.isEmpty()) {
-			String sql = "select distinct url,id,title, shotdesc,fromwebsite,imageurl,type,collectedtime,title_id,parent_catename from news where type = ? and collectedtime > ? and country in ("
-					+ country.toString() + ")  order by id desc limit " + limit;
-			Connection conn = JDBCConnection.getInstance().getConnection();
-			PreparedStatement stm = conn.prepareStatement(sql);
-			try {
-
-				for (String type : types) {
-					stm.clearParameters();
-					stm.setString(1, type);
-					stm.setTimestamp(2, new Timestamp(time));
-					int count = 3;
-					for (String c : countries) {
-						stm.setString(count, c);
-						count++;
-					}
-					ResultSet rs = stm.executeQuery();
-					Category c = new Category(type);
-					while (rs.next()) {
-						if (!categoryList.contains(c)) {
-							if (MappingHelper.categoryTypeLabelMapping.get(rs.getString("type")) != null) {
-								c = new Category(new ArrayList<News>(),
-										MappingHelper.categoryTypeLabelMapping.get(rs.getString("type")),
-										rs.getString("type"));
-							} else {
-								c = new Category(new ArrayList<News>(), "", rs.getString("type"));
-							}
-							categoryList.add(c);
-						} else {
-							c = categoryList.get(categoryList.indexOf(c));
-						}
-						c.addNews(dataToNews(rs));
-					}
-					rs.close();
-				}
-
-				for (Category c : categoryList) {
-					c.setSubcates(MappingHelper.parentCateMapping.get(c.getCateId()));
-				}
-
-				org.json.simple.JSONArray list = (org.json.simple.JSONArray) new JSONParser()
-						.parse(JSONHelper.toJSONArray(categoryList).toString());
-				result.put("categories", list);
-
-			} catch (Exception e) {
-				e.printStackTrace();
-			} finally {
-				stm.close();
-				conn.close();
-			}
-
-		}
-		return result;
-	}
+//	public JSONObject getLatestNews(String uid,String locale, int limit, long time)
+//			throws Exception {
+//		JSONObject result = new JSONObject();
+//		List<String> lgs = UserSettings.getUserSetting(uid, UserSettings.TYPE_FAVORITE_LANGUAGES, locale);
+//		
+//		List<News> news = new ArrayList<>();
+//		for(Category c : cachedArticles.values()){
+//			for(News n : c.getNews()){
+//				if(lgs.contains(n.getLang()) && n.getDate().getTime() > time){
+//					news.add(n);
+//				}
+//			}
+//		}
+//		org.json.simple.JSONArray list = (org.json.simple.JSONArray) new JSONParser()
+//				.parse(JSONHelper.toJSONArray(news).toString());
+//		
+//		result.put("news", list);
+//
+//		return result;
+//	}
 
 	public List<News> getMoreNews(String type, List<String> countries, int fromIndex, int limit) throws SQLException {
 		List<News> newsList = new ArrayList<>();
@@ -449,21 +404,22 @@ public class NewsService {
 		country.deleteCharAt(country.length() - 1);
 		String sql = "select * from news where type=? and country in (" + country.toString()
 				+ ")  order by id desc limit " + limit + " offset " + fromIndex;
-		Connection conn = JDBCConnection.getInstance().getConnection();
-		PreparedStatement stm = conn.prepareStatement(sql);
-		stm.setString(1, type);
-		int count = 2;
-		for (String c : countries) {
-			stm.setString(count, c);
-			count++;
+		try (Connection conn = JDBCConnection.getInstance().getConnection()) {
+			try (PreparedStatement stm = conn.prepareStatement(sql)) {
+				stm.setString(1, type);
+				int count = 2;
+				for (String c : countries) {
+					stm.setString(count, c);
+					count++;
+				}
+				try (ResultSet rs = stm.executeQuery()) {
+					while (rs.next()) {
+						newsList.add(dataToNews(rs));
+					}
+				}
+			}
+
 		}
-		ResultSet rs = stm.executeQuery();
-		while (rs.next()) {
-			newsList.add(dataToNews(rs));
-		}
-		rs.close();
-		stm.close();
-		conn.close();
 		return newsList;
 	}
 
@@ -512,8 +468,8 @@ public class NewsService {
 			rs.close();
 			stm.close();
 			conn.close();
-			//if (news.size() > 0)
-				//cache.put(cached, news);
+			// if (news.size() > 0)
+			// cache.put(cached, news);
 		}
 		return news;
 
@@ -558,6 +514,8 @@ public class NewsService {
 		news.setUrl(rs.getString("url"));
 		news.setId(rs.getInt("id"));
 		news.setParentCateName(rs.getString("parent_catename"));
+		news.setLang(rs.getString("language"));
+		news.setCountry(rs.getString("country"));
 		try {
 			news.setDate(rs.getTimestamp("collectedtime"));
 		} catch (Exception ex) {
@@ -599,24 +557,15 @@ public class NewsService {
 		List<News> newsList = new ArrayList<>();
 		String sql = "select * from news where parent_catename=?  order by id desc limit " + limit + " offset "
 				+ fromIndex;
-		Connection conn = null;
-		PreparedStatement stm = null;
-		ResultSet rs = null;
-		try {
-			conn = JDBCConnection.getInstance().getConnection();
-			stm = conn.prepareStatement(sql);
-			stm.setString(1, cate);
-			rs = stm.executeQuery();
-			while (rs.next()) {
-				newsList.add(dataToNews(rs));
+		try (Connection conn = JDBCConnection.getInstance().getConnection()) {
+			try (PreparedStatement stm = conn.prepareStatement(sql)) {
+				stm.setString(1, cate);
+				try (ResultSet rs = stm.executeQuery()) {
+					while (rs.next()) {
+						newsList.add(dataToNews(rs));
+					}
+				}
 			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			rs.close();
-			stm.close();
-			conn.close();
 		}
 		return newsList;
 	}
