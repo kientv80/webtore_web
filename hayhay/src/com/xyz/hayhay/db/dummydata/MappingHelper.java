@@ -29,7 +29,7 @@ public class MappingHelper {
 	public static List<Category> categories = new ArrayList<>();
 	static {
 		for(CATEGORY category: CATEGORY.values()){
-			mainMenuitems.add(new MenuItem(category.name(),"/news/" + category.name(), LocalizedResource.getInstance().getValue(category.name(), null), LocalizedResource.getInstance().getValue(category.name(), null), ""));
+			mainMenuitems.add(new MenuItem(category.name(),"/news/" + category.name(), LocalizedResource.getInstance().getValue(category.name(), LocalizedResource.EN_ENGLISH), LocalizedResource.getInstance().getValue(category.name(), LocalizedResource.EN_ENGLISH), ""));
 		}
 		//Category group
 		for(Entry<CATEGORY, List<TYPE>> cate : NewsTypes.cateTypeMapping.entrySet()){

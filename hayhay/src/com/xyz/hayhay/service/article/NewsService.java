@@ -37,16 +37,17 @@ public class NewsService {
 	private Map<String, Category> cachedArticles = new ConcurrentHashMap<>();
 	private Timer t = new Timer();
 	private static String block = new String("block");
+
 	public static synchronized NewsService getInstance() {
 		synchronized (block) {
 			if (instance == null)
-			instance = new NewsService();
+				instance = new NewsService();
 		}
 		return instance;
 	}
 
 	private NewsService() {
-		t.schedule(new TimerTask(){
+		t.schedule(new TimerTask() {
 			@Override
 			public void run() {
 				try {
@@ -55,11 +56,10 @@ public class NewsService {
 				} catch (Exception ex) {
 					ex.printStackTrace();
 				}
-				
+
 			}
 		}, 0, 5 * 60 * 1000);// update every five minutes
 	}
-
 
 	private void loadLatestArticles() throws SQLException {
 		StringBuilder filterTypes = new StringBuilder();
@@ -96,24 +96,25 @@ public class NewsService {
 
 	public List<News> getLatestNews(String uid, String locale, int limit, long fromTime) throws Exception {
 		List<String> lgs = UserSettings.getUserSetting(uid, UserSettings.TYPE_FAVORITE_LANGUAGES, locale);
-		
+
 		List<News> news = new ArrayList<>();
-		for(Category c : cachedArticles.values()){
-			for(News n : c.getNews()){
-				if(lgs.contains(n.getLang()) && n.getDate().getTime() > fromTime){
+		for (Category c : cachedArticles.values()) {
+			for (News n : c.getNews()) {
+				if (lgs.contains(n.getLang()) && n.getDate().getTime() > fromTime) {
 					news.add(n);
 				}
 			}
 		}
 		return news;
 	}
+
 	public List<Category> getOfflineNews(String uid, String locale, int limit, long fromTime) throws Exception {
-		List<News> news = getLatestNews(uid,locale,limit,fromTime);
-		Map<String,Category> cates =new HashMap<>();
-		if(news != null && !news.isEmpty()){
-			for(News n : news){
+		List<News> news = getLatestNews(uid, locale, limit, fromTime);
+		Map<String, Category> cates = new HashMap<>();
+		if (news != null && !news.isEmpty()) {
+			for (News n : news) {
 				Category c = cates.get(n.getParentCateName());
-				if(c == null){
+				if (c == null) {
 					c = new Category(n.getParentCateName());
 					c.setNews(new ArrayList<News>());
 					cates.put(n.getParentCateName(), c);
@@ -123,8 +124,7 @@ public class NewsService {
 		}
 		return new ArrayList<>(cates.values());
 	}
-	
-	
+
 	public List<News> getNews(String type, int limit) throws SQLException {
 		List<News> newsList = new ArrayList<>();
 		String sql = "select * from news where type=?  order by id desc limit " + limit;
@@ -177,7 +177,9 @@ public class NewsService {
 		}
 		return newsList;
 	}
-	private final int  MAX_CACHED = 200;
+
+	private final int MAX_CACHED = 200;
+
 	public JSONObject getHighlightNews(String uid, String locale, int limit, int fromIndex) throws Exception {
 		JSONObject result = new JSONObject();
 		Map<String, Category> categoryList = new LinkedHashMap<>();
@@ -257,14 +259,13 @@ public class NewsService {
 						}
 					});
 
-
 					org.json.simple.JSONArray list = (org.json.simple.JSONArray) new JSONParser()
 							.parse(JSONHelper.toJSONArray(sortCates).toString());
 					sortCates.clear();
 					categoryList.clear();
 					sortCates = null;
 					categoryList = null;
-					if (fromIndex <=MAX_CACHED && list != null && list.size() > 0)
+					if (fromIndex <= MAX_CACHED && list != null && list.size() > 0)
 						cache.put(cachedKey, list);
 					result.put("categories", list);
 				}
@@ -272,8 +273,6 @@ public class NewsService {
 		}
 		return result;
 	}
-
-	
 
 	public JSONObject getNews(String uid, String locale, List<String> types, int limit, int fromIndex)
 			throws Exception {
@@ -292,9 +291,9 @@ public class NewsService {
 		JCSCacheClient cache = JSCCacheManager.getInstace().getCache(cachedKey.toString());
 		Object newsList = cache.get(cachedKey.toString());
 
-		if ( fromIndex <= MAX_CACHED && newsList != null) {
+		if (fromIndex <= MAX_CACHED && newsList != null) {
 			result.put("categories", (org.json.simple.JSONArray) newsList);
-		}else {
+		} else {
 			StringBuilder type = new StringBuilder();
 			StringBuilder langs = new StringBuilder();
 			StringBuilder counts = new StringBuilder();
@@ -364,7 +363,7 @@ public class NewsService {
 				categoryList.clear();
 				categoryList = null;
 				result.put("categories", list);
-				
+
 				if (fromIndex <= MAX_CACHED && list != null && list.size() > 0 && cachedKey != null) {
 					cache.put(cachedKey, list);
 				}
@@ -374,51 +373,61 @@ public class NewsService {
 		return result;
 	}
 
-//	public JSONObject getLatestNews(String uid,String locale, int limit, long time)
-//			throws Exception {
-//		JSONObject result = new JSONObject();
-//		List<String> lgs = UserSettings.getUserSetting(uid, UserSettings.TYPE_FAVORITE_LANGUAGES, locale);
-//		
-//		List<News> news = new ArrayList<>();
-//		for(Category c : cachedArticles.values()){
-//			for(News n : c.getNews()){
-//				if(lgs.contains(n.getLang()) && n.getDate().getTime() > time){
-//					news.add(n);
-//				}
-//			}
-//		}
-//		org.json.simple.JSONArray list = (org.json.simple.JSONArray) new JSONParser()
-//				.parse(JSONHelper.toJSONArray(news).toString());
-//		
-//		result.put("news", list);
-//
-//		return result;
-//	}
-
-	public List<News> getMoreNews(String type, List<String> countries, int fromIndex, int limit) throws SQLException {
+	public List<News> getNewsByType(String uid, String type, int fromIndex, int limit) throws Exception {
 		List<News> newsList = new ArrayList<>();
-		StringBuilder country = new StringBuilder();
-		for (String c : countries) {
-			country.append("?,");
-		}
-		country.deleteCharAt(country.length() - 1);
-		String sql = "select * from news where type=? and country in (" + country.toString()
-				+ ")  order by id desc limit " + limit + " offset " + fromIndex;
-		try (Connection conn = JDBCConnection.getInstance().getConnection()) {
-			try (PreparedStatement stm = conn.prepareStatement(sql)) {
-				stm.setString(1, type);
-				int count = 2;
-				for (String c : countries) {
-					stm.setString(count, c);
-					count++;
-				}
-				try (ResultSet rs = stm.executeQuery()) {
-					while (rs.next()) {
-						newsList.add(dataToNews(rs));
+		List<String> languages = UserSettings.getUserSetting(uid, UserSettings.TYPE_FAVORITE_LANGUAGES, "");
+		List<String> countries = UserSettings.getUserSetting(uid, UserSettings.TYPE_FAVORITE_COUNTRIES, "");
+		StringBuilder cachedKey = new StringBuilder("article_");
+
+		System.out.println(languages.toString());
+		System.out.println(countries.toString());
+
+		cachedKey.append(type);
+		cachedKey.append(StringUtils.join(languages, "_"));
+		cachedKey.append(StringUtils.join(countries, "_")).append("_from_" + fromIndex);
+		JCSCacheClient cache = JSCCacheManager.getInstace().getCache(cachedKey.toString());
+		Object cnewsList = cache.get(cachedKey.toString());
+		if (cnewsList != null) {
+			newsList = (List<News>) cnewsList;
+		} else {
+			StringBuilder langs = new StringBuilder();
+			StringBuilder counts = new StringBuilder();
+			for (String l : languages) {
+				langs.append("?,");
+			}
+			langs.deleteCharAt(langs.length() - 1);
+			for (String c : countries) {
+				counts.append("?,");
+			}
+			counts.deleteCharAt(counts.length() - 1);
+			String sql = "select distinct url,id,title, shotdesc,fromwebsite,imageurl,type,collectedtime,title_id,parent_catename,country,language  from news where type = ?"
+					+ " and country in (" + counts.toString() + ") and language in (" + langs.toString()
+					+ ")  order by id desc limit " + limit + " offset " + fromIndex;
+			int count = 1;
+			try (Connection conn = JDBCConnection.getInstance().getConnection()) {
+				try (PreparedStatement stm = conn.prepareStatement(sql)) {
+					stm.setString(1, type);
+					for (int i = 0; i < countries.size(); i++) {
+						count++;
+						stm.setString(count, countries.get(i));
 					}
+					for (int i = 0; i < languages.size(); i++) {
+						count++;
+						stm.setString(count, languages.get(i));
+					}
+					System.out.println(sql);
+					System.out.println("count=" + count);
+					try (ResultSet rs = stm.executeQuery()) {
+						while (rs.next()) {
+							News n = dataToNews(rs);
+							newsList.add(n);
+						}
+					}
+
+					if (newsList.size() > 0)
+						cache.put(cachedKey, newsList);
 				}
 			}
-
 		}
 		return newsList;
 	}

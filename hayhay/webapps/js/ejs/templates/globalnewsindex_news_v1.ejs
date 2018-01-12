@@ -1,0 +1,86 @@
+
+
+
+
+
+<%for(i = 0;i< categoriesNews.length;i++){ %>
+	<%
+		var mainNews = {};
+		var hotNews = {};
+		
+		var category =categoriesNews[i];
+		if(category.news.length <= 0)
+			continue;
+			
+		mainNews = category.news[0];
+
+		if(category.news.length > 1)
+			hotNews = category.news.slice(1,category.news.length);
+		
+	%>
+		<div class="container-fluid" style="padding: 2px 0px 15px 0px;">
+			<div class="row w3-card-2"   style="padding: 0px; background-color:#fff ;color: white;">
+				<div id="<%=category.cateId%>"></div>
+				<div class="container-fluid"  id="<%=category.cateId%>_container">
+					<!-- Main news -->
+					<div class="row" style="padding: 0px">
+						<!-- Cate header -->
+						<div class="container-fluid" style="padding: 0px;margin-bottom:8px;border-bottom : 4px solid <%=category.backGroudColor%>  !important;">
+							<h5 style="padding-left: 10px;"><a href="#" style=" text-decoration: none;color:<%=category.backGroudColor%> ;font-weight: bold;"><%=category.name%></a></h5>
+						</div>
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"  style="padding: 0px;border-bottom : 1px solid #e9eaed  !important;">
+							<div class="container-fluid"  id="<%=mainNews.id%>">
+								<div class="row" style="padding: 0px">
+									<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" style="padding: 0px;">
+										<div class="container-fluid" style="padding: 0px;">
+										  	<a   onclick="return showWebcontent('<%=mainNews.url%>',false,'<%=mainNews.id%>','<%=mainNews.type%>','');" style="text-decoration: none;"> 
+												<img class="img-responsive mainarticleimage" src="<%=mainNews.imageUrl%>" alt="" style="width: 100%;" id="image_<%=mainNews.id%>">
+											</a>
+										</div>
+									</div>
+									<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8" >
+										<h3>
+											<a  onclick="return showWebcontent('<%=mainNews.url%>',false,'<%=mainNews.id%>','<%=mainNews.type%>','')" class="mainarticletitle" style="text-decoration: none;"><%=mainNews.title%></a>
+										</h3>
+										<p>
+											<%=mainNews.shotDesc%>
+											<br><a href="/news/type/<%=mainNews.type%>" style="text-decoration: none;"><span class="website_info" style="text-transform: uppercase;color:<%=category.backGroudColor%>"><%=mainNews.type%></span> </a><span class="website_info">(<%=mainNews.fromWebSite%> <%=mainNews.strDate %>)</span>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="padding: 0px;background-color: #e9eaed;"  >
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"  style="padding: 10px 0px 0px 0px ;background-color: #fff;">
+							<!-- hot  news -->
+							<div class="container-fluid" style="padding: 0px;">
+								<%for(j = 0;j< hotNews.length; j ++){ var news = hotNews[j];%>
+										<div class="row" style="padding: 0px 0px 10px 0px;" id="<%=news.id%>">
+											<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"  style="padding: 0px;" id="<%=news.id%>">
+												<div class="container-fluid" style="padding:0px 4px 0px 4px;">
+													<a  onclick="return showWebcontent('<%=news.url%>',false,'<%=news.id%>','<%=news.type%>','');" style=" text-decoration: none;">
+														<img class="img-responsive highlightarticleimage" style="width: 100%;padding-top: 6px" alt="<%=news.title%>" src="<%=news.imageUrl%>" id="image_<%=news.id%>">
+													</a>
+												</div>
+											</div>
+											<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+												<div class="container-fluid">
+													<a  onclick="return showWebcontent('<%=news.url%>',false,'<%=news.id%>','<%=news.type%>','');" class="highlight" style="text-decoration: none;"><%=news.title%></a>
+													<p style="padding: 0px;">
+														<a href="/news/type/<%=news.type%>" style="text-decoration: none;"><span class="website_info"  style="text-transform: uppercase;color:<%=category.backGroudColor%>"><%=news.type%></span> </a>
+														<span class="website_info">(<%=news.fromWebSite%> <%=news.strDate%>)</span>
+													</p>
+												</div>
+											</div>
+										</div>
+								<%}%>
+							</div>
+						</div>
+		
+					</div>
+				</div>
+			</div>
+		</div>
+<%}%>
+		 

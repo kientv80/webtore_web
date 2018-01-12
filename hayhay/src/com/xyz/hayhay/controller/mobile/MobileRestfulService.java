@@ -2,6 +2,7 @@ package com.xyz.hayhay.controller.mobile;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONException;
@@ -101,11 +102,11 @@ public class MobileRestfulService extends BaseController {
 	@ResponseBody
 	@RequestMapping(value = "/mobile/article/{category}", method = RequestMethod.GET)
 	public void getArticlesV2(@PathVariable String category, String uid, String from, String locale,
-			HttpServletResponse resp) {
+			HttpServletResponse resp, HttpServletRequest rq) {
 		try {
 			System.out.println("Locale = " + locale);
 			JSONObject result = null;
-
+			uid = getUid(uid, rq);
 			if (category == null || category.isEmpty()) {
 				category = NewsTypes.CATEGORY.HotNews.name();
 			}
@@ -160,11 +161,14 @@ public class MobileRestfulService extends BaseController {
 
 	@ResponseBody
 	@RequestMapping(value = "/mobile/settings/get", method = RequestMethod.GET)
-	public void getSettings(String uid, String option, String locale, HttpServletResponse resp) {
+	public void getSettings(String uid, String option, String locale, HttpServletResponse resp, HttpServletRequest rq) {
 		try {
+			uid = getUid(uid, rq);
 			System.out.println("getSettings " + uid + ":" + option + ":" + locale);
 			JSONObject settings = UserSettings.getSettings(uid, option, locale);
+			
 			if (settings != null) {
+				settings.put("errorCode", 0);
 				System.out.println(settings.toJSONString());
 				writeSimpleJSONObjectResponse(resp, settings);
 			} else {
@@ -177,8 +181,9 @@ public class MobileRestfulService extends BaseController {
 
 	@ResponseBody
 	@RequestMapping(value = "/mobile/settings/update", method = RequestMethod.POST)
-	public void updateSettings(String uid, String settings, HttpServletResponse resp) {
+	public void updateSettings(String uid, String settings, HttpServletResponse resp, HttpServletRequest rq) {
 		try {
+			uid = getUid(uid, rq);
 			System.out.println(settings);
 			JSONObject st = (JSONObject) new JSONParser().parse(settings);
 			UserSettings.saveUserSettings(st.get("title").toString(), st.get("serviceUrl").toString(), uid,

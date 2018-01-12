@@ -5,11 +5,13 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.simple.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.xyz.hayhay.controller.BaseController.RESULT;
 import com.xyz.hayhay.service.user.Person;
 import com.xyz.hayhay.service.user.ProfileService;
 import com.xyz.hayhay.util.JSONHelper;
@@ -34,8 +36,16 @@ public class ProfileController extends BaseController{
 			} else if(ps.size() == 1){
 				p = ps.get(0);
 			}
+		}else{
+			p = new Person();
+			p.setDeviceid("web");
+			p.setDeviceinfo("web");
+			p = ProfileService.getInstance().addPerson(p);
 		}
-		if(p != null)
-			writeJSONResponsed(resp, JSONHelper.toJSONObject(p));
+		if(p != null){
+			JSONObject result = JSONHelper.toJSONObject(p);
+			result.put("errorCode", RESULT.SUCCESS.ordinal());
+			writeJSONResponsed(resp, result);
+		}
 	}
 }

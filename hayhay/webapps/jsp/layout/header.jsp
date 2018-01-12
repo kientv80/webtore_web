@@ -63,6 +63,10 @@
 			      			<img alt="" src="/images/icons/chuyenmuc.png" class="img-responsive" style="padding-right: 10px;width: 34px;height: 20px;" title="Danh mục khác">
 			      		</a>
 			      		<ul class="dropdown-menu" style="width: 300px;background-color: #3e5062;">
+						<li style="padding-top: 5px;">
+						  <a href="#" style="color:#fff;text-transform: uppercase;" onclick="showLanguageSettings();">Settings</a>
+						 
+						</li>
 			      			<c:forEach items = "${othermenuitems }" var="item">
 					        	<c:if test="${item.submenus.size() > 0 }">
 					        		<li class="dropdown">

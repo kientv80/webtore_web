@@ -38,5 +38,5 @@
 
 
 <div id="footer" class="container-fluid" style="padding-top: 10px;width: 100%;">
-	<p>Copyright © 2015 by 360Hay.com</p>
+	<p>Copyright © 2015 by globalnewsindex.com</p>
 </div>

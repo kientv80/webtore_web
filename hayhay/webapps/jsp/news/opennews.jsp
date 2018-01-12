@@ -7,18 +7,18 @@
 <head>
 	<title>360hay!</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="author" content="360hay.com" />
+	<meta name="author" content="globalnewsindex.com" />
 	<meta content="vi-VN" />
 	<meta property="og:title" content="${title }" />
 	<meta name="description" content="${desc }" />
 	<meta property="og:image" itemprop="thumbnailUrl" content="${image}" />
-	<meta property="og:url" content="http://360hay.com?article=${url}" />
-	<meta content="Tin nhanh 360hay.com" property="og:site_name"/>
-	<meta name="author" content="360hay.com" />
-	<meta name="dc.publisher" content="360Hay" />
-    <meta name="dc.rights.copyright" content="360hay.com" />
-    <meta name="dc.creator.name" content="360hay.com" />
-    <meta name="apple-mobile-web-app-title" content="360hay.com" />
+	<meta property="og:url" content="http://globalnewsindex.com?article=${url}" />
+	<meta content="globalnewsindex.com" property="og:site_name"/>
+	<meta name="author" content="globalnewsindex.com" />
+	<meta name="dc.publisher" content="GlobalNewsIndex" />
+    <meta name="dc.rights.copyright" content="globalnewsindex.com" />
+    <meta name="dc.creator.name" content="globalnewsindex.com" />
+    <meta name="apple-mobile-web-app-title" content="globalnewsindex.com" />
 	<c:if test="${embededGA == true}">
 		<script>
 		
@@ -45,7 +45,7 @@
 		window.fbAsyncInit = function() {
 			// init the FB JS SDK
 			FB.init({
-				appId : '1641687746054225', // App ID from the app dashboard
+				appId : '1658222504229501', // App ID from the app dashboard
 				status : true, // Check Facebook Login status
 				xfbml : true
 			// Look for social plugins on the page
@@ -58,7 +58,7 @@
 				return;
 			js = d.createElement(s);
 			js.id = id;
-			js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=1641687746054225";
+			js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=1658222504229501";
 			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
 	</script>
@@ -71,7 +71,7 @@
 							<button type="button" class="btn btn-primary" onclick="return parent.closeEmbeddedContent('${ref}');">Đóng</button>
 						</div>
 						<c:if test="${articleId != null && articleId != ''}">
-							<div id= "fblike" style="float: right;  padding: 7px 12px;" class="fb-share-button" data-href="http://360hay.com/like?articleId=${articleId}&targetUrl=${url}" data-layout="button_count"></div>
+							<div id= "fblike" style="float: right;  padding: 7px 12px;" class="fb-share-button" data-href="http://globalnewsindex.com/like?articleId=${articleId}&targetUrl=${url}" data-layout="button_count"></div>
 						</c:if>
 					</div>
 				</div>

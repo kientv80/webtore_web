@@ -30,7 +30,7 @@ function showWebcontent(url, isIs360hayArticle,articleId,cateName, ref) {
 		$("#youtubeEmbededContent").attr("style","display:block;padding: 0px;;height: 100%;");
 		selectedCategory = cateName;
 		loadYoutubeArticles();
-	}else if(url.indexOf("muabannhadat.vn") > 0 || url.indexOf("phimmoi.net") > 0){
+	}else if(url.indexOf("muabannhadat.vn") > 0 || url.indexOf("phimmoi.net")  > 0 || url.indexOf("tienphong.vn")  > 0 || url.indexOf("foxnews.com")  > 0  ){
 		window.open(url);
 	}else if(fromApp != null && fromApp != undefined && fromApp == "true" ){
 		var article = findNewsById(parseInt(articleId));

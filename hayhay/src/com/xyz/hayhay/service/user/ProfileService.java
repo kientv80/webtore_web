@@ -54,7 +54,7 @@ public class ProfileService {
 				rs.close();
 			con.close();
 		}
-		return getPerson(Long.valueOf(p.getId()));
+		return p;//getPerson(Long.valueOf(p.getId()));
 	}
 
 	public Person getPerson(long id) throws SQLException {

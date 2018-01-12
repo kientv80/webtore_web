@@ -26,7 +26,7 @@
 					<div class="row" style="padding: 0px">
 						<!-- Cate header -->
 						<div class="container-fluid" style="padding: 0px;margin-bottom:8px;border-bottom : 4px solid <%=category.backGroudColor%>  !important;">
-							<h5 style="padding-left: 10px;"><a href="#" style=" text-decoration: none;color:back;font-weight: bold;"><%=category.cateId%></a></h5>
+							<h5 style="padding-left: 10px;"><a href="#" style=" text-decoration: none;color: rgba(0, 0, 0, 0.5);font-weight: bold;"><%=category.cateId%></a></h5>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"  style="padding: 0px;border-bottom : 1px solid #e9eaed  !important;">
 							<div class="container-fluid"  id="<%=mainNews.id%>">
@@ -57,14 +57,14 @@
 							<div class="container-fluid" style="padding: 0px;">
 								<%for(j = 0;j< hotNews.length; j ++){ var news = hotNews[j];%>
 										<div class="row" style="padding: 0px 0px 10px 0px;" id="<%=news.id%>">
-											<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"  style="padding: 0px;" id="<%=news.id%>">
+											<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3"  style="padding: 0px;" id="<%=news.id%>">
 												<div class="container-fluid" style="padding:0px 4px 0px 4px;">
 													<a  onclick="return showWebcontent('<%=news.url%>',false,'<%=news.id%>','<%=news.type%>','');" style=" text-decoration: none;">
 														<img class="img-responsive highlightarticleimage" style="width: 100%;padding-top: 6px" alt="<%=news.title%>" src="<%=news.imageUrl%>" id="image_<%=news.id%>">
 													</a>
 												</div>
 											</div>
-											<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+											<div class="col-xs-8 col-sm-8 col-md-8 col-lg-9">
 												<div class="container-fluid">
 													<a  onclick="return showWebcontent('<%=news.url%>',false,'<%=news.id%>','<%=news.type%>','');" class="highlight" style="text-decoration: none;"><%=news.title%></a>
 													<p style="padding: 0px;">

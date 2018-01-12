@@ -94,19 +94,19 @@ public class UserSettings {
 			settings.add(createSetting(News.COUNTRY.US.ordinal(), News.COUNTRY.US.name(),
 					LocalizedResource.getInstance().getValue("country.us", locale), "checkbox", true));
 			settings.add(createSetting(News.COUNTRY.CHINA.ordinal(), News.COUNTRY.CHINA.name(),
-					LocalizedResource.getInstance().getValue("country.china", locale), "checkbox", false));
+					LocalizedResource.getInstance().getValue("country.china", locale), "checkbox", true));
 			settings.add(createSetting(News.COUNTRY.ASIAN.ordinal(), News.COUNTRY.ASIAN.name(),
-					LocalizedResource.getInstance().getValue("country.asian", locale), "checkbox", false));
+					LocalizedResource.getInstance().getValue("country.asian", locale), "checkbox", true));
 
 		} else {
 			settings.add(createSetting(News.COUNTRY.VN.ordinal(), News.COUNTRY.VN.name(),
-					LocalizedResource.getInstance().getValue("country.vn", locale), "checkbox", false));
+					LocalizedResource.getInstance().getValue("country.vn", locale), "checkbox", true));
 			settings.add(createSetting(News.COUNTRY.US.ordinal(), News.COUNTRY.US.name(),
 					LocalizedResource.getInstance().getValue("country.us", locale), "checkbox", true));
 			settings.add(createSetting(News.COUNTRY.CHINA.ordinal(), News.COUNTRY.CHINA.name(),
-					LocalizedResource.getInstance().getValue("country.china", locale), "checkbox", false));
+					LocalizedResource.getInstance().getValue("country.china", locale), "checkbox", true));
 			settings.add(createSetting(News.COUNTRY.ASIAN.ordinal(), News.COUNTRY.ASIAN.name(),
-					LocalizedResource.getInstance().getValue("country.asian", locale), "checkbox", false));
+					LocalizedResource.getInstance().getValue("country.asian", locale), "checkbox", true));
 		}
 
 		result.put("settings", settings);

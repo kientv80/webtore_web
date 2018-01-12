@@ -46,25 +46,27 @@ public class NewsController extends BaseController {
 	@Autowired
 	HayHayService stressService;
 
-	@Async
-	@ResponseBody
-	@RequestMapping(value = "/news/loadmorenews.html", method = RequestMethod.GET)
-	public void loadMoreNews(String from, String cate, String fromIndex, ModelMap model, HttpServletRequest request,
-			HttpServletResponse resp) {
-		int index = Integer.valueOf(fromIndex);
-		try {
-			if (!"dashboard".equals(from)) {
-				List<News> news = newsService.getMoreNews(cate,Arrays.asList(new String[]{"VN"}), index, 12);
-				writeJSONResponse(resp, JSONHelper.toJSONArray(news));
-			} else {
-				List<News> news = newsService.getMoreHighlightNews(cate, index, 12);
-				writeJSONResponse(resp, JSONHelper.toJSONArray(news));
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+//	@Async
+//	@ResponseBody
+//	@RequestMapping(value = "/news/loadmorenews.html", method = RequestMethod.GET)
+//	public void loadMoreNews(String from, String cate, String fromIndex, ModelMap model, HttpServletRequest request,
+//			HttpServletResponse resp) {
+//		int index = Integer.valueOf(fromIndex);
+//		try {
+//			if (!"dashboard".equals(from)) {
+//				String uid = getUid("", request);
+//				String type = cate;
+//				List<News> news = newsService.getMoreNews(uid, type, index, 12);
+//				writeJSONResponse(resp, JSONHelper.toJSONArray(news));
+//			} else {
+//				List<News> news = newsService.getMoreHighlightNews(cate, index, 12);
+//				writeJSONResponse(resp, JSONHelper.toJSONArray(news));
+//			}
+//
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//	}
 
 
 	@RequestMapping(value = "/news/opennews.html", method = RequestMethod.GET)
@@ -109,16 +111,18 @@ public class NewsController extends BaseController {
 			model.put("target", target);
 			return "category_news";
 		} else {
-			return getNewsByCate(NewsTypes.CATEGORY.HotNews.name(), target, model);
+			String uid = getUid("", rq);
+			return getNewsByCate(uid, NewsTypes.CATEGORY.HotNews.name(), target, model);
 		}
 	}
 
 	@RequestMapping(value = "/news/{cate}", method = RequestMethod.GET)
 	public String newsCategory(@PathVariable String cate, String target, HttpServletRequest req,
-			HttpServletResponse resp, ModelMap model) {
-		return getNewsByCate(cate, target, model);
+			HttpServletResponse resp, ModelMap model, HttpServletRequest rq) {
+		String uid = getUid("", rq);
+		return getNewsByCate(uid, cate, target, model);
 	}
-	private String getNewsByCate(String cate, String target, ModelMap model) {
+	private String getNewsByCate(String uid, String cate, String target, ModelMap model) {
 		try {
 			if (target != null && !target.isEmpty()) {
 				model.put("target", target);
@@ -127,10 +131,10 @@ public class NewsController extends BaseController {
 				JSONObject result = new JSONObject();
 				model.put("fromIndex", 10);
 				if (cate == null || cate.isEmpty() ||  NewsTypes.CATEGORY.HotNews.name().equals(cate)) {
-					result = newsService.getHighlightNews("-1",LocalizedResource.VI_VN, 10, 0);
+					result = newsService.getHighlightNews(uid,LocalizedResource.VI_VN, 10, 0);
 					
 				}else{
-					result = newsService.getNews("-1", LocalizedResource.VI_VN, MappingHelper.cateGroup.get(cate), 10, 0);
+					result = newsService.getNews(uid, LocalizedResource.VI_VN, MappingHelper.cateGroup.get(cate), 10, 0);
 				}
 				model.put("from", "dashboard");
 				model.put("cate", cate);
@@ -150,8 +154,9 @@ public class NewsController extends BaseController {
 			ModelMap model) {
 		List<News> news = new ArrayList<>();
 		try {
-			news = newsService.getNews(cate, 50);
-		} catch (SQLException e) {
+			String uid = getUid("", req);
+			news = newsService.getNewsByType(uid,cate,0, 50);
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		model.put("news", news);
@@ -173,15 +178,16 @@ public class NewsController extends BaseController {
 					ex.printStackTrace();
 				}
 			}
+			String uid = getUid("", req);
 			JSONObject result = null;
 			List<String> cates = new ArrayList<>();
 			if (cate == null || cate.isEmpty()) {
 				cate = NewsTypes.CATEGORY.HotNews.name();
-				result = newsService.getHighlightNews("-1",LocalizedResource.VI_VN, 10, fIndex);
+				result = newsService.getHighlightNews(uid,LocalizedResource.VI_VN, 10, fIndex);
 			}else{
 				cates = new ArrayList<>();
 				cates = MappingHelper.cateGroup.get(cate);
-				result = newsService.getNews("-1", LocalizedResource.VI_VN, cates, 10, fIndex);
+				result = newsService.getNews(uid, LocalizedResource.VI_VN, cates, 10, fIndex);
 			}
 			
 			if (result != null)
@@ -204,8 +210,9 @@ public class NewsController extends BaseController {
 					
 				}
 			}
+			String uid = getUid("", req);
 			JSONObject result = null;
-			result = newsService.getNews("-1", LocalizedResource.VI_VN, MappingHelper.cateGroup.get(cate), 10, fIndex);
+			result = newsService.getNews(uid, LocalizedResource.VI_VN, MappingHelper.cateGroup.get(cate), 10, fIndex);
 			if (result != null)
 				writeSimpleJSONObjectResponse(resp, result);
 		} catch (Exception e) {

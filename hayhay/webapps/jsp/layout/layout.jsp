@@ -8,7 +8,7 @@
 <script src="/js/jquery-2.1.3.min.js"></script>
 <script src="/js/bootstrap_v01.min.js"></script>
 <script src="/js/webstorejs_core_v06.js"></script>
-<script src="/js/360hay_v21.js"></script>
+<script src="/js/360hay_v23.js"></script>
 <link rel="stylesheet" href="/css/bootstrap_v07.min.css">
 <link rel="shortcut icon" href="/images/icons/hayicon.png" type="image/x-icon" />
  <style>
@@ -127,6 +127,44 @@
 		</div>
 	</div>
 
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+		<h5 class="modal-title" id="exampleModalLabel">Read news writen in follow languages</h5>
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		  <span aria-hidden="true">&times;</span>
+		</button>
+	      </div>
+	      <div class="modal-body">
+		    <form>
+		      <div class="form-group">
+			<label for="english">English</label>
+			<input type="checkbox" class="form-check-input" id="english">
+			<small id="englishHelp" class="form-text text-muted">Read news in English</small>
+		      </div>
+		      <div class="form-group">
+			    <label for="vn">Vietnamese</label>
+			<input type="checkbox" class="form-check-input" id="vn">
+			<small id="vnlHelp" class="form-text text-muted">Read news in Vietnamese</small>
+		      </div>
+		      <div class="form-check">
+			    <label for="chinese">Chinese</label>
+			<input type="checkbox" class="form-check-input" id="chinese">
+			<small id="chineselHelp" class="form-text text-muted">Read news in Chinese</small>
+		      </div>
+		    </form>
+	      </div>
+	      <div class="modal-footer">
+		<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		<button type="button" class="btn btn-primary" onclick="return saveLanguageSettings();" >Save</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+	
 	<script>
 		function showTargetUrl(){
 			if('${target}' != ''){
@@ -154,10 +192,104 @@
 			$('#myNavbar').css("width",width+"px");
 		});
 		
-	   	$( document ).ready(function() {
+	   	$(document).ready(function() {
 		   var po = getPosition(document.getElementById('myNavbar'));
 			$('#myNavbar').attr("data-offset-top",po.y);
 		});
+		
+		
+		//=============== show settings model ======================================
+	      function saveLanguageSettings(){
+			      var settings = undefined;
+			      var profile = ClientCache.getLocalCacheJSON('profile');
+			      var params = {};
+			      if(profile == null || profile == undefined){
+				      HTTPClient.callSyncAjaxService("http://globalnewsindex.com/profile?profileid=",params,"POST","profile");
+				      profile = ClientCache.getLocalCacheJSON('profile');
+				      if(profile != undefined && profile.id > 0){
+					ClientCache.setCookie("uid",profile.id);
+				      }
+			      }else{
+				ClientCache.setCookie("uid",profile.id);
+			      }
+			      if(profile != null && profile != undefined){
+				      HTTPClient.callSyncAjaxService("http://globalnewsindex.com/mobile/settings/get?uid=" + profile.id  + "&option=favorite_languages",params,"GET","settings");
+				      settings = ClientCache.getLocalCacheJSON('settings');
+			      }
+			      if(settings!=undefined){
+				if($("#vn:checked").val() != undefined && $("#vn:checked").val()=="on"){
+				  settings.settings[0].value=true;
+				}else{
+				  settings.settings[0].value=false;
+				}
+				if($("#english:checked").val() != undefined && $("#english:checked").val()=="on"){
+				  settings.settings[1].value=true;
+				}else{
+				  settings.settings[1].value=false;
+				}
+
+				if($("#chinese:checked").val() != undefined && $("#chinese:checked").val()=="on"){
+				  settings.settings[2].value=true;
+				}else{
+				  settings.settings[2].value=false;
+				}
+				params={"uid":profile.id,"settings":JSON.stringify(settings)};
+				
+				HTTPClient.callSyncAjaxService("http://globalnewsindex.com/mobile/settings/update?a=1",params,"POST",);
+				$('#exampleModal').modal('toggle');
+				window.location="http://globalnewsindex.com";
+			      }
+				      
+		      }
+		      function loadLanguageSettings(){
+			var settings = undefined;
+			      var profile = ClientCache.getLocalCacheJSON('profile');
+			      var params = {};
+			      if(profile == null || profile == undefined){
+				      HTTPClient.callSyncAjaxService("http://globalnewsindex.com/profile?profileid=",params,"POST","profile");
+				      profile = ClientCache.getLocalCacheJSON('profile');
+			      }
+			      if(profile != null && profile != undefined){
+				      HTTPClient.callSyncAjaxService("http://globalnewsindex.com/mobile/settings/get?uid=" + profile.id  + "&option=favorite_languages",params,"GET","settings");
+				      settings = ClientCache.getLocalCacheJSON('settings');
+			      }
+			      if(settings!=undefined){
+				if(settings.settings[0].value==true){
+				  $("#vn").attr('checked','checked');
+				}else{
+				  $("#vn").removeAttr('checked');
+				}
+				if(settings.settings[1].value==true){
+				  $("#english").attr('checked','checked');
+				}else{
+				  $("#english").removeAttr('checked');
+				}
+				if(settings.settings[2].value==true){
+				  $("#chinese").attr('checked','checked');
+				}else{
+				  $("#chinese").removeAttr('checked');
+				}
+			      }
+		      }
+		      function bindLanguageSettingsData(){
+			$('#exampleModal').on('shown.bs.modal', function () {
+			  loadLanguageSettings();
+			});
+		      }
+		      function languageSettings(){
+			var settings = ClientCache.getLocalCacheJSON('settings');
+			if(settings == undefined){
+			  showLanguageSettings();
+			}
+		      }
+		      function showLanguageSettings(){
+			$('#exampleModal').modal('show');
+		      }
+		      $(document).ready(function() {
+			bindLanguageSettingsData();
+			languageSettings();
+		      });
+		
 	 </script>	
 
 	<script type="text/javascript">
@@ -180,6 +312,7 @@
 				ClientCache.setCookie("fromAndroidApp","false");
 			}
 		}
+
 		showHideMenuBar();
 	</script>
 </body>

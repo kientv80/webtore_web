@@ -89,6 +89,48 @@
 			</div>
 		</div>
 </div>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Read news writen in follow languages</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+	    <form>
+	      <div class="form-group">
+		<label for="english">English</label>
+		<input type="checkbox" class="form-check-input" id="english">
+		<small id="englishHelp" class="form-text text-muted">Read news in English</small>
+	      </div>
+	      <div class="form-group">
+		    <label for="vn">Vietnamese</label>
+		<input type="checkbox" class="form-check-input" id="vn">
+		<small id="vnlHelp" class="form-text text-muted">Read news in Vietnamese</small>
+	      </div>
+	      <div class="form-check">
+		    <label for="chinese">Chinese</label>
+		<input type="checkbox" class="form-check-input" id="chinese">
+		<small id="chineselHelp" class="form-text text-muted">Read news in Chinese</small>
+	      </div>
+	    </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="return saveLanguageSettings();" >Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <script type="text/javascript">
 	var tv = "${tvstation}";
 	var programe = "";
@@ -108,4 +150,91 @@
 		hour2 = hour;
 		window.location = "/entertainment/tvprogram/filter?tvstation=" + tv + "&hour=" +  hour2;
 	}
+	function saveLanguageSettings(){
+		var settings = undefined;
+		var profile = ClientCache.getLocalCacheJSON('profile');
+		var params = {};
+		if(profile == null || profile == undefined){
+			HTTPClient.callSyncAjaxService("http://globalnewsindex.com/profile?profileid=",params,"POST","profile");
+			profile = ClientCache.getLocalCacheJSON('profile');
+			if(profile != undefined && profile.id > 0){
+			  ClientCache.setCookie("uid",profile.id);
+			}
+		}else{
+		  ClientCache.setCookie("uid",profile.id);
+		}
+		if(profile != null && profile != undefined){
+			HTTPClient.callSyncAjaxService("http://globalnewsindex.com/mobile/settings/get?uid=" + profile.id  + "&option=favorite_languages",params,"GET","settings");
+			settings = ClientCache.getLocalCacheJSON('settings');
+		}
+		if(settings!=undefined){
+		  if($("#vn:checked").val() != undefined && $("#vn:checked").val()=="on"){
+		    settings.settings[0].value=true;
+		  }else{
+		    settings.settings[0].value=false;
+		  }
+		  if($("#english:checked").val() != undefined && $("#english:checked").val()=="on"){
+		    settings.settings[1].value=true;
+		  }else{
+		    settings.settings[1].value=false;
+		  }
+
+		  if($("#chinese:checked").val() != undefined && $("#chinese:checked").val()=="on"){
+		    settings.settings[2].value=true;
+		  }else{
+		    settings.settings[2].value=false;
+		  }
+		  params={"uid":profile.id,"settings":JSON.stringify(settings)};
+		  
+		  HTTPClient.callSyncAjaxService("http://globalnewsindex.com/mobile/settings/update?a=1",params,"POST",);
+		  $('#exampleModal').modal('toggle');
+		}
+			
+	}
+	function loadLanguageSettings(){
+	  var settings = undefined;
+		var profile = ClientCache.getLocalCacheJSON('profile');
+		var params = {};
+		if(profile == null || profile == undefined){
+			HTTPClient.callSyncAjaxService("http://globalnewsindex.com/profile?profileid=",params,"POST","profile");
+			profile = ClientCache.getLocalCacheJSON('profile');
+		}
+		if(profile != null && profile != undefined){
+			HTTPClient.callSyncAjaxService("http://globalnewsindex.com/mobile/settings/get?uid=" + profile.id  + "&option=favorite_languages",params,"GET","settings");
+			settings = ClientCache.getLocalCacheJSON('settings');
+		}
+		if(settings!=undefined){
+		  if(settings.settings[0].value==true){
+		    $("#vn").attr('checked','checked');
+		  }else{
+		    $("#vn").attr('checked','');
+		  }
+		   if(settings.settings[1].value==true){
+		    $("#english").attr('checked','checked');
+		  }else{
+		    $("#english").attr('checked','');
+		  }
+		   if(settings.settings[2].value==true){
+		    $("#chinese").attr('checked','checked');
+		  }else{
+		    $("#chinese").attr('checked','');
+		  }
+		}
+	}
+	function bindLanguageSettingsData(){
+	  $('#exampleModal').on('shown.bs.modal', function () {
+	    loadLanguageSettings();
+	  });
+	}
+	function languageSettings(){
+	  var settings = ClientCache.getLocalCacheJSON('settings');
+	  if(settings == undefined){
+	    $('#exampleModal').modal('show');
+	  }
+	}
+	
+	$(document).ready(function() {
+	  bindLanguageSettingsData();
+	  languageSettings();
+	});
 </script>

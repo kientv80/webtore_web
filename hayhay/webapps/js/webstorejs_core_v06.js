@@ -81,7 +81,7 @@ HTTPClient.callAjaxService = function (targetUrl, params,requestMethod, callback
             if (callback != undefined && callback != null) {
                 HTTPClient.callJSFunc(callback, args);
             }
-            if (cachedKey != undefined && cachedKey != null && json.err >= 0) {
+            if (cachedKey != undefined && cachedKey != null && (json.err != undefined && json.err >= 0 || json.errorCode != undefined && json.errorCode >= 0) ) {
                 ClientCache.localCaching(cachedKey, JSON.stringify(json));
             }
         }, error: function (jqXHR, textStatus, errorThrown) {
@@ -111,8 +111,8 @@ HTTPClient.callSyncAjaxService = function (targetUrl, params, requestMethod, cac
         async: false,
         timeout: 15000,
         success: function (json) {
-            if (cachedKey != undefined && cachedKey != null && json.err >= 0) {
-                localCaching(cachedKey, JSON.stringify(json));
+            if (cachedKey != undefined && cachedKey != null && (json.err != undefined && json.err >= 0 || json.errorCode != undefined && json.errorCode >= 0) ) {
+                ClientCache.localCaching(cachedKey, JSON.stringify(json));
             }
         }, error: function (jqXHR, textStatus, errorThrown) {
             if (textStatus == "timeout") {

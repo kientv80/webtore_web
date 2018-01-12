@@ -9,6 +9,7 @@ import java.util.Properties;
 public class LocalizedResource {
 
 	public static final String VI_VN = "vi_VN";
+	public static final String EN_ENGLISH = "en_english";
 	private static LocalizedResource instance;
 	Properties vnResources;
 	Properties enResources;

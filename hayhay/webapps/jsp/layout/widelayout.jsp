@@ -8,7 +8,7 @@
 <script src="/js/jquery-2.1.3.min.js"></script>
 <script src="/js/bootstrap_v01.min.js"></script>
 <script src="/js/webstorejs_core_v06.js"></script>
-<script src="/js/360hay_v20.js"></script>
+<script src="/js/360hay_v22.js"></script>
 <link rel="stylesheet" href="/css/bootstrap_v07.min.css">
 <link rel="shortcut icon" href="/images/icons/hayicon.png" type="image/x-icon" />
 

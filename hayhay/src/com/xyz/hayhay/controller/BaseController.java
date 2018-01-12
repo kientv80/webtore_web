@@ -123,5 +123,13 @@ public class BaseController {
 		}
 		return value;
 	}
-
+	public String getUid(String uid, HttpServletRequest rq){
+		if(uid == null || uid.isEmpty()){
+			uid = getCookie("uid", rq);
+			if(uid == null || uid.isEmpty()){
+				uid = "-1";
+			}
+		}
+		return uid;
+	}
 }
