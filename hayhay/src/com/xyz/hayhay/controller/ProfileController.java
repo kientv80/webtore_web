@@ -1,49 +1,62 @@
 package com.xyz.hayhay.controller;
 
 import java.sql.SQLException;
-import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.xyz.hayhay.controller.BaseController.RESULT;
-import com.xyz.hayhay.service.user.Person;
+import com.xyz.hayhay.service.user.Profile;
 import com.xyz.hayhay.service.user.ProfileService;
 import com.xyz.hayhay.util.JSONHelper;
-import com.xyz.hayhay.util.ValidationHelper;
 
 @Controller
-public class ProfileController extends BaseController{
+public class ProfileController extends BaseController {
 
 	@ResponseBody
-	@RequestMapping(value = "/profile", method = { RequestMethod.POST})
-	public void getProfile(String profileid,String deviceid,String deviceinfo,HttpServletResponse resp) throws Exception, SQLException{
-		Person p = null;
-		if(profileid != null && ValidationHelper.isLong(profileid)){
-			p = ProfileService.getInstance().getPerson(Long.parseLong(profileid));
-		} else if( deviceid != null && !deviceid.isEmpty()){
-			List<Person> ps = ProfileService.getInstance().getPersonByDeviceId(deviceid);
-			if(ps == null || ps.isEmpty() || ps.size() > 1){
-				p = new Person();
-				p.setDeviceid(deviceid);
-				p.setDeviceinfo(deviceinfo);
-				p = ProfileService.getInstance().addPerson(p);
-			} else if(ps.size() == 1){
-				p = ps.get(0);
-			}
-		}else{
-			p = new Person();
-			p.setDeviceid("web");
-			p.setDeviceinfo("web");
-			p = ProfileService.getInstance().addPerson(p);
+	@RequestMapping(value = "/getprofile", method = { RequestMethod.GET })
+	public void getProfile(String profileid, HttpServletResponse resp) throws Exception, SQLException {
+		System.out.println("/profile profileid=" + profileid);
+		Profile p = null;
+		if (profileid != null && !profileid.isEmpty()) {
+			p = ProfileService.getInstance().getProfile(profileid);
+		} else {
+			p = new Profile();
+			p.setId("-1");
 		}
-		if(p != null){
+		JSONObject result = JSONHelper.toJSONObject(p);
+		System.out.println("profile=" + result.toJSONString());
+		result.put("errorCode", RESULT.SUCCESS.ordinal());
+		writeJSONResponsed(resp, result);
+	}
+
+	@ResponseBody
+	@RequestMapping(value = "/saveprofile", method = { RequestMethod.POST })
+	public void saveProfile(String profile, HttpServletResponse resp) throws Exception, SQLException {
+		System.out.print(profile);
+		JSONObject jprofile = (JSONObject) new JSONParser().parse(profile);
+		Profile p = null;
+		String id = jprofile.containsKey("id") ? jprofile.get("id").toString() : null;
+		String name = jprofile.containsKey("name") ? jprofile.get("name").toString() : null;
+		String firstName = jprofile.containsKey("firstName") ? jprofile.get("firstName").toString() : null;
+		String lastName = jprofile.containsKey("lastName") ? jprofile.get("lastName").toString() : null;
+		String avatar = jprofile.containsKey("avatar") ? jprofile.get("avatar").toString() : null;
+		String token = jprofile.containsKey("token") ? jprofile.get("token").toString() : null;
+		String permissions = jprofile.containsKey("permissions") ? jprofile.get("permissions").toString() : null;
+		String declinedPermissions = jprofile.containsKey("declinedPermissions")
+				? jprofile.get("declinedPermissions").toString() : null;
+		p = new Profile(id, name, firstName, lastName, avatar, token, permissions, declinedPermissions);
+		if (id != null && !id.isEmpty()) {
+			p = ProfileService.getInstance().saveProfile(p);
+		}
+		if (p != null) {
 			JSONObject result = JSONHelper.toJSONObject(p);
+			System.out.println("profile=" + result.toJSONString());
 			result.put("errorCode", RESULT.SUCCESS.ordinal());
 			writeJSONResponsed(resp, result);
 		}

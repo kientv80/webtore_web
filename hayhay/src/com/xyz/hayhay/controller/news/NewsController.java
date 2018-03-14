@@ -112,7 +112,7 @@ public class NewsController extends BaseController {
 			return "category_news";
 		} else {
 			String uid = getUid("", rq);
-			return getNewsByCate(uid, NewsTypes.CATEGORY.HotNews.name(), target, model);
+			return getNewsByCate(uid,LocalizedResource.VI_VN, NewsTypes.CATEGORY.HotNews.name(), target, model);
 		}
 	}
 
@@ -120,9 +120,9 @@ public class NewsController extends BaseController {
 	public String newsCategory(@PathVariable String cate, String target, HttpServletRequest req,
 			HttpServletResponse resp, ModelMap model, HttpServletRequest rq) {
 		String uid = getUid("", rq);
-		return getNewsByCate(uid, cate, target, model);
+		return getNewsByCate(uid,LocalizedResource.VI_VN, cate, target, model);
 	}
-	private String getNewsByCate(String uid, String cate, String target, ModelMap model) {
+	private String getNewsByCate(String uid,String locale, String cate, String target, ModelMap model) {
 		try {
 			if (target != null && !target.isEmpty()) {
 				model.put("target", target);
@@ -131,10 +131,10 @@ public class NewsController extends BaseController {
 				JSONObject result = new JSONObject();
 				model.put("fromIndex", 10);
 				if (cate == null || cate.isEmpty() ||  NewsTypes.CATEGORY.HotNews.name().equals(cate)) {
-					result = newsService.getHighlightNews(uid,LocalizedResource.VI_VN, 10, 0);
+					result = newsService.getHighlightNews(uid,locale, 10, 0);
 					
 				}else{
-					result = newsService.getNews(uid, LocalizedResource.VI_VN, MappingHelper.cateGroup.get(cate), 10, 0);
+					result = newsService.getNews(uid, locale, MappingHelper.cateGroup.get(cate), 10, 0);
 				}
 				model.put("from", "dashboard");
 				model.put("cate", cate);

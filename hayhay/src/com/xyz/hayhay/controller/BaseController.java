@@ -28,15 +28,17 @@ public class BaseController {
 	public boolean isMobile(HttpServletRequest req){
 		return TargetingUtil.isMobilePhone(req);
 	}
-	public List<MenuItem> getListMenuItems (WEBSITE_TYPE type){
-		return MappingHelper.mainMenuitems;
-	}
+//	public List<MenuItem> getListMenuItems (WEBSITE_TYPE type){
+//		return MappingHelper.mainMenuitems;
+//	}
 	
 	enum RESULT{SUCCESS,FAILED};
 	public void writeSuccessResponse(HttpServletResponse resp, String message){
 		try {
 			resp.setContentType("application/json");
 			resp.setCharacterEncoding("utf-8");
+			resp.addHeader("Access-Control-Allow-Origin", "*");
+			resp.addHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, OPTIONS, HEAD");
 			PrintWriter out = resp.getWriter();
 			JSONObject jobj = new JSONObject();
 			jobj.put("errorCode", RESULT.SUCCESS.ordinal());
@@ -52,6 +54,8 @@ public class BaseController {
 		try {
 			resp.setContentType("application/json");
 			resp.setCharacterEncoding("utf-8");
+			resp.addHeader("Access-Control-Allow-Origin", "*");
+			resp.addHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, OPTIONS, HEAD");
 			PrintWriter out = resp.getWriter();
 			JSONObject jobj = new JSONObject();
 			jobj.put("errorCode", RESULT.FAILED.ordinal());
@@ -67,6 +71,8 @@ public class BaseController {
 		try {
 			resp.setContentType("application/json");
 			resp.setCharacterEncoding("utf-8");
+			resp.addHeader("Access-Control-Allow-Origin", "*");
+			resp.addHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, OPTIONS, HEAD");
 			PrintWriter out = resp.getWriter();
 			out.write(json.toString());
 			out.flush();
@@ -79,6 +85,8 @@ public class BaseController {
 		try {
 			resp.setContentType("application/json");
 			resp.setCharacterEncoding("utf-8");
+			resp.addHeader("Access-Control-Allow-Origin", "*");
+			resp.addHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, OPTIONS, HEAD");
 			PrintWriter out = resp.getWriter();
 			out.write(json.toString());
 			out.flush();
@@ -91,6 +99,8 @@ public class BaseController {
 		try {
 			resp.setContentType("application/json");
 			resp.setCharacterEncoding("utf-8");
+			resp.addHeader("Access-Control-Allow-Origin", "*");
+			resp.addHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, OPTIONS, HEAD");
 			PrintWriter out = resp.getWriter();
 			out.write(json.toString());
 			out.flush();
@@ -103,6 +113,8 @@ public class BaseController {
 		try {
 			resp.setContentType("application/json");
 			resp.setCharacterEncoding("utf-8");
+			resp.addHeader("Access-Control-Allow-Origin", "*");
+			resp.addHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, OPTIONS, HEAD");
 			PrintWriter out = resp.getWriter();
 			out.write(json.toString());
 			out.flush();
@@ -131,5 +143,14 @@ public class BaseController {
 			}
 		}
 		return uid;
+	}
+	public String getLocale(String locale, HttpServletRequest rq){
+		if(locale == null || locale.isEmpty()){
+			locale = getCookie("locale", rq);
+			if(locale == null || locale.isEmpty()){
+				locale = "english";
+			}
+		}
+		return locale;
 	}
 }

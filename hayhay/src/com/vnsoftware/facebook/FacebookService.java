@@ -42,70 +42,70 @@ public class FacebookService {
 		}
 	}
 	public void fblogincallback(HttpServletRequest req, HttpServletResponse resp) {
-		try {
-			String telco = "";
-			if(req.getSession(true).getAttribute("telco") != null)
-				telco = req.getSession(true).getAttribute("telco").toString();
-			if(telco == null || telco.isEmpty())
-				telco = getCookie("telco", req);
-			
-			log.info(">>>>>>>>>>>>>>> fblogincallback query string = " + req.getRequestURL());
-			String code = req.getParameter("code");
-			log.info(">>>>>>>>>>>>>>> fblogincallback code = " + code);
-			System.out.println(">>>>>>>>>>>>>>> fblogincallback code = " + code);
-			if (code != null && !code.isEmpty()) {
-				List<Param> params = new ArrayList<Param>();
-				params.add(new Param("redirect_uri", "http://360hay.com/fblogincallback.html"));
-				params.add(new Param("client_id", FacebookService.clientId));
-				params.add(new Param("client_secret",FacebookService.key));
-				params.add(new Param("code", code));
-				String response = HTTPClient.executeHttpGet("https://graph.facebook.com/v2.3/oauth/access_token?redirect_uri=http://360hay.com/fblogincallback.html&client_id="+clientId+"&client_secret="+key+"&code="+ code, null);
-				JSONObject jobj = (JSONObject) new JSONParser().parse(response);
-				String accessToken = jobj.get("access_token").toString();
-				log.info(">>>>>>>>>>>>>>> AccessToken = " + accessToken + " ======== " + response);
-
-				response = HTTPClient.executeHttpGet("https://graph.facebook.com/v2.3/oauth/access_token?client_id="+FacebookService.clientId+"&client_secret="+key+"&grant_type=client_credentials", null);
-				JSONObject appAccessToken = (JSONObject) new JSONParser().parse(response);
-				log.info(">>>>>>>>>>>>>>> appAccessToken ========= " + appAccessToken.get("access_token").toString());
-
-				response = HTTPClient.executeHttpGet("https://graph.facebook.com/v2.3/debug_token?method=get&access_token=" + appAccessToken.get("access_token").toString() + "&input_token=" + accessToken, null);
-				log.info(">>>>>>>>>>>>>>> debug_token ========= " + response);
-				JSONObject jobj2 = (JSONObject) new JSONParser().parse(response);
-				JSONObject jobjData2 = (JSONObject) jobj2.get("data");
-				if ("true".equals(jobjData2.get("is_valid").toString())) {
-					String userId = jobjData2.get("user_id").toString();
-					response = HTTPClient.executeHttpGet("https://graph.facebook.com/v2.3/" + userId + "?method=get&fields=id,name,email,cover,picture,gender,hometown,last_name,first_name&access_token=" + accessToken, null);
-					log.info(">>>>>>>>>>>>>>> Profile ========= " + response);
-					JSONObject profile = (JSONObject) new JSONParser().parse(response);
-					Person p = jsontoPerson(accessToken, profile);
-					Person fbProfile = ProfileService.getInstance().getPerson(Long.parseLong(p.getFaceBookId()));
-					if(fbProfile == null){
-						p.setTelco(telco);
-						fbProfile = ProfileService.getInstance().addPerson(p);
-					}
-					if(fbProfile != null){
-						req.getSession(true).setAttribute("profile", fbProfile);
-						resp.sendRedirect("/home.html");
-					}else{
-						log.info(">>>>>>>>>>>>>>> Something wrong ========= ");
-						resp.sendRedirect("/login");
-					}
-
-				} else {
-					log.info(">>>>>>>>>>>>>>> is_valid is false ========= ");
-					resp.sendRedirect("/login");
-				}
-			}else if(req.getParameter("error_code") != null){
-				log.info(">>>>>>> error_code >>>>>>>> " + req.getParameter("error_code") + ":" + req.getParameter("error_message"));
-				resp.sendRedirect("/login");
-			} else {
-				log.info(">>>>>>> User cancel login so no code >>>>>>>> ");
-				resp.sendRedirect("/login");
-			}
-		} catch (Exception e) {
-			log.error("",e);
-			e.printStackTrace();
-		}
+//		try {
+//			String telco = "";
+//			if(req.getSession(true).getAttribute("telco") != null)
+//				telco = req.getSession(true).getAttribute("telco").toString();
+//			if(telco == null || telco.isEmpty())
+//				telco = getCookie("telco", req);
+//			
+//			log.info(">>>>>>>>>>>>>>> fblogincallback query string = " + req.getRequestURL());
+//			String code = req.getParameter("code");
+//			log.info(">>>>>>>>>>>>>>> fblogincallback code = " + code);
+//			System.out.println(">>>>>>>>>>>>>>> fblogincallback code = " + code);
+//			if (code != null && !code.isEmpty()) {
+//				List<Param> params = new ArrayList<Param>();
+//				params.add(new Param("redirect_uri", "http://360hay.com/fblogincallback.html"));
+//				params.add(new Param("client_id", FacebookService.clientId));
+//				params.add(new Param("client_secret",FacebookService.key));
+//				params.add(new Param("code", code));
+//				String response = HTTPClient.executeHttpGet("https://graph.facebook.com/v2.3/oauth/access_token?redirect_uri=http://360hay.com/fblogincallback.html&client_id="+clientId+"&client_secret="+key+"&code="+ code, null);
+//				JSONObject jobj = (JSONObject) new JSONParser().parse(response);
+//				String accessToken = jobj.get("access_token").toString();
+//				log.info(">>>>>>>>>>>>>>> AccessToken = " + accessToken + " ======== " + response);
+//
+//				response = HTTPClient.executeHttpGet("https://graph.facebook.com/v2.3/oauth/access_token?client_id="+FacebookService.clientId+"&client_secret="+key+"&grant_type=client_credentials", null);
+//				JSONObject appAccessToken = (JSONObject) new JSONParser().parse(response);
+//				log.info(">>>>>>>>>>>>>>> appAccessToken ========= " + appAccessToken.get("access_token").toString());
+//
+//				response = HTTPClient.executeHttpGet("https://graph.facebook.com/v2.3/debug_token?method=get&access_token=" + appAccessToken.get("access_token").toString() + "&input_token=" + accessToken, null);
+//				log.info(">>>>>>>>>>>>>>> debug_token ========= " + response);
+//				JSONObject jobj2 = (JSONObject) new JSONParser().parse(response);
+//				JSONObject jobjData2 = (JSONObject) jobj2.get("data");
+//				if ("true".equals(jobjData2.get("is_valid").toString())) {
+//					String userId = jobjData2.get("user_id").toString();
+//					response = HTTPClient.executeHttpGet("https://graph.facebook.com/v2.3/" + userId + "?method=get&fields=id,name,email,cover,picture,gender,hometown,last_name,first_name&access_token=" + accessToken, null);
+//					log.info(">>>>>>>>>>>>>>> Profile ========= " + response);
+//					JSONObject profile = (JSONObject) new JSONParser().parse(response);
+//					Person p = jsontoPerson(accessToken, profile);
+//					Person fbProfile = ProfileService.getInstance().getPerson(Long.parseLong(p.getFaceBookId()));
+//					if(fbProfile == null){
+//						p.setTelco(telco);
+//						fbProfile = ProfileService.getInstance().addPerson(p);
+//					}
+//					if(fbProfile != null){
+//						req.getSession(true).setAttribute("profile", fbProfile);
+//						resp.sendRedirect("/home.html");
+//					}else{
+//						log.info(">>>>>>>>>>>>>>> Something wrong ========= ");
+//						resp.sendRedirect("/login");
+//					}
+//
+//				} else {
+//					log.info(">>>>>>>>>>>>>>> is_valid is false ========= ");
+//					resp.sendRedirect("/login");
+//				}
+//			}else if(req.getParameter("error_code") != null){
+//				log.info(">>>>>>> error_code >>>>>>>> " + req.getParameter("error_code") + ":" + req.getParameter("error_message"));
+//				resp.sendRedirect("/login");
+//			} else {
+//				log.info(">>>>>>> User cancel login so no code >>>>>>>> ");
+//				resp.sendRedirect("/login");
+//			}
+//		} catch (Exception e) {
+//			log.error("",e);
+//			e.printStackTrace();
+//		}
 	}
 
 	private static Person jsontoPerson(String accessToken, JSONObject profile) {

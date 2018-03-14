@@ -1,8 +1,13 @@
 package com.xyz.hayhay.service.user;
 
 public class ShortProfile {
+	private Long id;
 	private String domainName;
-
+	private long facebookId;
+	private String name;
+	private String image;
+	
+	
 	public ShortProfile() {
 	}
 	
@@ -14,7 +19,7 @@ public class ShortProfile {
 		this.image = image;
 		this.setDomainName(domainName);
 	}
-	private long facebookId;
+
 
 	/**
 	 * @return the id
@@ -68,7 +73,5 @@ public class ShortProfile {
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
 	}
-	Long id;
-	String name;
-	String image;
+
 }

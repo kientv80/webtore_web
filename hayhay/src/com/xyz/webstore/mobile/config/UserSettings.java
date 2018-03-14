@@ -20,6 +20,7 @@ import com.xyz.hayhay.entirty.NewsTypes;
 import com.xyz.hayhay.localization.LocalizedResource;
 
 public class UserSettings {
+	
 	public static String TYPE_FAVORITE_CATE = "favorite_cates";
 	public static String TYPE_FAVORITE_COUNTRIES = "favorite_countries";
 	public static String TYPE_FAVORITE_LANGUAGES = "favorite_languages";
@@ -65,7 +66,7 @@ public class UserSettings {
 
 		result.put("settings", settings);
 		result.put("title", LocalizedResource.getInstance().getValue("setting.languages", locale));
-		result.put("serviceUrl", "http://360hay.com/mobile/settings/update");
+		result.put("serviceUrl", AppConf.DOMAIN + "/mobile/settings/update");
 		result.put("type", TYPE_FAVORITE_LANGUAGES);
 		return result;
 	}
@@ -80,7 +81,7 @@ public class UserSettings {
 		}
 		result.put("settings", settings);
 		result.put("title", LocalizedResource.getInstance().getValue(TYPE_FAVORITE_CATE, locale));
-		result.put("serviceUrl", "http://360hay.com/mobile/settings/update");
+		result.put("serviceUrl", AppConf.DOMAIN + "/mobile/settings/update");
 		result.put("type", TYPE_FAVORITE_CATE);
 		return result;
 	}
@@ -88,30 +89,25 @@ public class UserSettings {
 	public static JSONObject getDefaultFavoriteCountriesSettings(String locale) throws JSONException {
 		JSONObject result = new JSONObject();
 		JSONArray settings = new JSONArray();
-		if ("vi_VN".equals(locale)) {
-			settings.add(createSetting(News.COUNTRY.VN.ordinal(), News.COUNTRY.VN.name(),
-					LocalizedResource.getInstance().getValue("country.vn", locale), "checkbox", true));
-			settings.add(createSetting(News.COUNTRY.US.ordinal(), News.COUNTRY.US.name(),
-					LocalizedResource.getInstance().getValue("country.us", locale), "checkbox", true));
-			settings.add(createSetting(News.COUNTRY.CHINA.ordinal(), News.COUNTRY.CHINA.name(),
-					LocalizedResource.getInstance().getValue("country.china", locale), "checkbox", true));
-			settings.add(createSetting(News.COUNTRY.ASIAN.ordinal(), News.COUNTRY.ASIAN.name(),
-					LocalizedResource.getInstance().getValue("country.asian", locale), "checkbox", true));
 
-		} else {
-			settings.add(createSetting(News.COUNTRY.VN.ordinal(), News.COUNTRY.VN.name(),
-					LocalizedResource.getInstance().getValue("country.vn", locale), "checkbox", true));
-			settings.add(createSetting(News.COUNTRY.US.ordinal(), News.COUNTRY.US.name(),
-					LocalizedResource.getInstance().getValue("country.us", locale), "checkbox", true));
-			settings.add(createSetting(News.COUNTRY.CHINA.ordinal(), News.COUNTRY.CHINA.name(),
-					LocalizedResource.getInstance().getValue("country.china", locale), "checkbox", true));
-			settings.add(createSetting(News.COUNTRY.ASIAN.ordinal(), News.COUNTRY.ASIAN.name(),
-					LocalizedResource.getInstance().getValue("country.asian", locale), "checkbox", true));
-		}
+		settings.add(createSetting(News.COUNTRY.VN.ordinal(), News.COUNTRY.VN.name(),
+				LocalizedResource.getInstance().getValue("country.vn", locale), "checkbox", true));
+		settings.add(createSetting(News.COUNTRY.US.ordinal(), News.COUNTRY.US.name(),
+				LocalizedResource.getInstance().getValue("country.us", locale), "checkbox", true));
+		settings.add(createSetting(News.COUNTRY.CHINA.ordinal(), News.COUNTRY.CHINA.name(),
+				LocalizedResource.getInstance().getValue("country.china", locale), "checkbox", true));
+		settings.add(createSetting(News.COUNTRY.ASIAN.ordinal(), News.COUNTRY.ASIAN.name(),
+				LocalizedResource.getInstance().getValue("country.asian", locale), "checkbox", true));
+		settings.add(createSetting(News.COUNTRY.ASIAN.ordinal(), News.COUNTRY.ASIAN.name(),
+				LocalizedResource.getInstance().getValue("country.asian", locale), "checkbox", true));
+		settings.add(createSetting(News.COUNTRY.BRITISH.ordinal(), News.COUNTRY.BRITISH.name(),
+				LocalizedResource.getInstance().getValue("country.british", locale), "checkbox", true));
 
+		
+		
 		result.put("settings", settings);
 		result.put("title", LocalizedResource.getInstance().getValue(TYPE_FAVORITE_COUNTRIES, locale));
-		result.put("serviceUrl", "http://360hay.com/mobile/settings/update");
+		result.put("serviceUrl", AppConf.DOMAIN + "/mobile/settings/update");
 		result.put("type", TYPE_FAVORITE_COUNTRIES);
 		return result;
 	}

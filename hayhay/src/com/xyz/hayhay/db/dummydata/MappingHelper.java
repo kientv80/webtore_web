@@ -23,13 +23,16 @@ public class MappingHelper {
 	public static Map<String,List<CategoryInfo>> parentCateMapping = new HashMap<>();
 	public static Map<String,List<MenuItem>> cateMenuItemMapping = new HashMap<>();
 	public static Map<String, List<String>> cateGroup = new TreeMap<>();
-	public static List<MenuItem> mainMenuitems = new ArrayList<>();
+	private static List<MenuItem> mainMenuitems = new ArrayList<>();
+	private static List<MenuItem> vnmainMenuitems = new ArrayList<>();
 	public static Map<String, List<String>> parentCates = new TreeMap<>();
 	public static Map<String, List<String>> cateVietWorldMapping = new TreeMap<>();
 	public static List<Category> categories = new ArrayList<>();
 	static {
 		for(CATEGORY category: CATEGORY.values()){
 			mainMenuitems.add(new MenuItem(category.name(),"/news/" + category.name(), LocalizedResource.getInstance().getValue(category.name(), LocalizedResource.EN_ENGLISH), LocalizedResource.getInstance().getValue(category.name(), LocalizedResource.EN_ENGLISH), ""));
+			vnmainMenuitems.add(new MenuItem(category.name(),"/news/" + category.name(), LocalizedResource.getInstance().getValue(category.name(), LocalizedResource.VI_VN), LocalizedResource.getInstance().getValue(category.name(), LocalizedResource.VI_VN), ""));
+			
 		}
 		//Category group
 		for(Entry<CATEGORY, List<TYPE>> cate : NewsTypes.cateTypeMapping.entrySet()){
@@ -48,5 +51,12 @@ public class MappingHelper {
 
 	public static List<MenuItem> getMenuItems(String category){
 		return cateMenuItemMapping.get(category);
+	}
+	public static List<MenuItem> getMenuitems(String locale){
+		if(LocalizedResource.VI_VN.equals(locale)){
+			return vnmainMenuitems;
+		}else{
+			return mainMenuitems;
+		}
 	}
 }

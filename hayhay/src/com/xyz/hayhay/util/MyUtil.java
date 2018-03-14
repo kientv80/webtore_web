@@ -56,6 +56,18 @@ public class MyUtil {
 		}
 		return null;
 	}
+	public static String getStringCookie(String key, HttpServletRequest rq) {
+		String value = null;
+		if(rq.getCookies() != null && rq.getCookies().length > 0){
+			for(Cookie c : rq.getCookies()){
+				if(key.equals(c.getName())){
+					value = c.getValue();
+					break;
+				}
+			}
+		}
+		return value;
+	}
 	public static void followZaloPage(File phoneNums, long pageId) {
 		try {
 			FileReader f = new FileReader(phoneNums);

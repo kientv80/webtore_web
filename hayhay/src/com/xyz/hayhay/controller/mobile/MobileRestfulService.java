@@ -18,6 +18,7 @@ import com.xyz.hayhay.controller.BaseController;
 import com.xyz.hayhay.db.dummydata.MappingHelper;
 import com.xyz.hayhay.entirty.NewsTypes;
 import com.xyz.hayhay.entirty.WebsiteInfo;
+import com.xyz.hayhay.localization.LocalizedResource;
 import com.xyz.hayhay.util.JSONHelper;
 import com.xyz.hayhay.website.collector.TranslateService;
 import com.xyz.webstore.mobile.config.Category;
@@ -117,9 +118,9 @@ public class MobileRestfulService extends BaseController {
 				fromIndex = Integer.parseInt(from);
 
 			if (NewsTypes.CATEGORY.HotNews.name().equals(category)) {
-				result = newsService.getHighlightNews(uid, locale, 10, fromIndex);
+				result = newsService.getHighlightNews(uid, LocalizedResource.VI_VN, 10, fromIndex);
 			} else {
-				result = newsService.getNews(uid, locale, MappingHelper.cateGroup.get(category), 10, fromIndex);
+				result = newsService.getNews(uid, LocalizedResource.VI_VN, MappingHelper.cateGroup.get(category), 10, fromIndex);
 			}
 			try {
 				if (result != null)
