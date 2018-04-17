@@ -42,23 +42,30 @@ public class ProfileController extends BaseController {
 		JSONObject jprofile = (JSONObject) new JSONParser().parse(profile);
 		Profile p = null;
 		String id = jprofile.containsKey("id") ? jprofile.get("id").toString() : null;
-		String name = jprofile.containsKey("name") ? jprofile.get("name").toString() : null;
-		String firstName = jprofile.containsKey("firstName") ? jprofile.get("firstName").toString() : null;
-		String lastName = jprofile.containsKey("lastName") ? jprofile.get("lastName").toString() : null;
-		String avatar = jprofile.containsKey("avatar") ? jprofile.get("avatar").toString() : null;
-		String token = jprofile.containsKey("token") ? jprofile.get("token").toString() : null;
-		String permissions = jprofile.containsKey("permissions") ? jprofile.get("permissions").toString() : null;
-		String declinedPermissions = jprofile.containsKey("declinedPermissions")
-				? jprofile.get("declinedPermissions").toString() : null;
-		p = new Profile(id, name, firstName, lastName, avatar, token, permissions, declinedPermissions);
-		if (id != null && !id.isEmpty()) {
-			p = ProfileService.getInstance().saveProfile(p);
+		p = ProfileService.getInstance().getProfile(id);
+		if (p == null) {
+			String name = jprofile.containsKey("name") ? jprofile.get("name").toString() : null;
+			String firstName = jprofile.containsKey("firstName") ? jprofile.get("firstName").toString() : null;
+			String lastName = jprofile.containsKey("lastName") ? jprofile.get("lastName").toString() : null;
+			String avatar = jprofile.containsKey("avatar") ? jprofile.get("avatar").toString() : null;
+			String token = jprofile.containsKey("token") ? jprofile.get("token").toString() : null;
+			String permissions = jprofile.containsKey("permissions") ? jprofile.get("permissions").toString() : null;
+			String declinedPermissions = jprofile.containsKey("declinedPermissions")
+					? jprofile.get("declinedPermissions").toString() : null;
+			p = new Profile(id, name, firstName, lastName, avatar, token, permissions, declinedPermissions);
+			if (id != null && !id.isEmpty()) {
+				p = ProfileService.getInstance().saveProfile(p);
+			}
+		}else{
+			//Compare and update if any change
 		}
+		JSONObject result = new JSONObject();
 		if (p != null) {
-			JSONObject result = JSONHelper.toJSONObject(p);
-			System.out.println("profile=" + result.toJSONString());
+			result = JSONHelper.toJSONObject(p);
 			result.put("errorCode", RESULT.SUCCESS.ordinal());
-			writeJSONResponsed(resp, result);
+		}else{
+			result.put("errorCode", RESULT.FAILED.ordinal());
 		}
+		writeJSONResponsed(resp, result);
 	}
 }

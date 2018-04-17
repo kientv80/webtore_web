@@ -4,18 +4,17 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Map;
 
-import org.springframework.expression.spel.ast.PropertyOrFieldReference;
+import org.apache.commons.collections.map.HashedMap;
 
-import com.mysql.jdbc.Statement;
 import com.xyz.hayhay.db.JDBCConnection;
 
 public class ProfileService {
 	private static ProfileService instance;
+
 	public static ProfileService getInstance() {
-		if(instance == null)
+		if (instance == null)
 			instance = new ProfileService();
 		return instance;
 	}
@@ -27,16 +26,16 @@ public class ProfileService {
 		ResultSet rs = null;
 		try {
 			stm = con.prepareStatement(sql);
-			stm.setString(1, p.getId()+"");
-			stm.setString(2, p.getName()+"");
-			stm.setString(3, p.getAvatar()+"");
-			stm.setString(4, p.getToken()+"");
-			stm.setString(5, p.getFirstName()+"");
-			stm.setString(6, p.getLastName()+"");
-			stm.setString(7, p.getPermissions()+"");
-			stm.setString(8, p.getDeclinedPermissions()+"");
+			stm.setString(1, p.getId() + "");
+			stm.setString(2, p.getName() + "");
+			stm.setString(3, p.getAvatar() + "");
+			stm.setString(4, p.getToken() + "");
+			stm.setString(5, p.getFirstName() + "");
+			stm.setString(6, p.getLastName() + "");
+			stm.setString(7, p.getPermissions() + "");
+			stm.setString(8, p.getDeclinedPermissions() + "");
 			stm.execute();
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -46,23 +45,29 @@ public class ProfileService {
 				rs.close();
 			con.close();
 		}
-		return p;//getPerson(Long.valueOf(p.getId()));
+		return p;// getPerson(Long.valueOf(p.getId()));
 	}
-	
+
+	Map<String, Profile> profiles = new HashedMap();
+
 	public Profile getProfile(String id) throws SQLException {
-		String sql = "select * from profile where id=?";
-		Profile p = null;
-		try(Connection con = JDBCConnection.getInstance().getConnection()){
-			try(PreparedStatement stm = con.prepareStatement(sql)){
-				try(ResultSet rs = stm.executeQuery()){
-					while (rs.next()) {
-						p = toProfile(rs);
+		Profile p = profiles.get(id);
+		if (p == null) {
+			String sql = "select * from profile where id=?";
+			try (Connection con = JDBCConnection.getInstance().getConnection()) {
+				try (PreparedStatement stm = con.prepareStatement(sql)) {
+					try (ResultSet rs = stm.executeQuery()) {
+						while (rs.next()) {
+							p = toProfile(rs);
+							profiles.put(p.getId(), p);
+						}
 					}
 				}
 			}
 		}
 		return p;
 	}
+
 	private Profile toProfile(ResultSet rs) throws SQLException {
 		Profile p = new Profile();
 		p.setId(rs.getString("id"));
