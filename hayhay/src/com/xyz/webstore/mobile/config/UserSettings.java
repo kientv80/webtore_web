@@ -35,14 +35,6 @@ public class UserSettings {
 			result = (JSONObject) settings;
 		} else {
 			result = getUserSettings(userId, type, locale);
-			if (result == null) {
-				if (TYPE_FAVORITE_CATE.equals(type))
-					result = getDefaultFavoriteCatesSettings(locale);
-				else if (TYPE_FAVORITE_COUNTRIES.equals(type))
-					result = getDefaultFavoriteCountriesSettings(locale);
-				else if (TYPE_FAVORITE_LANGUAGES.equals(type))
-					result = getDefaultFavoriteLanguagesSettings(locale);
-			}
 		}
 		return result;
 
@@ -139,16 +131,15 @@ public class UserSettings {
 
 			}
 		}
-		if (result != null) {
+		if (result != null) {//merge user setting to defaultSettings
 			JSONArray settings = (JSONArray) new JSONParser().parse(result.get("settings").toString());
 			JSONArray dsettings = (JSONArray) defaultSetting.get("settings");
 			for (int i = 0; i < settings.size(); i++) {
 				JSONObject st = (JSONObject) settings.get(i);
 				((JSONObject) dsettings.get(((Long) st.get("id")).intValue())).put("value", st.get("value"));
 			}
-			result = defaultSetting;
 		}
-		return result;
+		return defaultSetting;
 	}
 
 	public static JSONObject saveUserSettings(String title, String serviceUrl, String userId, String type,

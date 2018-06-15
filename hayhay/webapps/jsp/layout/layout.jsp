@@ -127,18 +127,28 @@
 		</div>
 	</div>
 
-	<!-- Modal -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<!-- Modal languageSettings -->
+	<div class="modal fade" id="languageSettings" tabindex="-1" role="dialog" aria-labelledby="languageSettingsLabel" aria-hidden="true">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
 	      <div class="modal-header">
-		<h5 class="modal-title" id="exampleModalLabel">Read news writen in follow languages</h5>
-		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		  <span aria-hidden="true">&times;</span>
-		</button>
+		<h5 class="modal-title" id="languageSettingsLabel">Settings</h5>
 	      </div>
 	      <div class="modal-body">
 		    <form>
+		      <h5 class="modal-title" id="languageSettingsLabel"><b>Select website language</b></h5>
+		      
+		       <div class="form-group">
+			<label for="english">English</label>
+			<input type="radio" class="form-check-input" name="locale" id="l_english" checked>
+		      </div>
+		      <div class="form-group">
+			<label for="vn">Vietnamese</label>
+			<input type="radio" class="form-check-input" name="locale" id="l_vn" >
+		      </div>
+		      
+		      
+		      <h5 class="modal-title" id="languageSettingsLabel"><b>Read news writen in follow languages</b></h5>
 		      <div class="form-group">
 			<label for="english">English</label>
 			<input type="checkbox" class="form-check-input" id="english">
@@ -217,36 +227,47 @@
 				      settings = ClientCache.getLocalCacheJSON('settings');
 			      }
 			      if(settings!=undefined){
-				if($("#vn:checked").val() != undefined && $("#vn:checked").val()=="on"){
-				  settings.settings[0].value=true;
-				}else{
-				  settings.settings[0].value=false;
-				}
-				if($("#english:checked").val() != undefined && $("#english:checked").val()=="on"){
-				  settings.settings[1].value=true;
-				}else{
-				  settings.settings[1].value=false;
-				}
-
-				if($("#chinese:checked").val() != undefined && $("#chinese:checked").val()=="on"){
-				  settings.settings[2].value=true;
-				}else{
-				  settings.settings[2].value=false;
-				}
-				params={"uid":profile.id,"settings":JSON.stringify(settings)};
+				try{
 				
-				HTTPClient.callSyncAjaxService("http://globalnewsindex.com/mobile/settings/update?a=1",params,"POST",);
-				$('#exampleModal').modal('toggle');
+				  if($("#l_vn:checked").val() != undefined && $("#l_vn:checked").val()=="on"){
+				    ClientCache.setCookie("locale","vi_VN");
+				  }else{
+				    ClientCache.setCookie("locale","english");
+				  }
+				  
+				  if($("#vn:checked").val() != undefined && $("#vn:checked").val()=="on"){
+				    settings.settings[0].value=true;
+				  }else{
+				    settings.settings[0].value=false;
+				  }
+				  if($("#english:checked").val() != undefined && $("#english:checked").val()=="on"){
+				    settings.settings[1].value=true;
+				  }else{
+				    settings.settings[1].value=false;
+				  }
+
+				  if($("#chinese:checked").val() != undefined && $("#chinese:checked").val()=="on"){
+				    settings.settings[2].value=true;
+				  }else{
+				    settings.settings[2].value=false;
+				  }
+				  params={"uid":profile.id,"settings":JSON.stringify(settings)};
+				  
+				  HTTPClient.callSyncAjaxService("http://globalnewsindex.com/mobile/settings/update?a=1",params,"POST",);
+				}catch(ex){
+				  alert(ex);
+				}
+				$('#languageSettings').modal('toggle');
 				window.location="http://globalnewsindex.com";
 			      }
 				      
 		      }
 		      function loadLanguageSettings(){
-			var settings = undefined;
+			      var settings = undefined;
 			      var profile = ClientCache.getLocalCacheJSON('profile');
 			      var params = {};
 			      if(profile == null || profile == undefined){
-				      HTTPClient.callSyncAjaxService("http://globalnewsindex.com/profile?profileid=",params,"POST","profile");
+				      HTTPClient.callSyncAjaxService("http://globalnewsindex.com/getprofile",params,"GET","profile");
 				      profile = ClientCache.getLocalCacheJSON('profile');
 			      }
 			      if(profile != null && profile != undefined){
@@ -256,7 +277,7 @@
 			      if(settings!=undefined){
 				if(settings.settings[0].value==true){
 				  $("#vn").attr('checked','checked');
-				}else{
+				}else{	
 				  $("#vn").removeAttr('checked');
 				}
 				if(settings.settings[1].value==true){
@@ -270,9 +291,14 @@
 				  $("#chinese").removeAttr('checked');
 				}
 			      }
+			      if(ClientCache.getCookie("locale") != undefined && ClientCache.getCookie("locale") == 'english'){
+				 $("#l_english").attr('checked','checked');
+			      }else{
+				 $("#l_vn").attr('checked','checked');
+			      }
 		      }
 		      function bindLanguageSettingsData(){
-			$('#exampleModal').on('shown.bs.modal', function () {
+			$('#languageSettings').on('shown.bs.modal', function () {
 			  loadLanguageSettings();
 			});
 		      }
@@ -283,7 +309,7 @@
 			}
 		      }
 		      function showLanguageSettings(){
-			$('#exampleModal').modal('show');
+			$('#languageSettings').modal('show');
 		      }
 		      $(document).ready(function() {
 			bindLanguageSettingsData();

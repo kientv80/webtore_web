@@ -27,7 +27,7 @@ public class ProfileController extends BaseController {
 			p = ProfileService.getInstance().getProfile(profileid);
 		} else {
 			p = new Profile();
-			p.setId("-1");
+			p.setId("visitor_" + System.nanoTime());
 		}
 		JSONObject result = JSONHelper.toJSONObject(p);
 		System.out.println("profile=" + result.toJSONString());
