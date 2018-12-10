@@ -557,7 +557,7 @@
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
-	    file:/kientv/hayhay/webapps/WEB-INF/application-context.xml
+	    file:/media/kientv/DATA/Development/experiment_projects/webtore_web/hayhay/webapps/WEB-INF/application-context.xml
         </param-value>
     </context-param>
     
@@ -568,7 +568,7 @@
         </servlet-class>
             <init-param>
                 <param-name>contextConfigLocation</param-name>
-                <param-value>file:/kientv/hayhay/webapps/WEB-INF/web-context.xml</param-value>
+                <param-value>file:/media/kientv/DATA/Development/experiment_projects/webtore_web/hayhay/webapps/WEB-INF/web-context.xml</param-value>
             </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>

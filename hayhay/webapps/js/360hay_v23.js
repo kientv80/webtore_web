@@ -10,6 +10,7 @@ var selectedSectionId;
 var selectedCategory;
 var allNews=[];
 function showWebcontent(url, isIs360hayArticle,articleId,cateName, ref) {
+	/*
 	var youtubeId = "";
 	var fromApp = ClientCache.getCookie("fromAndroidApp");
 	if(articleId != undefined && articleId.indexOf("hn_") >= 0){
@@ -45,7 +46,8 @@ function showWebcontent(url, isIs360hayArticle,articleId,cateName, ref) {
 		$("#header").attr("style","display:none;padding: 0px;");
 		$("#bodyId").attr("style","background-color: #f1f1f1;overflow: hidden;");
 		jump("embededContent", false);
-	}
+	}*/
+	window.open(url);
 }
 function closeEmbeddedContent(ref){
 	if(ref == undefined || ref == ""){
@@ -193,7 +195,8 @@ function renderNewsHTML(fromPage,fromNewsIndex, categories,cate){
 	var cates = categories;
 	var data ={categoriesNews:cates,from:fromPage,fromIndex:fromNewsIndex};
 	addNews(cates[0].news);
-	View.renderHTML("newsContainer",data, "/js/ejs/templates/globalnewsindex_news_v4.ejs", true)
+	View.renderHTML("hotNewsContainerId",data, "/js/ejs/templates/globalnewsindex_news_v5.ejs", true);
+	View.renderHTML("sideNewsContainerId",data, "/js/ejs/templates/globalnewsindex_side_news.ejs", true);
 	//swiper();
 	//loadImages(cates[0].news);
 	//scheduleLoadOtherCategories(fromPage,fromNewsIndex,cate);
@@ -237,7 +240,8 @@ function loadNews(fromPage, fromIndex, cate){
 						var renderCate = [result.categories[currentIndex]];
 						currentIndex ++;
 						var data ={categoriesNews:renderCate,from:fromPage,fromIndex:fromIndex};
-						View.renderHTML("newsContainer",data, "/js/ejs/templates/globalnewsindex_news_v4.ejs", true)
+						View.renderHTML("hotNewsContainerId",data, "/js/ejs/templates/globalnewsindex_news_v5.ejs", true);
+						View.renderHTML("sideNewsContainerId",data, "/js/ejs/templates/globalnewsindex_side_news.ejs", true);
 						addNews(renderCate[0].news);
 					}
 					renderCount = renderCount -1;
@@ -263,7 +267,8 @@ function loadNews2(fromPage, fromIndex, cate){
 							var renderCate = [result.categories[currentIndex]];
 							currentIndex ++;
 							var data ={categoriesNews:renderCate,from:fromPage,fromIndex:fromIndex};
-							View.renderHTML("newsContainer",data, "/js/ejs/templates/globalnewsindex_news_v4.ejs", true)
+							View.renderHTML("hotNewsContainerId",data, "/js/ejs/templates/globalnewsindex_news_v5.ejs", true);
+							View.renderHTML("sideNewsContainerId",data, "/js/ejs/templates/globalnewsindex_side_news.ejs", true);
 							addNews(renderCate[0].news);
 						}
 						renderCount = renderCount -1;

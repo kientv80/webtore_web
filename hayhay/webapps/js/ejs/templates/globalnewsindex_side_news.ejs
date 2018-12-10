@@ -1,0 +1,54 @@
+<%
+	var news = [];
+	var count = 0;
+	var firstElement = true;
+	for(i = 0;i< categoriesNews.length;i++){ 
+		for(n=0;n<categoriesNews[i].news.length;n++){
+			news[count]=categoriesNews[i].news[n];
+			count++;
+		}
+		
+	}
+
+%>
+<%for(n = 0;n< news.length;n++){
+		if( (n+3) % 3 >= 2){ %>
+				<%if(firstElement == true){ firstElement = false;%>
+						<div class="container-fluid" style="padding: 2px 0px 15px 0px;">
+						<div class="row w3-card-2"   style="padding: 0px; background-color:#fff ;color: white;">
+				<%}%>
+						<!--title-->
+						<div class="row">
+								<div class="container-fluid">
+										<div class="row">
+											<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding: 0px;">
+												<div class="container-fluid" style="padding: 0px;">
+												  	<a   onclick="return showWebcontent('<%=news[n].url%>',false,'<%=news[n].id%>','<%=news[n].type%>','');" style="text-decoration: none;"> 
+														<img class="img-responsive mainarticleimage" src="<%=news[n].imageUrl%>" alt="" style="width: 100%;" id="image_<%=news[n].id%>">
+													</a>
+												</div>
+											</div>
+										</div>
+										<!--Image and Desc-->
+										<div class="row" >
+											<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+												<h2>
+													<a  onclick="return showWebcontent('<%=news[n].url%>',false,'<%=news[n].id%>','<%=news[n].type%>','')" class="mainarticletitle" style="text-decoration: none;font-size: 16px;"><%=news[n].title%></a>
+												</h2>
+												<p>
+													<%=news[n].shotDesc%>
+													<br><a href="/news/type/<%=news[n].type%>" style="text-decoration: none;"><span class="website_info" style="text-transform: uppercase;"><%=news[n].type%></span> </a><span class="website_info">(<%=news[n].fromWebSite%> <%=news[n].strDate %>)</span>
+												</p>
+											</div>
+									   </div>
+								</div>
+						</div>
+
+		<%}%>
+<%}%>
+
+<%if(!firstElement){%>
+	</div>
+	</div>
+<%}%>
+		 
