@@ -41,7 +41,7 @@ jcs.region.article.elementattributes.IsLateral=true
 # Primary Disk Cache -- faster than the rest because of memory key storage
 jcs.auxiliary.DC= org.apache.jcs.auxiliary.disk.indexed.IndexedDiskCacheFactory
 jcs.auxiliary.DC.attributes=org.apache.jcs.auxiliary.disk.indexed.IndexedDiskCacheAttributes
-jcs.auxiliary.DC.attributes.DiskPath=/kientv/hayhay/
+jcs.auxiliary.DC.attributes.DiskPath=/media/kientv/DATA/Development/experiment_projects/webtore_web/hayhay/
 jcs.auxiliary.DC.attributes.MaxPurgatorySize=10000
 jcs.auxiliary.DC.attributes.MaxKeySize=10000
 jcs.auxiliary.DC.attributes.OptimizeAtRemoveCount=300000
@@ -49,7 +49,7 @@ jcs.auxiliary.DC.attributes.MaxRecycleBinSize=7500
 
 jcs.auxiliary.article= org.apache.jcs.auxiliary.disk.indexed.IndexedDiskCacheFactory
 jcs.auxiliary.article.attributes=org.apache.jcs.auxiliary.disk.indexed.IndexedDiskCacheAttributes
-jcs.auxiliary.article.attributes.DiskPath=/kientv/hayhay/
+jcs.auxiliary.article.attributes.DiskPath=/media/kientv/DATA/Development/experiment_projects/webtore_web/hayhay/
 jcs.auxiliary.article.attributes.MaxPurgatorySize=10000
 jcs.auxiliary.article.attributes.MaxKeySize=10000
 jcs.auxiliary.article.attributes.OptimizeAtRemoveCount=300000

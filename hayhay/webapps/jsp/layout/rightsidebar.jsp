@@ -39,7 +39,7 @@
 
 				<div class="row" style="padding-bottom: 4px;z-index: 2;" data-spy="affix" id="myAffix">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-left: 6px;">
-						<div class="container-fluid  w3-card-2">
+						<div class="container-fluid  w3-card-2" style="background-color: white;">
 							<img class="card-img-top" src="/images/ads/mtsport.png" alt="Minh Thu Sport" style="width: 100%;">
 							<div class="w3-container">
 							    <h4 style="font-weight:bold; ">Minh Thư Sport</h4>

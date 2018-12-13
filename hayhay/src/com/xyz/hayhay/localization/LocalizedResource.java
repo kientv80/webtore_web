@@ -6,6 +6,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+import com.xyz.hayhay.util.ConfigurationHelper;
+
 public class LocalizedResource {
 
 	public static final String VI_VN = "vi_VN";
@@ -27,9 +29,9 @@ public class LocalizedResource {
 	}
 	private LocalizedResource() throws FileNotFoundException, IOException{
 		vnResources = new Properties();
-		vnResources.load(new FileInputStream(new File("/kientv/hayhay/resources/string.properties")));
+		vnResources.load(new FileInputStream(new File(ConfigurationHelper.getInstance().getValue("appDir")+"/resources/string.properties")));
 		enResources = new Properties();
-		enResources.load(new FileInputStream(new File("/kientv/hayhay/resources/string_en.properties")));
+		enResources.load(new FileInputStream(new File(ConfigurationHelper.getInstance().getValue("appDir")+"/resources/string_en.properties")));
 	}
 	public String getValue(String key, String locale){
 		if(locale != null && VI_VN.equalsIgnoreCase(locale.trim())){
